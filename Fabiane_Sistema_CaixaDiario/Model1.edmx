@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CDFModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Competencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompNome" Type="date" />
+          <Property Name="DataRegistro" Type="datetime" />
+          <Property Name="Usuario" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeFantasia" Type="nvarchar" MaxLength="100" />
+          <Property Name="RazaoSocial" Type="nvarchar" MaxLength="150" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="250" />
+          <Property Name="CEP" Type="nchar" MaxLength="8" />
+          <Property Name="Fone" Type="numeric" Precision="11" Scale="0" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="DataRegistro" Type="datetime" />
+          <Property Name="Usuario" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Movimentacao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Data" Type="date" />
+          <Property Name="Descricao" Type="nvarchar" MaxLength="150" />
+          <Property Name="Valor" Type="money" />
+          <Property Name="TipoMovimentacao_fk" Type="int" />
+          <Property Name="ParteEnvolvida_fk" Type="int" />
+          <Property Name="Competencia_fk" Type="int" />
+          <Property Name="Empresa_fk" Type="int" />
+          <Property Name="DataRegistro" Type="datetime" />
+          <Property Name="Usuario" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="ParteEnvolvida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="150" />
+          <Property Name="TipoParteEnvolvida_fk" Type="int" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="200" />
+          <Property Name="CEP" Type="nchar" MaxLength="8" />
+          <Property Name="Fone" Type="numeric" Precision="11" Scale="0" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="DataRegistro" Type="datetime" />
+          <Property Name="Usuario" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TipoMovimentacao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoMovimentacao" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TipoParteEnvolvida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar" MaxLength="50" />
+          <Property Name="DataRegistro" Type="datetime" />
+          <Property Name="Usuario" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_Comepetencia">
+          <End Role="Competencia" Type="Self.Competencia" Multiplicity="0..1" />
+          <End Role="Movimentacao" Type="Self.Movimentacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Competencia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movimentacao">
+              <PropertyRef Name="Competencia_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa">
+          <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+          <End Role="Movimentacao" Type="Self.Movimentacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movimentacao">
+              <PropertyRef Name="Empresa_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movimentacao_ParteEnvolvida">
+          <End Role="ParteEnvolvida" Type="Self.ParteEnvolvida" Multiplicity="0..1" />
+          <End Role="Movimentacao" Type="Self.Movimentacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParteEnvolvida">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movimentacao">
+              <PropertyRef Name="ParteEnvolvida_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movimentacao_TipoMovimentacao">
+          <End Role="TipoMovimentacao" Type="Self.TipoMovimentacao" Multiplicity="0..1" />
+          <End Role="Movimentacao" Type="Self.Movimentacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoMovimentacao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movimentacao">
+              <PropertyRef Name="TipoMovimentacao_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParteEnvolvida_TipoParteEnvolvida">
+          <End Role="TipoParteEnvolvida" Type="Self.TipoParteEnvolvida" Multiplicity="0..1" />
+          <End Role="ParteEnvolvida" Type="Self.ParteEnvolvida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoParteEnvolvida">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParteEnvolvida">
+              <PropertyRef Name="TipoParteEnvolvida_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CDFModelStoreContainer">
+          <EntitySet Name="Competencia" EntityType="Self.Competencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movimentacao" EntityType="Self.Movimentacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ParteEnvolvida" EntityType="Self.ParteEnvolvida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoMovimentacao" EntityType="Self.TipoMovimentacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoParteEnvolvida" EntityType="Self.TipoParteEnvolvida" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Comepetencia" Association="Self.FK_Comepetencia">
+            <End Role="Competencia" EntitySet="Competencia" />
+            <End Role="Movimentacao" EntitySet="Movimentacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa" Association="Self.FK_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="Movimentacao" EntitySet="Movimentacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movimentacao_ParteEnvolvida" Association="Self.FK_Movimentacao_ParteEnvolvida">
+            <End Role="ParteEnvolvida" EntitySet="ParteEnvolvida" />
+            <End Role="Movimentacao" EntitySet="Movimentacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movimentacao_TipoMovimentacao" Association="Self.FK_Movimentacao_TipoMovimentacao">
+            <End Role="TipoMovimentacao" EntitySet="TipoMovimentacao" />
+            <End Role="Movimentacao" EntitySet="Movimentacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParteEnvolvida_TipoParteEnvolvida" Association="Self.FK_ParteEnvolvida_TipoParteEnvolvida">
+            <End Role="TipoParteEnvolvida" EntitySet="TipoParteEnvolvida" />
+            <End Role="ParteEnvolvida" EntitySet="ParteEnvolvida" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDFModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeFantasia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RazaoSocial" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Endereco" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
+          <Property Name="Fone" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DataRegistro" Type="DateTime" Precision="3" />
+          <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="MovimentacaosEmp" Relationship="CDFModel.FK_Empresa" FromRole="Empresa" ToRole="Movimentacao" />
+        </EntityType>
+        <EntityContainer Name="CDFEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Empresas" EntityType="Self.Empresa" />
+          <EntitySet Name="Competencias" EntityType="CDFModel.Competencia" />
+          <EntitySet Name="ParteEnvolvidas" EntityType="CDFModel.ParteEnvolvida" />
+          <EntitySet Name="TipoMovimentacaos" EntityType="CDFModel.TipoMovimentacao" />
+          <EntitySet Name="TipoParteEnvolvidas" EntityType="CDFModel.TipoParteEnvolvida" />
+          <AssociationSet Name="FK_ParteEnvolvida_TipoParteEnvolvida" Association="CDFModel.FK_ParteEnvolvida_TipoParteEnvolvida">
+            <End Role="TipoParteEnvolvida" EntitySet="TipoParteEnvolvidas" />
+            <End Role="ParteEnvolvida" EntitySet="ParteEnvolvidas" />
+          </AssociationSet>
+          <EntitySet Name="Movimentacaos" EntityType="CDFModel.Movimentacao" />
+          <AssociationSet Name="FK_Comepetencia" Association="CDFModel.FK_Comepetencia">
+            <End Role="Competencia" EntitySet="Competencias" />
+            <End Role="Movimentacao" EntitySet="Movimentacaos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa" Association="CDFModel.FK_Empresa">
+            <End Role="Empresa" EntitySet="Empresas" />
+            <End Role="Movimentacao" EntitySet="Movimentacaos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movimentacao_ParteEnvolvida" Association="CDFModel.FK_Movimentacao_ParteEnvolvida">
+            <End Role="ParteEnvolvida" EntitySet="ParteEnvolvidas" />
+            <End Role="Movimentacao" EntitySet="Movimentacaos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movimentacao_TipoMovimentacao" Association="CDFModel.FK_Movimentacao_TipoMovimentacao">
+            <End Role="TipoMovimentacao" EntitySet="TipoMovimentacaos" />
+            <End Role="Movimentacao" EntitySet="Movimentacaos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Competencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompNome" Type="DateTime" Precision="0" />
+          <Property Name="DataRegistro" Type="DateTime" Precision="3" />
+          <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="MovimentacaosComp" Relationship="CDFModel.FK_Comepetencia" FromRole="Competencia" ToRole="Movimentacao" />
+        </EntityType>
+        <EntityType Name="ParteEnvolvida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TipoParteEnvolvida_fk" Type="Int32" />
+          <Property Name="Endereco" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
+          <Property Name="Fone" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DataRegistro" Type="DateTime" Precision="3" />
+          <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="TipoParteEnvolvida" Relationship="CDFModel.FK_ParteEnvolvida_TipoParteEnvolvida" FromRole="ParteEnvolvida" ToRole="TipoParteEnvolvida" />
+          <NavigationProperty Name="MovimentacaosPEnv" Relationship="CDFModel.FK_Movimentacao_ParteEnvolvida" FromRole="ParteEnvolvida" ToRole="Movimentacao" />
+        </EntityType>
+        <EntityType Name="TipoMovimentacao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoMovimentacao1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="MovimentacaosTpMov" Relationship="CDFModel.FK_Movimentacao_TipoMovimentacao" FromRole="TipoMovimentacao" ToRole="Movimentacao" />
+        </EntityType>
+        <EntityType Name="TipoParteEnvolvida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TPEnv" Relationship="CDFModel.FK_ParteEnvolvida_TipoParteEnvolvida" FromRole="TipoParteEnvolvida" ToRole="ParteEnvolvida" />
+          <Property Name="DataRegistro" Type="DateTime" Precision="3" />
+          <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_ParteEnvolvida_TipoParteEnvolvida">
+          <End Type="CDFModel.TipoParteEnvolvida" Role="TipoParteEnvolvida" Multiplicity="0..1" />
+          <End Type="CDFModel.ParteEnvolvida" Role="ParteEnvolvida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoParteEnvolvida">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParteEnvolvida">
+              <PropertyRef Name="TipoParteEnvolvida_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Movimentacao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="DateTime" Precision="0" />
+          <Property Name="Descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Valor" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TipoMovimentacao_fk" Type="Int32" />
+          <Property Name="ParteEnvolvida_fk" Type="Int32" />
+          <Property Name="Competencia_fk" Type="Int32" />
+          <Property Name="Empresa_fk" Type="Int32" />
+          <Property Name="DataRegistro" Type="DateTime" Precision="3" />
+          <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Competencia" Relationship="CDFModel.FK_Comepetencia" FromRole="Movimentacao" ToRole="Competencia" />
+          <NavigationProperty Name="Empresa" Relationship="CDFModel.FK_Empresa" FromRole="Movimentacao" ToRole="Empresa" />
+          <NavigationProperty Name="ParteEnvolvida" Relationship="CDFModel.FK_Movimentacao_ParteEnvolvida" FromRole="Movimentacao" ToRole="ParteEnvolvida" />
+          <NavigationProperty Name="TipoMovimentacao" Relationship="CDFModel.FK_Movimentacao_TipoMovimentacao" FromRole="Movimentacao" ToRole="TipoMovimentacao" />
+        </EntityType>
+        <Association Name="FK_Comepetencia">
+          <End Type="CDFModel.Competencia" Role="Competencia" Multiplicity="0..1" />
+          <End Type="CDFModel.Movimentacao" Role="Movimentacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Competencia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movimentacao">
+              <PropertyRef Name="Competencia_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa">
+          <End Type="CDFModel.Empresa" Role="Empresa" Multiplicity="0..1" />
+          <End Type="CDFModel.Movimentacao" Role="Movimentacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movimentacao">
+              <PropertyRef Name="Empresa_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movimentacao_ParteEnvolvida">
+          <End Type="CDFModel.ParteEnvolvida" Role="ParteEnvolvida" Multiplicity="0..1" />
+          <End Type="CDFModel.Movimentacao" Role="Movimentacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParteEnvolvida">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movimentacao">
+              <PropertyRef Name="ParteEnvolvida_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movimentacao_TipoMovimentacao">
+          <End Type="CDFModel.TipoMovimentacao" Role="TipoMovimentacao" Multiplicity="0..1" />
+          <End Type="CDFModel.Movimentacao" Role="Movimentacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoMovimentacao">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movimentacao">
+              <PropertyRef Name="TipoMovimentacao_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CDFModelStoreContainer" CdmEntityContainer="CDFEntities">
+          <EntitySetMapping Name="Empresas">
+            <EntityTypeMapping TypeName="CDFModel.Empresa">
+              <MappingFragment StoreEntitySet="Empresa">
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomeFantasia" ColumnName="NomeFantasia" />
+                <ScalarProperty Name="RazaoSocial" ColumnName="RazaoSocial" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="Fone" ColumnName="Fone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Competencias">
+            <EntityTypeMapping TypeName="CDFModel.Competencia">
+              <MappingFragment StoreEntitySet="Competencia">
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+                <ScalarProperty Name="CompNome" ColumnName="CompNome" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParteEnvolvidas">
+            <EntityTypeMapping TypeName="CDFModel.ParteEnvolvida">
+              <MappingFragment StoreEntitySet="ParteEnvolvida">
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fone" ColumnName="Fone" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="TipoParteEnvolvida_fk" ColumnName="TipoParteEnvolvida_fk" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoMovimentacaos">
+            <EntityTypeMapping TypeName="CDFModel.TipoMovimentacao">
+              <MappingFragment StoreEntitySet="TipoMovimentacao">
+                <ScalarProperty Name="TipoMovimentacao1" ColumnName="TipoMovimentacao" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoParteEnvolvidas">
+            <EntityTypeMapping TypeName="CDFModel.TipoParteEnvolvida">
+              <MappingFragment StoreEntitySet="TipoParteEnvolvida">
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movimentacaos">
+            <EntityTypeMapping TypeName="CDFModel.Movimentacao">
+              <MappingFragment StoreEntitySet="Movimentacao">
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+                <ScalarProperty Name="Empresa_fk" ColumnName="Empresa_fk" />
+                <ScalarProperty Name="Competencia_fk" ColumnName="Competencia_fk" />
+                <ScalarProperty Name="ParteEnvolvida_fk" ColumnName="ParteEnvolvida_fk" />
+                <ScalarProperty Name="TipoMovimentacao_fk" ColumnName="TipoMovimentacao_fk" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

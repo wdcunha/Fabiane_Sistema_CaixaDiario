@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd7d1c9398c64e59aa653e2c5b57c35b" Name="Diagram1">
+        <EntityTypeShape EntityType="CDFModel.Empresa" Width="1.875" PointX="6.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDFModel.Competencia" Width="1.75" PointX="0.875" PointY="1.625" />
+        <EntityTypeShape EntityType="CDFModel.ParteEnvolvida" Width="1.875" PointX="6.5" PointY="3.625" />
+        <EntityTypeShape EntityType="CDFModel.TipoMovimentacao" Width="2" PointX="0.625" PointY="5" />
+        <EntityTypeShape EntityType="CDFModel.TipoParteEnvolvida" Width="1.5" PointX="9.375" PointY="3.625" />
+        <AssociationConnector Association="CDFModel.FK_ParteEnvolvida_TipoParteEnvolvida" />
+        <EntityTypeShape EntityType="CDFModel.Movimentacao" Width="2.125" PointX="3.75" PointY="1.125" />
+        <AssociationConnector Association="CDFModel.FK_Comepetencia" />
+        <AssociationConnector Association="CDFModel.FK_Empresa" />
+        <AssociationConnector Association="CDFModel.FK_Movimentacao_ParteEnvolvida" />
+        <AssociationConnector Association="CDFModel.FK_Movimentacao_TipoMovimentacao" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
