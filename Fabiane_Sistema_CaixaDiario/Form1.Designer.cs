@@ -40,17 +40,8 @@
             System.Windows.Forms.Label foneLabel;
             System.Windows.Forms.Label nomeFantasiaLabel;
             System.Windows.Forms.Label razaoSocialLabel;
-            System.Windows.Forms.Label cEPLabel1;
             System.Windows.Forms.Label dataRegistroLabel;
-            System.Windows.Forms.Label emailLabel1;
-            System.Windows.Forms.Label enderecoLabel1;
-            System.Windows.Forms.Label foneLabel1;
-            System.Windows.Forms.Label idLabel1;
-            System.Windows.Forms.Label nomeLabel;
-            System.Windows.Forms.Label tipoParteEnvolvida_fkLabel;
             System.Windows.Forms.Label usuarioLabel;
-            System.Windows.Forms.Label descricaoLabel;
-            System.Windows.Forms.Label idLabel2;
             System.Windows.Forms.Label idLabel4;
             System.Windows.Forms.Label tipoMovimentacao1Label;
             System.Windows.Forms.Label label4;
@@ -59,6 +50,14 @@
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
+            System.Windows.Forms.Label descricaoLabel;
+            System.Windows.Forms.Label cEPLabel1;
+            System.Windows.Forms.Label emailLabel1;
+            System.Windows.Forms.Label enderecoLabel1;
+            System.Windows.Forms.Label foneLabel1;
+            System.Windows.Forms.Label idLabel1;
+            System.Windows.Forms.Label nomeLabel;
+            System.Windows.Forms.Label tipoParteEnvolvida_fkLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -137,17 +136,21 @@
             this.nomeFantasiaTextBox = new System.Windows.Forms.TextBox();
             this.razaoSocialTextBox = new System.Windows.Forms.TextBox();
             this.TabParteEnvolvida = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.parteEnvolvidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idTextBox2 = new System.Windows.Forms.TextBox();
             this.cEPTextBox1 = new System.Windows.Forms.TextBox();
-            this.dataRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.emailTextBox1 = new System.Windows.Forms.TextBox();
             this.enderecoTextBox1 = new System.Windows.Forms.TextBox();
             this.foneTextBox1 = new System.Windows.Forms.TextBox();
             this.idTextBox1 = new System.Windows.Forms.TextBox();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.tipoParteEnvolvida_fkTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnIncluir = new System.Windows.Forms.Button();
+            this.dataRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.usuarioTextBox = new System.Windows.Forms.TextBox();
             this.parteEnvolvidaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -183,6 +186,7 @@
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             label1 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
@@ -194,17 +198,8 @@
             foneLabel = new System.Windows.Forms.Label();
             nomeFantasiaLabel = new System.Windows.Forms.Label();
             razaoSocialLabel = new System.Windows.Forms.Label();
-            cEPLabel1 = new System.Windows.Forms.Label();
             dataRegistroLabel = new System.Windows.Forms.Label();
-            emailLabel1 = new System.Windows.Forms.Label();
-            enderecoLabel1 = new System.Windows.Forms.Label();
-            foneLabel1 = new System.Windows.Forms.Label();
-            idLabel1 = new System.Windows.Forms.Label();
-            nomeLabel = new System.Windows.Forms.Label();
-            tipoParteEnvolvida_fkLabel = new System.Windows.Forms.Label();
             usuarioLabel = new System.Windows.Forms.Label();
-            descricaoLabel = new System.Windows.Forms.Label();
-            idLabel2 = new System.Windows.Forms.Label();
             idLabel4 = new System.Windows.Forms.Label();
             tipoMovimentacao1Label = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -213,6 +208,14 @@
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
+            descricaoLabel = new System.Windows.Forms.Label();
+            cEPLabel1 = new System.Windows.Forms.Label();
+            emailLabel1 = new System.Windows.Forms.Label();
+            enderecoLabel1 = new System.Windows.Forms.Label();
+            foneLabel1 = new System.Windows.Forms.Label();
+            idLabel1 = new System.Windows.Forms.Label();
+            nomeLabel = new System.Windows.Forms.Label();
+            tipoParteEnvolvida_fkLabel = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.panelComp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.competenciaBindingSource)).BeginInit();
@@ -228,6 +231,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             this.panelEmpresa.SuspendLayout();
             this.TabParteEnvolvida.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaDataGridView)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -351,104 +355,25 @@
             razaoSocialLabel.TabIndex = 26;
             razaoSocialLabel.Text = "Razao Social:";
             // 
-            // cEPLabel1
-            // 
-            cEPLabel1.AutoSize = true;
-            cEPLabel1.Location = new System.Drawing.Point(469, 174);
-            cEPLabel1.Name = "cEPLabel1";
-            cEPLabel1.Size = new System.Drawing.Size(36, 16);
-            cEPLabel1.TabIndex = 1;
-            cEPLabel1.Text = "CEP:";
-            // 
             // dataRegistroLabel
             // 
             dataRegistroLabel.AutoSize = true;
-            dataRegistroLabel.Location = new System.Drawing.Point(469, 205);
+            dataRegistroLabel.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataRegistroLabel.Location = new System.Drawing.Point(936, 132);
             dataRegistroLabel.Name = "dataRegistroLabel";
             dataRegistroLabel.Size = new System.Drawing.Size(107, 16);
             dataRegistroLabel.TabIndex = 3;
             dataRegistroLabel.Text = "Data Registro:";
             // 
-            // emailLabel1
-            // 
-            emailLabel1.AutoSize = true;
-            emailLabel1.Location = new System.Drawing.Point(48, 171);
-            emailLabel1.Name = "emailLabel1";
-            emailLabel1.Size = new System.Drawing.Size(52, 16);
-            emailLabel1.TabIndex = 5;
-            emailLabel1.Text = "Email:";
-            // 
-            // enderecoLabel1
-            // 
-            enderecoLabel1.AutoSize = true;
-            enderecoLabel1.Location = new System.Drawing.Point(48, 201);
-            enderecoLabel1.Name = "enderecoLabel1";
-            enderecoLabel1.Size = new System.Drawing.Size(74, 16);
-            enderecoLabel1.TabIndex = 7;
-            enderecoLabel1.Text = "Endereco:";
-            // 
-            // foneLabel1
-            // 
-            foneLabel1.AutoSize = true;
-            foneLabel1.Location = new System.Drawing.Point(48, 231);
-            foneLabel1.Name = "foneLabel1";
-            foneLabel1.Size = new System.Drawing.Size(44, 16);
-            foneLabel1.TabIndex = 9;
-            foneLabel1.Text = "Fone:";
-            // 
-            // idLabel1
-            // 
-            idLabel1.AutoSize = true;
-            idLabel1.Location = new System.Drawing.Point(48, 81);
-            idLabel1.Name = "idLabel1";
-            idLabel1.Size = new System.Drawing.Size(28, 16);
-            idLabel1.TabIndex = 11;
-            idLabel1.Text = "Id:";
-            // 
-            // nomeLabel
-            // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(469, 81);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(50, 16);
-            nomeLabel.TabIndex = 13;
-            nomeLabel.Text = "Nome:";
-            // 
-            // tipoParteEnvolvida_fkLabel
-            // 
-            tipoParteEnvolvida_fkLabel.AutoSize = true;
-            tipoParteEnvolvida_fkLabel.Location = new System.Drawing.Point(469, 111);
-            tipoParteEnvolvida_fkLabel.Name = "tipoParteEnvolvida_fkLabel";
-            tipoParteEnvolvida_fkLabel.Size = new System.Drawing.Size(169, 16);
-            tipoParteEnvolvida_fkLabel.TabIndex = 15;
-            tipoParteEnvolvida_fkLabel.Text = "Tipo Parte Envolvida fk:";
-            // 
             // usuarioLabel
             // 
             usuarioLabel.AutoSize = true;
-            usuarioLabel.Location = new System.Drawing.Point(469, 141);
+            usuarioLabel.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            usuarioLabel.Location = new System.Drawing.Point(936, 75);
             usuarioLabel.Name = "usuarioLabel";
-            usuarioLabel.Size = new System.Drawing.Size(66, 16);
+            usuarioLabel.Size = new System.Drawing.Size(155, 16);
             usuarioLabel.TabIndex = 17;
-            usuarioLabel.Text = "Usuario:";
-            // 
-            // descricaoLabel
-            // 
-            descricaoLabel.AutoSize = true;
-            descricaoLabel.Location = new System.Drawing.Point(48, 141);
-            descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(78, 16);
-            descricaoLabel.TabIndex = 19;
-            descricaoLabel.Text = "Descricao:";
-            // 
-            // idLabel2
-            // 
-            idLabel2.AutoSize = true;
-            idLabel2.Location = new System.Drawing.Point(48, 111);
-            idLabel2.Name = "idLabel2";
-            idLabel2.Size = new System.Drawing.Size(28, 16);
-            idLabel2.TabIndex = 21;
-            idLabel2.Text = "Id:";
+            usuarioLabel.Text = "Usuario cadastrante:";
             // 
             // idLabel4
             // 
@@ -532,6 +457,86 @@
             label10.Size = new System.Drawing.Size(86, 18);
             label10.TabIndex = 11;
             label10.Text = "Descrição:";
+            // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descricaoLabel.Location = new System.Drawing.Point(-7, 82);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new System.Drawing.Size(88, 16);
+            descricaoLabel.TabIndex = 35;
+            descricaoLabel.Text = "Descricao:";
+            // 
+            // cEPLabel1
+            // 
+            cEPLabel1.AutoSize = true;
+            cEPLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cEPLabel1.Location = new System.Drawing.Point(-7, 142);
+            cEPLabel1.Name = "cEPLabel1";
+            cEPLabel1.Size = new System.Drawing.Size(40, 16);
+            cEPLabel1.TabIndex = 21;
+            cEPLabel1.Text = "CEP:";
+            // 
+            // emailLabel1
+            // 
+            emailLabel1.AutoSize = true;
+            emailLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            emailLabel1.Location = new System.Drawing.Point(355, 145);
+            emailLabel1.Name = "emailLabel1";
+            emailLabel1.Size = new System.Drawing.Size(58, 16);
+            emailLabel1.TabIndex = 23;
+            emailLabel1.Text = "Email:";
+            // 
+            // enderecoLabel1
+            // 
+            enderecoLabel1.AutoSize = true;
+            enderecoLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            enderecoLabel1.Location = new System.Drawing.Point(-7, 112);
+            enderecoLabel1.Name = "enderecoLabel1";
+            enderecoLabel1.Size = new System.Drawing.Size(83, 16);
+            enderecoLabel1.TabIndex = 25;
+            enderecoLabel1.Text = "Endereco:";
+            // 
+            // foneLabel1
+            // 
+            foneLabel1.AutoSize = true;
+            foneLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            foneLabel1.Location = new System.Drawing.Point(-7, 172);
+            foneLabel1.Name = "foneLabel1";
+            foneLabel1.Size = new System.Drawing.Size(49, 16);
+            foneLabel1.TabIndex = 27;
+            foneLabel1.Text = "Fone:";
+            // 
+            // idLabel1
+            // 
+            idLabel1.AutoSize = true;
+            idLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            idLabel1.Location = new System.Drawing.Point(-7, 22);
+            idLabel1.Name = "idLabel1";
+            idLabel1.Size = new System.Drawing.Size(31, 16);
+            idLabel1.TabIndex = 29;
+            idLabel1.Text = "Id:";
+            // 
+            // nomeLabel
+            // 
+            nomeLabel.AutoSize = true;
+            nomeLabel.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomeLabel.Location = new System.Drawing.Point(-7, 52);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(55, 16);
+            nomeLabel.TabIndex = 31;
+            nomeLabel.Text = "Nome:";
+            // 
+            // tipoParteEnvolvida_fkLabel
+            // 
+            tipoParteEnvolvida_fkLabel.AutoSize = true;
+            tipoParteEnvolvida_fkLabel.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tipoParteEnvolvida_fkLabel.Location = new System.Drawing.Point(416, 19);
+            tipoParteEnvolvida_fkLabel.Name = "tipoParteEnvolvida_fkLabel";
+            tipoParteEnvolvida_fkLabel.Size = new System.Drawing.Size(174, 16);
+            tipoParteEnvolvida_fkLabel.TabIndex = 33;
+            tipoParteEnvolvida_fkLabel.Text = "Tipo Parte Envolvida:";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -618,7 +623,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1352, 681);
+            this.tabPage2.Size = new System.Drawing.Size(1235, 702);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Competência";
             // 
@@ -790,7 +795,7 @@
             this.tabPageCxDiario.Location = new System.Drawing.Point(4, 25);
             this.tabPageCxDiario.Name = "tabPageCxDiario";
             this.tabPageCxDiario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCxDiario.Size = new System.Drawing.Size(1352, 681);
+            this.tabPageCxDiario.Size = new System.Drawing.Size(1235, 702);
             this.tabPageCxDiario.TabIndex = 0;
             this.tabPageCxDiario.Text = "Caixa Diário";
             // 
@@ -809,7 +814,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 239F));
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 106);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(11, 117);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -847,7 +852,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 414F));
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBox2, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(7, 63);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 74);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -879,6 +884,8 @@
             // 
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataDataGridViewTextBoxColumn,
@@ -894,9 +901,9 @@
             this.dataRegistroDataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn30});
             this.dataGridView1.DataSource = this.movimentacaoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 186);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 197);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1339, 489);
+            this.dataGridView1.Size = new System.Drawing.Size(1150, 489);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataDataGridViewTextBoxColumn
@@ -904,60 +911,70 @@
             this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
             this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
             this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.Width = 57;
             // 
             // descricaoDataGridViewTextBoxColumn
             // 
             this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
             this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
             this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.Width = 84;
             // 
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            this.valorDataGridViewTextBoxColumn.Width = 60;
             // 
             // tipoMovimentacaofkDataGridViewTextBoxColumn
             // 
             this.tipoMovimentacaofkDataGridViewTextBoxColumn.DataPropertyName = "TipoMovimentacao_fk";
             this.tipoMovimentacaofkDataGridViewTextBoxColumn.HeaderText = "TipoMovimentacao_fk";
             this.tipoMovimentacaofkDataGridViewTextBoxColumn.Name = "tipoMovimentacaofkDataGridViewTextBoxColumn";
+            this.tipoMovimentacaofkDataGridViewTextBoxColumn.Width = 149;
             // 
             // parteEnvolvidafkDataGridViewTextBoxColumn
             // 
             this.parteEnvolvidafkDataGridViewTextBoxColumn.DataPropertyName = "ParteEnvolvida_fk";
             this.parteEnvolvidafkDataGridViewTextBoxColumn.HeaderText = "ParteEnvolvida_fk";
             this.parteEnvolvidafkDataGridViewTextBoxColumn.Name = "parteEnvolvidafkDataGridViewTextBoxColumn";
+            this.parteEnvolvidafkDataGridViewTextBoxColumn.Width = 127;
             // 
             // competenciafkDataGridViewTextBoxColumn
             // 
             this.competenciafkDataGridViewTextBoxColumn.DataPropertyName = "Competencia_fk";
             this.competenciafkDataGridViewTextBoxColumn.HeaderText = "Competencia_fk";
             this.competenciafkDataGridViewTextBoxColumn.Name = "competenciafkDataGridViewTextBoxColumn";
+            this.competenciafkDataGridViewTextBoxColumn.Width = 118;
             // 
             // empresafkDataGridViewTextBoxColumn
             // 
             this.empresafkDataGridViewTextBoxColumn.DataPropertyName = "Empresa_fk";
             this.empresafkDataGridViewTextBoxColumn.HeaderText = "Empresa_fk";
             this.empresafkDataGridViewTextBoxColumn.Name = "empresafkDataGridViewTextBoxColumn";
+            this.empresafkDataGridViewTextBoxColumn.Width = 93;
             // 
             // competenciaDataGridViewTextBoxColumn
             // 
             this.competenciaDataGridViewTextBoxColumn.DataPropertyName = "Competencia";
             this.competenciaDataGridViewTextBoxColumn.HeaderText = "Competencia";
             this.competenciaDataGridViewTextBoxColumn.Name = "competenciaDataGridViewTextBoxColumn";
+            this.competenciaDataGridViewTextBoxColumn.Width = 102;
             // 
             // empresaDataGridViewTextBoxColumn
             // 
             this.empresaDataGridViewTextBoxColumn.DataPropertyName = "Empresa";
             this.empresaDataGridViewTextBoxColumn.HeaderText = "Empresa";
             this.empresaDataGridViewTextBoxColumn.Name = "empresaDataGridViewTextBoxColumn";
+            this.empresaDataGridViewTextBoxColumn.Width = 77;
             // 
             // tipoMovimentacaoDataGridViewTextBoxColumn
             // 
             this.tipoMovimentacaoDataGridViewTextBoxColumn.DataPropertyName = "TipoMovimentacao";
             this.tipoMovimentacaoDataGridViewTextBoxColumn.HeaderText = "TipoMovimentacao";
             this.tipoMovimentacaoDataGridViewTextBoxColumn.Name = "tipoMovimentacaoDataGridViewTextBoxColumn";
+            this.tipoMovimentacaoDataGridViewTextBoxColumn.Width = 133;
             // 
             // dataRegistroDataGridViewTextBoxColumn2
             // 
@@ -970,6 +987,7 @@
             this.dataGridViewTextBoxColumn30.DataPropertyName = "Usuario";
             this.dataGridViewTextBoxColumn30.HeaderText = "Usuario";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.Width = 73;
             // 
             // movimentacaoBindingSource
             // 
@@ -977,7 +995,6 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControl1.Controls.Add(this.tabPageCxDiario);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -985,10 +1002,11 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.TabTipoMov);
             this.tabControl1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(-46, 11);
+            this.tabControl1.Location = new System.Drawing.Point(11, 11);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1360, 710);
+            this.tabControl1.Size = new System.Drawing.Size(1243, 731);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -1005,7 +1023,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1352, 681);
+            this.tabPage1.Size = new System.Drawing.Size(1235, 702);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Empresa";
             // 
@@ -1042,7 +1060,7 @@
             this.dataGridViewTextBoxColumn12,
             this.DeleteEmpColumn});
             this.empresaDataGridView.DataSource = this.empresaBindingSource;
-            this.empresaDataGridView.Location = new System.Drawing.Point(7, 358);
+            this.empresaDataGridView.Location = new System.Drawing.Point(-52, 369);
             this.empresaDataGridView.Name = "empresaDataGridView";
             this.empresaDataGridView.ReadOnly = true;
             this.empresaDataGridView.RowHeadersVisible = false;
@@ -1186,7 +1204,7 @@
             this.panelEmpresa.Controls.Add(this.nomeFantasiaTextBox);
             this.panelEmpresa.Controls.Add(razaoSocialLabel);
             this.panelEmpresa.Controls.Add(this.razaoSocialTextBox);
-            this.panelEmpresa.Location = new System.Drawing.Point(195, 82);
+            this.panelEmpresa.Location = new System.Drawing.Point(136, 93);
             this.panelEmpresa.Name = "panelEmpresa";
             this.panelEmpresa.Size = new System.Drawing.Size(998, 178);
             this.panelEmpresa.TabIndex = 20;
@@ -1248,127 +1266,177 @@
             // TabParteEnvolvida
             // 
             this.TabParteEnvolvida.BackColor = System.Drawing.Color.Tan;
+            this.TabParteEnvolvida.Controls.Add(this.panel1);
+            this.TabParteEnvolvida.Controls.Add(this.button1);
+            this.TabParteEnvolvida.Controls.Add(this.button2);
+            this.TabParteEnvolvida.Controls.Add(this.button3);
+            this.TabParteEnvolvida.Controls.Add(this.btnIncluir);
             this.TabParteEnvolvida.Controls.Add(label4);
-            this.TabParteEnvolvida.Controls.Add(descricaoLabel);
-            this.TabParteEnvolvida.Controls.Add(this.descricaoTextBox);
-            this.TabParteEnvolvida.Controls.Add(idLabel2);
-            this.TabParteEnvolvida.Controls.Add(this.idTextBox2);
-            this.TabParteEnvolvida.Controls.Add(cEPLabel1);
-            this.TabParteEnvolvida.Controls.Add(this.cEPTextBox1);
             this.TabParteEnvolvida.Controls.Add(dataRegistroLabel);
             this.TabParteEnvolvida.Controls.Add(this.dataRegistroDateTimePicker);
-            this.TabParteEnvolvida.Controls.Add(emailLabel1);
-            this.TabParteEnvolvida.Controls.Add(this.emailTextBox1);
-            this.TabParteEnvolvida.Controls.Add(enderecoLabel1);
-            this.TabParteEnvolvida.Controls.Add(this.enderecoTextBox1);
-            this.TabParteEnvolvida.Controls.Add(foneLabel1);
-            this.TabParteEnvolvida.Controls.Add(this.foneTextBox1);
-            this.TabParteEnvolvida.Controls.Add(idLabel1);
-            this.TabParteEnvolvida.Controls.Add(this.idTextBox1);
-            this.TabParteEnvolvida.Controls.Add(nomeLabel);
-            this.TabParteEnvolvida.Controls.Add(this.nomeTextBox);
-            this.TabParteEnvolvida.Controls.Add(tipoParteEnvolvida_fkLabel);
-            this.TabParteEnvolvida.Controls.Add(this.tipoParteEnvolvida_fkTextBox);
             this.TabParteEnvolvida.Controls.Add(usuarioLabel);
             this.TabParteEnvolvida.Controls.Add(this.usuarioTextBox);
             this.TabParteEnvolvida.Controls.Add(this.parteEnvolvidaDataGridView);
             this.TabParteEnvolvida.Location = new System.Drawing.Point(4, 25);
             this.TabParteEnvolvida.Name = "TabParteEnvolvida";
             this.TabParteEnvolvida.Padding = new System.Windows.Forms.Padding(3);
-            this.TabParteEnvolvida.Size = new System.Drawing.Size(1352, 681);
+            this.TabParteEnvolvida.Size = new System.Drawing.Size(1235, 702);
             this.TabParteEnvolvida.TabIndex = 6;
             this.TabParteEnvolvida.Text = "Parte Envolvida";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(descricaoLabel);
+            this.panel1.Controls.Add(this.descricaoTextBox);
+            this.panel1.Controls.Add(cEPLabel1);
+            this.panel1.Controls.Add(this.cEPTextBox1);
+            this.panel1.Controls.Add(emailLabel1);
+            this.panel1.Controls.Add(this.emailTextBox1);
+            this.panel1.Controls.Add(enderecoLabel1);
+            this.panel1.Controls.Add(this.enderecoTextBox1);
+            this.panel1.Controls.Add(foneLabel1);
+            this.panel1.Controls.Add(this.foneTextBox1);
+            this.panel1.Controls.Add(idLabel1);
+            this.panel1.Controls.Add(this.idTextBox1);
+            this.panel1.Controls.Add(nomeLabel);
+            this.panel1.Controls.Add(this.nomeTextBox);
+            this.panel1.Controls.Add(tipoParteEnvolvida_fkLabel);
+            this.panel1.Controls.Add(this.tipoParteEnvolvida_fkTextBox);
+            this.panel1.Location = new System.Drawing.Point(40, 75);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(890, 217);
+            this.panel1.TabIndex = 28;
             // 
             // descricaoTextBox
             // 
             this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "TipoParteEnvolvida.Descricao", true));
-            this.descricaoTextBox.Location = new System.Drawing.Point(223, 138);
+            this.descricaoTextBox.Location = new System.Drawing.Point(87, 79);
             this.descricaoTextBox.Name = "descricaoTextBox";
-            this.descricaoTextBox.Size = new System.Drawing.Size(200, 24);
-            this.descricaoTextBox.TabIndex = 20;
+            this.descricaoTextBox.Size = new System.Drawing.Size(707, 24);
+            this.descricaoTextBox.TabIndex = 36;
             // 
             // parteEnvolvidaBindingSource
             // 
             this.parteEnvolvidaBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.ParteEnvolvida);
             // 
-            // idTextBox2
-            // 
-            this.idTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "TipoParteEnvolvida.Id", true));
-            this.idTextBox2.Location = new System.Drawing.Point(223, 108);
-            this.idTextBox2.Name = "idTextBox2";
-            this.idTextBox2.Size = new System.Drawing.Size(100, 24);
-            this.idTextBox2.TabIndex = 22;
-            // 
             // cEPTextBox1
             // 
             this.cEPTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "CEP", true));
-            this.cEPTextBox1.Location = new System.Drawing.Point(644, 171);
+            this.cEPTextBox1.Location = new System.Drawing.Point(87, 139);
             this.cEPTextBox1.Name = "cEPTextBox1";
-            this.cEPTextBox1.Size = new System.Drawing.Size(200, 24);
-            this.cEPTextBox1.TabIndex = 2;
-            // 
-            // dataRegistroDateTimePicker
-            // 
-            this.dataRegistroDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.parteEnvolvidaBindingSource, "DataRegistro", true));
-            this.dataRegistroDateTimePicker.Location = new System.Drawing.Point(644, 201);
-            this.dataRegistroDateTimePicker.Name = "dataRegistroDateTimePicker";
-            this.dataRegistroDateTimePicker.Size = new System.Drawing.Size(200, 24);
-            this.dataRegistroDateTimePicker.TabIndex = 4;
+            this.cEPTextBox1.Size = new System.Drawing.Size(252, 24);
+            this.cEPTextBox1.TabIndex = 22;
             // 
             // emailTextBox1
             // 
             this.emailTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Email", true));
-            this.emailTextBox1.Location = new System.Drawing.Point(223, 168);
+            this.emailTextBox1.Location = new System.Drawing.Point(449, 142);
             this.emailTextBox1.Name = "emailTextBox1";
-            this.emailTextBox1.Size = new System.Drawing.Size(200, 24);
-            this.emailTextBox1.TabIndex = 6;
+            this.emailTextBox1.Size = new System.Drawing.Size(345, 24);
+            this.emailTextBox1.TabIndex = 24;
             // 
             // enderecoTextBox1
             // 
             this.enderecoTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Endereco", true));
-            this.enderecoTextBox1.Location = new System.Drawing.Point(223, 198);
+            this.enderecoTextBox1.Location = new System.Drawing.Point(87, 109);
             this.enderecoTextBox1.Name = "enderecoTextBox1";
-            this.enderecoTextBox1.Size = new System.Drawing.Size(200, 24);
-            this.enderecoTextBox1.TabIndex = 8;
+            this.enderecoTextBox1.Size = new System.Drawing.Size(707, 24);
+            this.enderecoTextBox1.TabIndex = 26;
             // 
             // foneTextBox1
             // 
             this.foneTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Fone", true));
-            this.foneTextBox1.Location = new System.Drawing.Point(223, 228);
+            this.foneTextBox1.Location = new System.Drawing.Point(87, 169);
             this.foneTextBox1.Name = "foneTextBox1";
-            this.foneTextBox1.Size = new System.Drawing.Size(200, 24);
-            this.foneTextBox1.TabIndex = 10;
+            this.foneTextBox1.Size = new System.Drawing.Size(252, 24);
+            this.foneTextBox1.TabIndex = 28;
             // 
             // idTextBox1
             // 
             this.idTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Id", true));
-            this.idTextBox1.Location = new System.Drawing.Point(223, 78);
+            this.idTextBox1.Location = new System.Drawing.Point(87, 19);
             this.idTextBox1.Name = "idTextBox1";
-            this.idTextBox1.Size = new System.Drawing.Size(200, 24);
-            this.idTextBox1.TabIndex = 12;
+            this.idTextBox1.ReadOnly = true;
+            this.idTextBox1.Size = new System.Drawing.Size(152, 24);
+            this.idTextBox1.TabIndex = 30;
             // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(644, 78);
+            this.nomeTextBox.Location = new System.Drawing.Point(87, 49);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(200, 24);
-            this.nomeTextBox.TabIndex = 14;
+            this.nomeTextBox.Size = new System.Drawing.Size(707, 24);
+            this.nomeTextBox.TabIndex = 32;
             // 
             // tipoParteEnvolvida_fkTextBox
             // 
             this.tipoParteEnvolvida_fkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "TipoParteEnvolvida_fk", true));
-            this.tipoParteEnvolvida_fkTextBox.Location = new System.Drawing.Point(644, 108);
+            this.tipoParteEnvolvida_fkTextBox.Location = new System.Drawing.Point(591, 16);
             this.tipoParteEnvolvida_fkTextBox.Name = "tipoParteEnvolvida_fkTextBox";
-            this.tipoParteEnvolvida_fkTextBox.Size = new System.Drawing.Size(200, 24);
-            this.tipoParteEnvolvida_fkTextBox.TabIndex = 16;
+            this.tipoParteEnvolvida_fkTextBox.Size = new System.Drawing.Size(203, 24);
+            this.tipoParteEnvolvida_fkTextBox.TabIndex = 34;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(415, 319);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "&Salvar";
+            this.toolTip1.SetToolTip(this.button1, "Gravas as informações inseridas nos campos");
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(297, 319);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "&Cancelar";
+            this.toolTip1.SetToolTip(this.button2, "Desfaz os lançamentos feitos nos campos, impedindo que seja gravado no banco de d" +
+        "ados");
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(179, 319);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "&Editar";
+            this.toolTip1.SetToolTip(this.button3, "Permite alterar os dados de uma empresa já cadastrada");
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnIncluir
+            // 
+            this.btnIncluir.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluir.Location = new System.Drawing.Point(61, 319);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluir.TabIndex = 24;
+            this.btnIncluir.Text = "I&ncluir";
+            this.toolTip1.SetToolTip(this.btnIncluir, "Abre os campos para novo lançamento de um novo registro de uma empresa não cadast" +
+        "rada");
+            this.btnIncluir.UseVisualStyleBackColor = true;
+            // 
+            // dataRegistroDateTimePicker
+            // 
+            this.dataRegistroDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.parteEnvolvidaBindingSource, "DataRegistro", true));
+            this.dataRegistroDateTimePicker.Location = new System.Drawing.Point(941, 151);
+            this.dataRegistroDateTimePicker.Name = "dataRegistroDateTimePicker";
+            this.dataRegistroDateTimePicker.Size = new System.Drawing.Size(252, 24);
+            this.dataRegistroDateTimePicker.TabIndex = 4;
             // 
             // usuarioTextBox
             // 
             this.usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Usuario", true));
-            this.usuarioTextBox.Location = new System.Drawing.Point(644, 138);
+            this.usuarioTextBox.Location = new System.Drawing.Point(939, 94);
             this.usuarioTextBox.Name = "usuarioTextBox";
-            this.usuarioTextBox.Size = new System.Drawing.Size(200, 24);
+            this.usuarioTextBox.ReadOnly = true;
+            this.usuarioTextBox.Size = new System.Drawing.Size(252, 24);
             this.usuarioTextBox.TabIndex = 18;
             // 
             // parteEnvolvidaDataGridView
@@ -1387,7 +1455,7 @@
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22});
             this.parteEnvolvidaDataGridView.DataSource = this.parteEnvolvidaBindingSource;
-            this.parteEnvolvidaDataGridView.Location = new System.Drawing.Point(51, 293);
+            this.parteEnvolvidaDataGridView.Location = new System.Drawing.Point(51, 377);
             this.parteEnvolvidaDataGridView.Name = "parteEnvolvidaDataGridView";
             this.parteEnvolvidaDataGridView.Size = new System.Drawing.Size(1142, 220);
             this.parteEnvolvidaDataGridView.TabIndex = 0;
@@ -1464,7 +1532,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1352, 681);
+            this.tabPage3.Size = new System.Drawing.Size(1235, 702);
             this.tabPage3.TabIndex = 7;
             this.tabPage3.Text = "Tipo Parte Envolvida";
             // 
@@ -1618,7 +1686,7 @@
             this.TabTipoMov.Location = new System.Drawing.Point(4, 25);
             this.TabTipoMov.Name = "TabTipoMov";
             this.TabTipoMov.Padding = new System.Windows.Forms.Padding(3);
-            this.TabTipoMov.Size = new System.Drawing.Size(1352, 681);
+            this.TabTipoMov.Size = new System.Drawing.Size(1235, 702);
             this.TabTipoMov.TabIndex = 8;
             this.TabTipoMov.Text = "Tipo de Movimentação";
             // 
@@ -1671,6 +1739,12 @@
             // 
             this.toolTip1.AutomaticDelay = 1000;
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1708,6 +1782,8 @@
             this.panelEmpresa.PerformLayout();
             this.TabParteEnvolvida.ResumeLayout(false);
             this.TabParteEnvolvida.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaDataGridView)).EndInit();
             this.tabPage3.ResumeLayout(false);
@@ -1790,19 +1866,10 @@
         private System.Windows.Forms.BindingSource competenciaBindingSource;
         private System.Windows.Forms.BindingSource empresaBindingSource;
         private System.Windows.Forms.TabPage TabParteEnvolvida;
-        private System.Windows.Forms.TextBox descricaoTextBox;
         private System.Windows.Forms.BindingSource parteEnvolvidaBindingSource;
-        private System.Windows.Forms.TextBox cEPTextBox1;
         private System.Windows.Forms.DateTimePicker dataRegistroDateTimePicker;
-        private System.Windows.Forms.TextBox emailTextBox1;
-        private System.Windows.Forms.TextBox enderecoTextBox1;
-        private System.Windows.Forms.TextBox foneTextBox1;
-        private System.Windows.Forms.TextBox idTextBox1;
-        private System.Windows.Forms.TextBox nomeTextBox;
-        private System.Windows.Forms.TextBox tipoParteEnvolvida_fkTextBox;
         private System.Windows.Forms.TextBox usuarioTextBox;
         private System.Windows.Forms.DataGridView parteEnvolvidaDataGridView;
-        private System.Windows.Forms.TextBox idTextBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
@@ -1861,6 +1928,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewButtonColumn btnExcluirPEnv;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnIncluir;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox descricaoTextBox;
+        private System.Windows.Forms.TextBox cEPTextBox1;
+        private System.Windows.Forms.TextBox emailTextBox1;
+        private System.Windows.Forms.TextBox enderecoTextBox1;
+        private System.Windows.Forms.TextBox foneTextBox1;
+        private System.Windows.Forms.TextBox idTextBox1;
+        private System.Windows.Forms.TextBox nomeTextBox;
+        private System.Windows.Forms.TextBox tipoParteEnvolvida_fkTextBox;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
