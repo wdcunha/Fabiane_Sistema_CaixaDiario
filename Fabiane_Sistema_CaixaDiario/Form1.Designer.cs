@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label5;
+            System.Windows.Forms.Label lblCompTitle;
+            System.Windows.Forms.Label lblEmpTitle;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label competenciaLabel;
             System.Windows.Forms.Label lblPesquisa;
@@ -44,13 +44,12 @@
             System.Windows.Forms.Label usuarioLabel;
             System.Windows.Forms.Label idLabel4;
             System.Windows.Forms.Label tipoMovimentacao1Label;
-            System.Windows.Forms.Label label4;
-            System.Windows.Forms.Label label6;
-            System.Windows.Forms.Label label7;
-            System.Windows.Forms.Label label8;
-            System.Windows.Forms.Label label9;
-            System.Windows.Forms.Label label10;
-            System.Windows.Forms.Label descricaoLabel;
+            System.Windows.Forms.Label lblPEnvTitle;
+            System.Windows.Forms.Label lblTPEnvTitle;
+            System.Windows.Forms.Label lblTMovTitle;
+            System.Windows.Forms.Label lblMovTitle;
+            System.Windows.Forms.Label lblidTPEnv;
+            System.Windows.Forms.Label lblDescricaoTPEnv;
             System.Windows.Forms.Label cEPLabel1;
             System.Windows.Forms.Label emailLabel1;
             System.Windows.Forms.Label enderecoLabel1;
@@ -58,6 +57,14 @@
             System.Windows.Forms.Label idLabel1;
             System.Windows.Forms.Label nomeLabel;
             System.Windows.Forms.Label tipoParteEnvolvida_fkLabel;
+            System.Windows.Forms.Label valorLabel;
+            System.Windows.Forms.Label tipoMovimentacao_fkLabel;
+            System.Windows.Forms.Label idLabel2;
+            System.Windows.Forms.Label descricaoLabel;
+            System.Windows.Forms.Label dataLabel;
+            System.Windows.Forms.Label parteEnvolvida_fkLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -78,117 +85,133 @@
             this.competenciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSalvarComp = new System.Windows.Forms.Button();
             this.btnCancelComp = new System.Windows.Forms.Button();
-            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.txtIdComp = new System.Windows.Forms.TextBox();
             this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             this.btnEditComp = new System.Windows.Forms.Button();
             this.btnIncluirComp = new System.Windows.Forms.Button();
             this.DataGridViewCompetencia = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeleteColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPageCxDiario = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEditMov = new System.Windows.Forms.Button();
+            this.btnIncluirMov = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoMovimentacaofkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parteEnvolvidafkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.competenciafkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empresafkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.competenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoMovimentacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataRegistroDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelMov = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.movimentacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mskbxValorMov = new System.Windows.Forms.MaskedTextBox();
+            this.btnSalvarMov = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.parteEnvolvidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cmbTMov = new System.Windows.Forms.ComboBox();
+            this.tipoMovimentacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCancelMov = new System.Windows.Forms.Button();
+            this.txtIdMov = new System.Windows.Forms.TextBox();
+            this.txtDescricaoMov = new System.Windows.Forms.TextBox();
+            this.dataDateTimePickerDataMov = new System.Windows.Forms.DateTimePicker();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbCompMov = new System.Windows.Forms.ComboBox();
+            this.lblCompTelaMov = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblEmpTelaMov = new System.Windows.Forms.Label();
+            this.cmbEmpMov = new System.Windows.Forms.ComboBox();
+            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewMov = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn67 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn68 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn69 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn70 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn71 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvExcluirMov = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnSalvarEmpresa = new System.Windows.Forms.Button();
             this.empresaDataGridView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeFantasiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razaoSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enderecoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.foneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataRegistroDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeleteEmpColumn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCancelarEmpresa = new System.Windows.Forms.Button();
             this.btnEditarEmpresa = new System.Windows.Forms.Button();
             this.btnIncluirEmpresa = new System.Windows.Forms.Button();
             this.panelEmpresa = new System.Windows.Forms.Panel();
-            this.cEPTextBox = new System.Windows.Forms.TextBox();
+            this.mskbxCEPEmp = new System.Windows.Forms.MaskedTextBox();
+            this.mskbxFoneEmp = new System.Windows.Forms.MaskedTextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.enderecoTextBox = new System.Windows.Forms.TextBox();
-            this.foneTextBox = new System.Windows.Forms.TextBox();
             this.nomeFantasiaTextBox = new System.Windows.Forms.TextBox();
             this.razaoSocialTextBox = new System.Windows.Forms.TextBox();
             this.TabParteEnvolvida = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.descricaoTextBox = new System.Windows.Forms.TextBox();
-            this.parteEnvolvidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cEPTextBox1 = new System.Windows.Forms.TextBox();
-            this.emailTextBox1 = new System.Windows.Forms.TextBox();
-            this.enderecoTextBox1 = new System.Windows.Forms.TextBox();
-            this.foneTextBox1 = new System.Windows.Forms.TextBox();
-            this.idTextBox1 = new System.Windows.Forms.TextBox();
-            this.nomeTextBox = new System.Windows.Forms.TextBox();
-            this.tipoParteEnvolvida_fkTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnIncluir = new System.Windows.Forms.Button();
+            this.panelPEnv = new System.Windows.Forms.Panel();
+            this.msktxtFone = new System.Windows.Forms.MaskedTextBox();
+            this.btnSalvarPEnv = new System.Windows.Forms.Button();
+            this.btnCancelPEnv = new System.Windows.Forms.Button();
+            this.msktxtCEP = new System.Windows.Forms.MaskedTextBox();
+            this.cboTPEnvolvida = new System.Windows.Forms.ComboBox();
+            this.tipoParteEnvolvidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtEmailPEnv = new System.Windows.Forms.TextBox();
+            this.txtEnderecoPEnv = new System.Windows.Forms.TextBox();
+            this.txtIdPEnv = new System.Windows.Forms.TextBox();
+            this.txtNomePEnv = new System.Windows.Forms.TextBox();
+            this.btnEditPEnv = new System.Windows.Forms.Button();
+            this.btnIncluirPEnv = new System.Windows.Forms.Button();
             this.dataRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.usuarioTextBox = new System.Windows.Forms.TextBox();
             this.parteEnvolvidaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panelPEnv = new System.Windows.Forms.Panel();
-            this.btnSalvarPEnv = new System.Windows.Forms.Button();
-            this.btnCancPEnv = new System.Windows.Forms.Button();
-            this.descricaoPEnv = new System.Windows.Forms.TextBox();
-            this.tipoParteEnvolvidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idTextBox3 = new System.Windows.Forms.TextBox();
-            this.btnEditarPEnv = new System.Windows.Forms.Button();
-            this.btnIncluirPEnv = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnExcluirPEnv = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabTPEnv = new System.Windows.Forms.TabPage();
+            this.panelTPEnv = new System.Windows.Forms.Panel();
+            this.btnSalvarTPEnv = new System.Windows.Forms.Button();
+            this.btnCancTPEnv = new System.Windows.Forms.Button();
+            this.descricaoTPEnv = new System.Windows.Forms.TextBox();
+            this.txtIdTPEnv = new System.Windows.Forms.TextBox();
+            this.btnEditTPEnv = new System.Windows.Forms.Button();
+            this.btnIncluirTPEnv = new System.Windows.Forms.Button();
             this.tipoParteEnvolvidaDataGridView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataRegistroDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnExcluirPEnv = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExcluirTPEnv = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TabTipoMov = new System.Windows.Forms.TabPage();
-            this.idTextBox4 = new System.Windows.Forms.TextBox();
-            this.tipoMovimentacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tipoMovimentacao1TextBox = new System.Windows.Forms.TextBox();
+            this.panelTMov = new System.Windows.Forms.Panel();
+            this.btnSalvarTMov = new System.Windows.Forms.Button();
+            this.btnCancelTMov = new System.Windows.Forms.Button();
+            this.descricaoTMov = new System.Windows.Forms.TextBox();
+            this.txtIdTMov = new System.Windows.Forms.TextBox();
+            this.btnEditTMov = new System.Windows.Forms.Button();
+            this.btnIncluirTMov = new System.Windows.Forms.Button();
             this.tipoMovimentacaoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoMovimentacao1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnExcluirTMov = new System.Windows.Forms.DataGridViewButtonColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            label1 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
+            lblCompTitle = new System.Windows.Forms.Label();
+            lblEmpTitle = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             competenciaLabel = new System.Windows.Forms.Label();
             lblPesquisa = new System.Windows.Forms.Label();
@@ -202,13 +225,12 @@
             usuarioLabel = new System.Windows.Forms.Label();
             idLabel4 = new System.Windows.Forms.Label();
             tipoMovimentacao1Label = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
-            label7 = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
-            label9 = new System.Windows.Forms.Label();
-            label10 = new System.Windows.Forms.Label();
-            descricaoLabel = new System.Windows.Forms.Label();
+            lblPEnvTitle = new System.Windows.Forms.Label();
+            lblTPEnvTitle = new System.Windows.Forms.Label();
+            lblTMovTitle = new System.Windows.Forms.Label();
+            lblMovTitle = new System.Windows.Forms.Label();
+            lblidTPEnv = new System.Windows.Forms.Label();
+            lblDescricaoTPEnv = new System.Windows.Forms.Label();
             cEPLabel1 = new System.Windows.Forms.Label();
             emailLabel1 = new System.Windows.Forms.Label();
             enderecoLabel1 = new System.Windows.Forms.Label();
@@ -216,54 +238,62 @@
             idLabel1 = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             tipoParteEnvolvida_fkLabel = new System.Windows.Forms.Label();
+            valorLabel = new System.Windows.Forms.Label();
+            tipoMovimentacao_fkLabel = new System.Windows.Forms.Label();
+            idLabel2 = new System.Windows.Forms.Label();
+            descricaoLabel = new System.Windows.Forms.Label();
+            dataLabel = new System.Windows.Forms.Label();
+            parteEnvolvida_fkLabel = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.panelComp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.competenciaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCompetencia)).BeginInit();
             this.tabPageCxDiario.SuspendLayout();
+            this.panelMov.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentacaoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoMovimentacaoBindingSource)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentacaoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMov)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresaDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             this.panelEmpresa.SuspendLayout();
             this.TabParteEnvolvida.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaDataGridView)).BeginInit();
-            this.tabPage3.SuspendLayout();
             this.panelPEnv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoParteEnvolvidaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaDataGridView)).BeginInit();
+            this.tabTPEnv.SuspendLayout();
+            this.panelTPEnv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoParteEnvolvidaDataGridView)).BeginInit();
             this.TabTipoMov.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoMovimentacaoBindingSource)).BeginInit();
+            this.panelTMov.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoMovimentacaoDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblCompTitle
             // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.ForeColor = System.Drawing.Color.Navy;
-            label1.Location = new System.Drawing.Point(33, 24);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(394, 27);
-            label1.TabIndex = 1;
-            label1.Text = "Manutenção de Competências";
+            lblCompTitle.AutoSize = true;
+            lblCompTitle.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblCompTitle.ForeColor = System.Drawing.Color.Navy;
+            lblCompTitle.Location = new System.Drawing.Point(33, 24);
+            lblCompTitle.Name = "lblCompTitle";
+            lblCompTitle.Size = new System.Drawing.Size(394, 27);
+            lblCompTitle.TabIndex = 1;
+            lblCompTitle.Text = "Manutenção de Competências";
             // 
-            // label5
+            // lblEmpTitle
             // 
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.ForeColor = System.Drawing.Color.Navy;
-            label5.Location = new System.Drawing.Point(33, 24);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(468, 27);
-            label5.TabIndex = 2;
-            label5.Text = "Manutenção dos dados da Empresa";
+            lblEmpTitle.AutoSize = true;
+            lblEmpTitle.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblEmpTitle.ForeColor = System.Drawing.Color.Navy;
+            lblEmpTitle.Location = new System.Drawing.Point(33, 24);
+            lblEmpTitle.Name = "lblEmpTitle";
+            lblEmpTitle.Size = new System.Drawing.Size(468, 27);
+            lblEmpTitle.TabIndex = 2;
+            lblEmpTitle.Text = "Manutenção dos dados da Empresa";
             // 
             // idLabel
             // 
@@ -299,7 +329,7 @@
             // 
             cEPLabel.AutoSize = true;
             cEPLabel.Font = new System.Drawing.Font("Eras Bold ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cEPLabel.Location = new System.Drawing.Point(768, 146);
+            cEPLabel.Location = new System.Drawing.Point(812, 150);
             cEPLabel.Name = "cEPLabel";
             cEPLabel.Size = new System.Drawing.Size(46, 19);
             cEPLabel.TabIndex = 16;
@@ -329,7 +359,7 @@
             // 
             foneLabel.AutoSize = true;
             foneLabel.Font = new System.Drawing.Font("Eras Bold ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            foneLabel.Location = new System.Drawing.Point(716, 97);
+            foneLabel.Location = new System.Drawing.Point(783, 97);
             foneLabel.Name = "foneLabel";
             foneLabel.Size = new System.Drawing.Size(54, 19);
             foneLabel.TabIndex = 8;
@@ -378,7 +408,7 @@
             // idLabel4
             // 
             idLabel4.AutoSize = true;
-            idLabel4.Location = new System.Drawing.Point(110, 210);
+            idLabel4.Location = new System.Drawing.Point(21, 19);
             idLabel4.Name = "idLabel4";
             idLabel4.Size = new System.Drawing.Size(28, 16);
             idLabel4.TabIndex = 1;
@@ -387,92 +417,82 @@
             // tipoMovimentacao1Label
             // 
             tipoMovimentacao1Label.AutoSize = true;
-            tipoMovimentacao1Label.Location = new System.Drawing.Point(110, 240);
+            tipoMovimentacao1Label.Location = new System.Drawing.Point(21, 49);
             tipoMovimentacao1Label.Name = "tipoMovimentacao1Label";
-            tipoMovimentacao1Label.Size = new System.Drawing.Size(153, 16);
+            tipoMovimentacao1Label.Size = new System.Drawing.Size(145, 16);
             tipoMovimentacao1Label.TabIndex = 3;
-            tipoMovimentacao1Label.Text = "Tipo Movimentacao1:";
+            tipoMovimentacao1Label.Text = "Tipo Movimentação:";
             // 
-            // label4
+            // lblPEnvTitle
             // 
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.ForeColor = System.Drawing.Color.Navy;
-            label4.Location = new System.Drawing.Point(46, 22);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(460, 27);
-            label4.TabIndex = 23;
-            label4.Text = "Manutenção das Partes Envolvidas";
+            lblPEnvTitle.AutoSize = true;
+            lblPEnvTitle.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblPEnvTitle.ForeColor = System.Drawing.Color.Navy;
+            lblPEnvTitle.Location = new System.Drawing.Point(46, 22);
+            lblPEnvTitle.Name = "lblPEnvTitle";
+            lblPEnvTitle.Size = new System.Drawing.Size(460, 27);
+            lblPEnvTitle.TabIndex = 23;
+            lblPEnvTitle.Text = "Manutenção das Partes Envolvidas";
             // 
-            // label6
+            // lblTPEnvTitle
             // 
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.ForeColor = System.Drawing.Color.Navy;
-            label6.Location = new System.Drawing.Point(284, 35);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(533, 27);
-            label6.TabIndex = 5;
-            label6.Text = "Manutenção do Tipo da Parte Envolvida";
+            lblTPEnvTitle.AutoSize = true;
+            lblTPEnvTitle.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblTPEnvTitle.ForeColor = System.Drawing.Color.Navy;
+            lblTPEnvTitle.Location = new System.Drawing.Point(284, 35);
+            lblTPEnvTitle.Name = "lblTPEnvTitle";
+            lblTPEnvTitle.Size = new System.Drawing.Size(533, 27);
+            lblTPEnvTitle.TabIndex = 5;
+            lblTPEnvTitle.Text = "Manutenção do Tipo da Parte Envolvida";
             // 
-            // label7
+            // lblTMovTitle
             // 
-            label7.AutoSize = true;
-            label7.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.ForeColor = System.Drawing.Color.Navy;
-            label7.Location = new System.Drawing.Point(108, 59);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(511, 27);
-            label7.TabIndex = 6;
-            label7.Text = "Manutenção do Tipo de Movimentação";
+            lblTMovTitle.AutoSize = true;
+            lblTMovTitle.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblTMovTitle.ForeColor = System.Drawing.Color.Navy;
+            lblTMovTitle.Location = new System.Drawing.Point(108, 59);
+            lblTMovTitle.Name = "lblTMovTitle";
+            lblTMovTitle.Size = new System.Drawing.Size(511, 27);
+            lblTMovTitle.TabIndex = 6;
+            lblTMovTitle.Text = "Manutenção do Tipo de Movimentação";
             // 
-            // label8
+            // lblMovTitle
             // 
-            label8.AutoSize = true;
-            label8.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.ForeColor = System.Drawing.Color.Navy;
-            label8.Location = new System.Drawing.Point(161, 12);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(324, 27);
-            label8.TabIndex = 12;
-            label8.Text = "Movimentação de Caixa";
-            this.toolTip1.SetToolTip(label8, "Lançamento de valores de entrada e saída");
+            lblMovTitle.AutoSize = true;
+            lblMovTitle.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblMovTitle.ForeColor = System.Drawing.Color.Navy;
+            lblMovTitle.Location = new System.Drawing.Point(161, 12);
+            lblMovTitle.Name = "lblMovTitle";
+            lblMovTitle.Size = new System.Drawing.Size(324, 27);
+            lblMovTitle.TabIndex = 12;
+            lblMovTitle.Text = "Movimentação de Caixa";
+            this.toolTip1.SetToolTip(lblMovTitle, "Lançamento de valores de entrada e saída");
             // 
-            // label9
+            // lblidTPEnv
             // 
-            label9.AutoSize = true;
-            label9.Font = new System.Drawing.Font("Eras Bold ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label9.Location = new System.Drawing.Point(3, 10);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(112, 18);
-            label9.TabIndex = 9;
-            label9.Text = "Identificação:";
+            lblidTPEnv.AutoSize = true;
+            lblidTPEnv.Font = new System.Drawing.Font("Eras Bold ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblidTPEnv.Location = new System.Drawing.Point(3, 10);
+            lblidTPEnv.Name = "lblidTPEnv";
+            lblidTPEnv.Size = new System.Drawing.Size(112, 18);
+            lblidTPEnv.TabIndex = 9;
+            lblidTPEnv.Text = "Identificação:";
             // 
-            // label10
+            // lblDescricaoTPEnv
             // 
-            label10.AutoSize = true;
-            label10.Font = new System.Drawing.Font("Eras Bold ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label10.Location = new System.Drawing.Point(3, 50);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(86, 18);
-            label10.TabIndex = 11;
-            label10.Text = "Descrição:";
-            // 
-            // descricaoLabel
-            // 
-            descricaoLabel.AutoSize = true;
-            descricaoLabel.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descricaoLabel.Location = new System.Drawing.Point(-7, 82);
-            descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(88, 16);
-            descricaoLabel.TabIndex = 35;
-            descricaoLabel.Text = "Descricao:";
+            lblDescricaoTPEnv.AutoSize = true;
+            lblDescricaoTPEnv.Font = new System.Drawing.Font("Eras Bold ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblDescricaoTPEnv.Location = new System.Drawing.Point(3, 50);
+            lblDescricaoTPEnv.Name = "lblDescricaoTPEnv";
+            lblDescricaoTPEnv.Size = new System.Drawing.Size(86, 18);
+            lblDescricaoTPEnv.TabIndex = 11;
+            lblDescricaoTPEnv.Text = "Descrição:";
             // 
             // cEPLabel1
             // 
             cEPLabel1.AutoSize = true;
             cEPLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cEPLabel1.Location = new System.Drawing.Point(-7, 142);
+            cEPLabel1.Location = new System.Drawing.Point(26, 145);
             cEPLabel1.Name = "cEPLabel1";
             cEPLabel1.Size = new System.Drawing.Size(40, 16);
             cEPLabel1.TabIndex = 21;
@@ -482,17 +502,17 @@
             // 
             emailLabel1.AutoSize = true;
             emailLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            emailLabel1.Location = new System.Drawing.Point(355, 145);
+            emailLabel1.Location = new System.Drawing.Point(309, 146);
             emailLabel1.Name = "emailLabel1";
             emailLabel1.Size = new System.Drawing.Size(58, 16);
-            emailLabel1.TabIndex = 23;
+            emailLabel1.TabIndex = 0;
             emailLabel1.Text = "Email:";
             // 
             // enderecoLabel1
             // 
             enderecoLabel1.AutoSize = true;
             enderecoLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            enderecoLabel1.Location = new System.Drawing.Point(-7, 112);
+            enderecoLabel1.Location = new System.Drawing.Point(26, 112);
             enderecoLabel1.Name = "enderecoLabel1";
             enderecoLabel1.Size = new System.Drawing.Size(83, 16);
             enderecoLabel1.TabIndex = 25;
@@ -502,7 +522,7 @@
             // 
             foneLabel1.AutoSize = true;
             foneLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            foneLabel1.Location = new System.Drawing.Point(-7, 172);
+            foneLabel1.Location = new System.Drawing.Point(26, 179);
             foneLabel1.Name = "foneLabel1";
             foneLabel1.Size = new System.Drawing.Size(49, 16);
             foneLabel1.TabIndex = 27;
@@ -512,7 +532,7 @@
             // 
             idLabel1.AutoSize = true;
             idLabel1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idLabel1.Location = new System.Drawing.Point(-7, 22);
+            idLabel1.Location = new System.Drawing.Point(26, 22);
             idLabel1.Name = "idLabel1";
             idLabel1.Size = new System.Drawing.Size(31, 16);
             idLabel1.TabIndex = 29;
@@ -522,7 +542,7 @@
             // 
             nomeLabel.AutoSize = true;
             nomeLabel.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomeLabel.Location = new System.Drawing.Point(-7, 52);
+            nomeLabel.Location = new System.Drawing.Point(26, 52);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(55, 16);
             nomeLabel.TabIndex = 31;
@@ -532,11 +552,71 @@
             // 
             tipoParteEnvolvida_fkLabel.AutoSize = true;
             tipoParteEnvolvida_fkLabel.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tipoParteEnvolvida_fkLabel.Location = new System.Drawing.Point(416, 19);
+            tipoParteEnvolvida_fkLabel.Location = new System.Drawing.Point(449, 19);
             tipoParteEnvolvida_fkLabel.Name = "tipoParteEnvolvida_fkLabel";
             tipoParteEnvolvida_fkLabel.Size = new System.Drawing.Size(174, 16);
             tipoParteEnvolvida_fkLabel.TabIndex = 33;
             tipoParteEnvolvida_fkLabel.Text = "Tipo Parte Envolvida:";
+            // 
+            // valorLabel
+            // 
+            valorLabel.AutoSize = true;
+            valorLabel.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            valorLabel.Location = new System.Drawing.Point(386, 60);
+            valorLabel.Name = "valorLabel";
+            valorLabel.Size = new System.Drawing.Size(58, 19);
+            valorLabel.TabIndex = 28;
+            valorLabel.Text = "Valor:";
+            // 
+            // tipoMovimentacao_fkLabel
+            // 
+            tipoMovimentacao_fkLabel.AutoSize = true;
+            tipoMovimentacao_fkLabel.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tipoMovimentacao_fkLabel.Location = new System.Drawing.Point(652, 70);
+            tipoMovimentacao_fkLabel.Name = "tipoMovimentacao_fkLabel";
+            tipoMovimentacao_fkLabel.Size = new System.Drawing.Size(173, 19);
+            tipoMovimentacao_fkLabel.TabIndex = 27;
+            tipoMovimentacao_fkLabel.Text = "Tipo Movimentação:";
+            // 
+            // idLabel2
+            // 
+            idLabel2.AutoSize = true;
+            idLabel2.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            idLabel2.Location = new System.Drawing.Point(65, 12);
+            idLabel2.Name = "idLabel2";
+            idLabel2.Size = new System.Drawing.Size(30, 19);
+            idLabel2.TabIndex = 25;
+            idLabel2.Text = "Id:";
+            // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descricaoLabel.Location = new System.Drawing.Point(9, 102);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new System.Drawing.Size(94, 19);
+            descricaoLabel.TabIndex = 22;
+            descricaoLabel.Text = "Descrição:";
+            // 
+            // dataLabel
+            // 
+            dataLabel.AutoSize = true;
+            dataLabel.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataLabel.Location = new System.Drawing.Point(47, 60);
+            dataLabel.Name = "dataLabel";
+            dataLabel.Size = new System.Drawing.Size(53, 19);
+            dataLabel.TabIndex = 21;
+            dataLabel.Text = "Data:";
+            // 
+            // parteEnvolvida_fkLabel
+            // 
+            parteEnvolvida_fkLabel.AutoSize = true;
+            parteEnvolvida_fkLabel.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            parteEnvolvida_fkLabel.Location = new System.Drawing.Point(652, 128);
+            parteEnvolvida_fkLabel.Name = "parteEnvolvida_fkLabel";
+            parteEnvolvida_fkLabel.Size = new System.Drawing.Size(142, 19);
+            parteEnvolvida_fkLabel.TabIndex = 31;
+            parteEnvolvida_fkLabel.Text = "Parte Envolvida:";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -597,7 +677,7 @@
             // 
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.Lavender;
-            this.lblTime.Location = new System.Drawing.Point(990, 7);
+            this.lblTime.Location = new System.Drawing.Point(973, 7);
             this.lblTime.Name = "lblTime";
             this.lblTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblTime.Size = new System.Drawing.Size(365, 18);
@@ -618,12 +698,12 @@
             this.tabPage2.Controls.Add(this.btnEditComp);
             this.tabPage2.Controls.Add(this.btnIncluirComp);
             this.tabPage2.Controls.Add(this.DataGridViewCompetencia);
-            this.tabPage2.Controls.Add(label1);
+            this.tabPage2.Controls.Add(lblCompTitle);
             this.tabPage2.Font = new System.Drawing.Font("Eras Medium ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1235, 702);
+            this.tabPage2.Size = new System.Drawing.Size(1357, 702);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Competência";
             // 
@@ -633,7 +713,7 @@
             this.panelComp.Controls.Add(this.dateTimePickerComp);
             this.panelComp.Controls.Add(this.btnSalvarComp);
             this.panelComp.Controls.Add(this.btnCancelComp);
-            this.panelComp.Controls.Add(this.idTextBox);
+            this.panelComp.Controls.Add(this.txtIdComp);
             this.panelComp.Controls.Add(competenciaLabel);
             this.panelComp.Location = new System.Drawing.Point(38, 176);
             this.panelComp.Name = "panelComp";
@@ -680,16 +760,16 @@
             this.btnCancelComp.UseVisualStyleBackColor = true;
             this.btnCancelComp.Click += new System.EventHandler(this.btnCancelComp_Click);
             // 
-            // idTextBox
+            // txtIdComp
             // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.competenciaBindingSource, "Id", true));
-            this.idTextBox.Font = new System.Drawing.Font("Eras Bold ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idTextBox.Location = new System.Drawing.Point(147, 7);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(78, 25);
-            this.idTextBox.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.idTextBox, "Número de identificação do registro da competência gerado automaticamente");
+            this.txtIdComp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.competenciaBindingSource, "Id", true));
+            this.txtIdComp.Font = new System.Drawing.Font("Eras Bold ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdComp.Location = new System.Drawing.Point(147, 7);
+            this.txtIdComp.Name = "txtIdComp";
+            this.txtIdComp.ReadOnly = true;
+            this.txtIdComp.Size = new System.Drawing.Size(78, 25);
+            this.txtIdComp.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtIdComp, "Número de identificação do registro da competência gerado automaticamente");
             // 
             // textBoxPesquisa
             // 
@@ -727,52 +807,63 @@
             this.DataGridViewCompetencia.AllowUserToAddRows = false;
             this.DataGridViewCompetencia.AllowUserToDeleteRows = false;
             this.DataGridViewCompetencia.AutoGenerateColumns = false;
+            this.DataGridViewCompetencia.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DataGridViewCompetencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewCompetencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn10,
-            this.dataRegistroDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn48,
+            this.dataGridViewTextBoxColumn49,
+            this.dataGridViewTextBoxColumn50,
             this.DeleteColumn});
             this.DataGridViewCompetencia.DataSource = this.competenciaBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Eras Medium ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewCompetencia.DefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridViewCompetencia.GridColor = System.Drawing.SystemColors.Highlight;
             this.DataGridViewCompetencia.Location = new System.Drawing.Point(502, 154);
             this.DataGridViewCompetencia.Name = "DataGridViewCompetencia";
             this.DataGridViewCompetencia.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Eras Medium ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewCompetencia.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridViewCompetencia.RowHeadersVisible = false;
-            this.DataGridViewCompetencia.Size = new System.Drawing.Size(604, 256);
+            this.DataGridViewCompetencia.Size = new System.Drawing.Size(473, 256);
             this.DataGridViewCompetencia.TabIndex = 5;
             this.DataGridViewCompetencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCompetencia_CellContentClick);
             // 
-            // idDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn48
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Nº";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 80;
+            this.dataGridViewTextBoxColumn48.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn48.HeaderText = "Sequencial";
+            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
+            this.dataGridViewTextBoxColumn48.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn10
+            // dataGridViewTextBoxColumn49
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "CompNome";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 250;
+            this.dataGridViewTextBoxColumn49.DataPropertyName = "CompNome";
+            this.dataGridViewTextBoxColumn49.HeaderText = "Competência";
+            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+            this.dataGridViewTextBoxColumn49.ReadOnly = true;
+            this.dataGridViewTextBoxColumn49.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn49.Width = 200;
             // 
-            // dataRegistroDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn50
             // 
-            this.dataRegistroDataGridViewTextBoxColumn.DataPropertyName = "DataRegistro";
-            this.dataRegistroDataGridViewTextBoxColumn.HeaderText = "Data de Registro";
-            this.dataRegistroDataGridViewTextBoxColumn.Name = "dataRegistroDataGridViewTextBoxColumn";
-            this.dataRegistroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Usuario";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Usuário";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn50.DataPropertyName = "DataRegistro";
+            this.dataGridViewTextBoxColumn50.HeaderText = "Data Registro";
+            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            this.dataGridViewTextBoxColumn50.ReadOnly = true;
             // 
             // DeleteColumn
             // 
@@ -785,64 +876,276 @@
             // 
             // tabPageCxDiario
             // 
+            this.tabPageCxDiario.AutoScroll = true;
             this.tabPageCxDiario.BackColor = System.Drawing.Color.Tan;
-            this.tabPageCxDiario.Controls.Add(label8);
+            this.tabPageCxDiario.Controls.Add(this.label1);
+            this.tabPageCxDiario.Controls.Add(this.btnEditMov);
+            this.tabPageCxDiario.Controls.Add(this.btnIncluirMov);
             this.tabPageCxDiario.Controls.Add(this.monthCalendar1);
+            this.tabPageCxDiario.Controls.Add(this.panelMov);
+            this.tabPageCxDiario.Controls.Add(lblMovTitle);
             this.tabPageCxDiario.Controls.Add(this.tableLayoutPanel2);
             this.tabPageCxDiario.Controls.Add(this.tableLayoutPanel1);
-            this.tabPageCxDiario.Controls.Add(this.dataGridView1);
+            this.tabPageCxDiario.Controls.Add(this.dataGridViewMov);
             this.tabPageCxDiario.Font = new System.Drawing.Font("Eras Medium ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageCxDiario.Location = new System.Drawing.Point(4, 25);
             this.tabPageCxDiario.Name = "tabPageCxDiario";
             this.tabPageCxDiario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCxDiario.Size = new System.Drawing.Size(1235, 702);
+            this.tabPageCxDiario.Size = new System.Drawing.Size(1357, 702);
             this.tabPageCxDiario.TabIndex = 0;
             this.tabPageCxDiario.Text = "Caixa Diário";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Font = new System.Drawing.Font("Eras Medium ITC", 1F);
+            this.label1.Location = new System.Drawing.Point(15, 138);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(590, 3);
+            this.label1.TabIndex = 26;
+            // 
+            // btnEditMov
+            // 
+            this.btnEditMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditMov.Location = new System.Drawing.Point(474, 109);
+            this.btnEditMov.Name = "btnEditMov";
+            this.btnEditMov.Size = new System.Drawing.Size(75, 23);
+            this.btnEditMov.TabIndex = 24;
+            this.btnEditMov.Text = "&Editar";
+            this.btnEditMov.UseVisualStyleBackColor = true;
+            this.btnEditMov.Click += new System.EventHandler(this.btnEditMov_Click);
+            // 
+            // btnIncluirMov
+            // 
+            this.btnIncluirMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluirMov.Location = new System.Drawing.Point(369, 109);
+            this.btnIncluirMov.Name = "btnIncluirMov";
+            this.btnIncluirMov.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluirMov.TabIndex = 25;
+            this.btnIncluirMov.Text = "I&ncluir";
+            this.btnIncluirMov.UseVisualStyleBackColor = true;
+            this.btnIncluirMov.Click += new System.EventHandler(this.btnIncluirMov_Click);
             // 
             // monthCalendar1
             // 
             this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(3, 1);
-            this.monthCalendar1.Location = new System.Drawing.Point(650, 12);
+            this.monthCalendar1.Location = new System.Drawing.Point(616, 16);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 11;
+            // 
+            // panelMov
+            // 
+            this.panelMov.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelMov.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelMov.BackColor = System.Drawing.Color.OldLace;
+            this.panelMov.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMov.Controls.Add(this.textBox1);
+            this.panelMov.Controls.Add(this.mskbxValorMov);
+            this.panelMov.Controls.Add(this.btnSalvarMov);
+            this.panelMov.Controls.Add(this.comboBox3);
+            this.panelMov.Controls.Add(this.cmbTMov);
+            this.panelMov.Controls.Add(this.btnCancelMov);
+            this.panelMov.Controls.Add(parteEnvolvida_fkLabel);
+            this.panelMov.Controls.Add(valorLabel);
+            this.panelMov.Controls.Add(tipoMovimentacao_fkLabel);
+            this.panelMov.Controls.Add(idLabel2);
+            this.panelMov.Controls.Add(this.txtIdMov);
+            this.panelMov.Controls.Add(descricaoLabel);
+            this.panelMov.Controls.Add(this.txtDescricaoMov);
+            this.panelMov.Controls.Add(dataLabel);
+            this.panelMov.Controls.Add(this.dataDateTimePickerDataMov);
+            this.panelMov.Location = new System.Drawing.Point(11, 153);
+            this.panelMov.Name = "panelMov";
+            this.panelMov.Size = new System.Drawing.Size(1024, 189);
+            this.panelMov.TabIndex = 21;
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentacaoBindingSource, "Valor", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0,00", "C2"));
+            this.textBox1.Location = new System.Drawing.Point(450, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 33;
+            // 
+            // movimentacaoBindingSource
+            // 
+            this.movimentacaoBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.Movimentacao);
+            // 
+            // mskbxValorMov
+            // 
+            this.mskbxValorMov.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mskbxValorMov.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentacaoBindingSource, "Valor", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0,00", "C2"));
+            this.mskbxValorMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskbxValorMov.Location = new System.Drawing.Point(450, 57);
+            this.mskbxValorMov.Name = "mskbxValorMov";
+            this.mskbxValorMov.Size = new System.Drawing.Size(100, 26);
+            this.mskbxValorMov.TabIndex = 32;
+            this.mskbxValorMov.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mskbxValorMov.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAllowJustNumbers_KeyPress);
+            // 
+            // btnSalvarMov
+            // 
+            this.btnSalvarMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarMov.Location = new System.Drawing.Point(937, 106);
+            this.btnSalvarMov.Name = "btnSalvarMov";
+            this.btnSalvarMov.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarMov.TabIndex = 22;
+            this.btnSalvarMov.Text = "&Salvar";
+            this.btnSalvarMov.UseVisualStyleBackColor = true;
+            this.btnSalvarMov.Click += new System.EventHandler(this.btnSalvarMov_Click);
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox3.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.movimentacaoBindingSource, "ParteEnvolvida_fk", true));
+            this.comboBox3.DataSource = this.parteEnvolvidaBindingSource;
+            this.comboBox3.DisplayMember = "Nome";
+            this.comboBox3.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(656, 149);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(271, 27);
+            this.comboBox3.TabIndex = 1;
+            this.comboBox3.ValueMember = "Id";
+            // 
+            // parteEnvolvidaBindingSource
+            // 
+            this.parteEnvolvidaBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.ParteEnvolvida);
+            // 
+            // cmbTMov
+            // 
+            this.cmbTMov.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbTMov.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.movimentacaoBindingSource, "TipoMovimentacao_fk", true));
+            this.cmbTMov.DataSource = this.tipoMovimentacaoBindingSource;
+            this.cmbTMov.DisplayMember = "TipoMovimentacao1";
+            this.cmbTMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTMov.FormattingEnabled = true;
+            this.cmbTMov.Location = new System.Drawing.Point(656, 95);
+            this.cmbTMov.Name = "cmbTMov";
+            this.cmbTMov.Size = new System.Drawing.Size(271, 27);
+            this.cmbTMov.TabIndex = 1;
+            this.cmbTMov.ValueMember = "Id";
+            // 
+            // tipoMovimentacaoBindingSource
+            // 
+            this.tipoMovimentacaoBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.TipoMovimentacao);
+            // 
+            // btnCancelMov
+            // 
+            this.btnCancelMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelMov.Location = new System.Drawing.Point(937, 149);
+            this.btnCancelMov.Name = "btnCancelMov";
+            this.btnCancelMov.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelMov.TabIndex = 23;
+            this.btnCancelMov.Text = "&Cancelar";
+            this.btnCancelMov.UseVisualStyleBackColor = true;
+            this.btnCancelMov.Click += new System.EventHandler(this.btnCancelMov_Click);
+            // 
+            // txtIdMov
+            // 
+            this.txtIdMov.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentacaoBindingSource, "Id", true));
+            this.txtIdMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdMov.Location = new System.Drawing.Point(105, 9);
+            this.txtIdMov.Name = "txtIdMov";
+            this.txtIdMov.ReadOnly = true;
+            this.txtIdMov.Size = new System.Drawing.Size(100, 26);
+            this.txtIdMov.TabIndex = 26;
+            // 
+            // txtDescricaoMov
+            // 
+            this.txtDescricaoMov.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentacaoBindingSource, "Descricao", true));
+            this.txtDescricaoMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricaoMov.Location = new System.Drawing.Point(105, 102);
+            this.txtDescricaoMov.Multiline = true;
+            this.txtDescricaoMov.Name = "txtDescricaoMov";
+            this.txtDescricaoMov.Size = new System.Drawing.Size(524, 74);
+            this.txtDescricaoMov.TabIndex = 24;
+            // 
+            // dataDateTimePickerDataMov
+            // 
+            this.dataDateTimePickerDataMov.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.movimentacaoBindingSource, "Data", true));
+            this.dataDateTimePickerDataMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataDateTimePickerDataMov.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataDateTimePickerDataMov.Location = new System.Drawing.Point(105, 56);
+            this.dataDateTimePickerDataMov.Name = "dataDateTimePickerDataMov";
+            this.dataDateTimePickerDataMov.Size = new System.Drawing.Size(125, 26);
+            this.dataDateTimePickerDataMov.TabIndex = 23;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 239F));
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(11, 117);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tableLayoutPanel2.Controls.Add(this.cmbCompMov, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblCompTelaMov, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(24, 101);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(359, 25);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(285, 31);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
-            // label3
+            // cmbCompMov
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Eras Bold ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Competência:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.label3, "A competência é formada pela junção do mês e ano");
+            this.cmbCompMov.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCompMov.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.movimentacaoBindingSource, "Competencia_fk", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "MMMM/yyyy"));
+            this.cmbCompMov.DataSource = this.competenciaBindingSource;
+            this.cmbCompMov.DisplayMember = "CompNome";
+            this.cmbCompMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCompMov.FormatString = "MMMM/yyyy";
+            this.cmbCompMov.FormattingEnabled = true;
+            this.cmbCompMov.Location = new System.Drawing.Point(129, 3);
+            this.cmbCompMov.Name = "cmbCompMov";
+            this.cmbCompMov.Size = new System.Drawing.Size(153, 27);
+            this.cmbCompMov.TabIndex = 27;
+            this.cmbCompMov.ValueMember = "Id";
             // 
-            // comboBox1
+            // lblCompTelaMov
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(233, 22);
-            this.comboBox1.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.comboBox1, "Selecione a competência que deseja trabalhar");
+            this.lblCompTelaMov.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCompTelaMov.CausesValidation = false;
+            this.lblCompTelaMov.Font = new System.Drawing.Font("Eras Bold ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompTelaMov.Location = new System.Drawing.Point(3, 4);
+            this.lblCompTelaMov.Margin = new System.Windows.Forms.Padding(3);
+            this.lblCompTelaMov.Name = "lblCompTelaMov";
+            this.lblCompTelaMov.Size = new System.Drawing.Size(120, 22);
+            this.lblCompTelaMov.TabIndex = 15;
+            this.lblCompTelaMov.Text = "Competência:";
+            this.lblCompTelaMov.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCompTelaMov, "A competência é formada pela junção do mês e ano");
             // 
             // tableLayoutPanel1
             // 
@@ -850,148 +1153,188 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 414F));
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox2, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 74);
+            this.tableLayoutPanel1.Controls.Add(this.lblEmpTelaMov, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cmbEmpMov, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 56);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(491, 25);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(526, 39);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
-            // label2
+            // lblEmpTelaMov
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Eras Bold ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Empresa:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblEmpTelaMov.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblEmpTelaMov.AutoSize = true;
+            this.lblEmpTelaMov.Font = new System.Drawing.Font("Eras Bold ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpTelaMov.Location = new System.Drawing.Point(3, 10);
+            this.lblEmpTelaMov.Name = "lblEmpTelaMov";
+            this.lblEmpTelaMov.Size = new System.Drawing.Size(85, 19);
+            this.lblEmpTelaMov.TabIndex = 0;
+            this.lblEmpTelaMov.Text = "Empresa:";
+            this.lblEmpTelaMov.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox2
+            // cmbEmpMov
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(80, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(408, 22);
-            this.comboBox2.TabIndex = 1;
+            this.cmbEmpMov.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbEmpMov.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.movimentacaoBindingSource, "Empresa_fk", true));
+            this.cmbEmpMov.DataSource = this.empresaBindingSource;
+            this.cmbEmpMov.DisplayMember = "NomeFantasia";
+            this.cmbEmpMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEmpMov.FormattingEnabled = true;
+            this.cmbEmpMov.Location = new System.Drawing.Point(115, 6);
+            this.cmbEmpMov.Name = "cmbEmpMov";
+            this.cmbEmpMov.Size = new System.Drawing.Size(408, 27);
+            this.cmbEmpMov.TabIndex = 1;
+            this.cmbEmpMov.ValueMember = "Id";
             // 
-            // dataGridView1
+            // empresaBindingSource
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataDataGridViewTextBoxColumn,
-            this.descricaoDataGridViewTextBoxColumn,
-            this.valorDataGridViewTextBoxColumn,
-            this.tipoMovimentacaofkDataGridViewTextBoxColumn,
-            this.parteEnvolvidafkDataGridViewTextBoxColumn,
-            this.competenciafkDataGridViewTextBoxColumn,
-            this.empresafkDataGridViewTextBoxColumn,
-            this.competenciaDataGridViewTextBoxColumn,
-            this.empresaDataGridViewTextBoxColumn,
-            this.tipoMovimentacaoDataGridViewTextBoxColumn,
-            this.dataRegistroDataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn30});
-            this.dataGridView1.DataSource = this.movimentacaoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 197);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1150, 489);
-            this.dataGridView1.TabIndex = 0;
+            this.empresaBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.Empresa);
             // 
-            // dataDataGridViewTextBoxColumn
+            // dataGridViewMov
             // 
-            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
-            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
-            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            this.dataDataGridViewTextBoxColumn.Width = 57;
+            this.dataGridViewMov.AllowUserToAddRows = false;
+            this.dataGridViewMov.AllowUserToDeleteRows = false;
+            this.dataGridViewMov.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridViewMov.AutoGenerateColumns = false;
+            this.dataGridViewMov.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewMov.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewMov.ColumnHeadersHeight = 30;
+            this.dataGridViewMov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewMov.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.dataGridViewTextBoxColumn63,
+            this.dataGridViewTextBoxColumn64,
+            this.dataGridViewTextBoxColumn65,
+            this.dataGridViewTextBoxColumn66,
+            this.dataGridViewTextBoxColumn67,
+            this.dataGridViewTextBoxColumn68,
+            this.dataGridViewTextBoxColumn69,
+            this.dataGridViewTextBoxColumn70,
+            this.dataGridViewTextBoxColumn71,
+            this.dgvExcluirMov});
+            this.dataGridViewMov.DataSource = this.movimentacaoBindingSource;
+            this.dataGridViewMov.Location = new System.Drawing.Point(11, 366);
+            this.dataGridViewMov.Name = "dataGridViewMov";
+            this.dataGridViewMov.ReadOnly = true;
+            this.dataGridViewMov.RowHeadersVisible = false;
+            this.dataGridViewMov.Size = new System.Drawing.Size(1294, 328);
+            this.dataGridViewMov.TabIndex = 0;
+            this.dataGridViewMov.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMov_CellContentClick);
             // 
-            // descricaoDataGridViewTextBoxColumn
+            // Id
             // 
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            this.descricaoDataGridViewTextBoxColumn.Width = 84;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Seq";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.ToolTipText = "Número Sequencial";
+            this.Id.Width = 50;
             // 
-            // valorDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn63
             // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.Width = 60;
+            this.dataGridViewTextBoxColumn63.DataPropertyName = "Data";
+            this.dataGridViewTextBoxColumn63.HeaderText = "Data";
+            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
+            this.dataGridViewTextBoxColumn63.ReadOnly = true;
+            this.dataGridViewTextBoxColumn63.Width = 80;
             // 
-            // tipoMovimentacaofkDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn64
             // 
-            this.tipoMovimentacaofkDataGridViewTextBoxColumn.DataPropertyName = "TipoMovimentacao_fk";
-            this.tipoMovimentacaofkDataGridViewTextBoxColumn.HeaderText = "TipoMovimentacao_fk";
-            this.tipoMovimentacaofkDataGridViewTextBoxColumn.Name = "tipoMovimentacaofkDataGridViewTextBoxColumn";
-            this.tipoMovimentacaofkDataGridViewTextBoxColumn.Width = 149;
+            this.dataGridViewTextBoxColumn64.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn64.HeaderText = "Descricão";
+            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
+            this.dataGridViewTextBoxColumn64.ReadOnly = true;
+            this.dataGridViewTextBoxColumn64.Width = 200;
             // 
-            // parteEnvolvidafkDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn65
             // 
-            this.parteEnvolvidafkDataGridViewTextBoxColumn.DataPropertyName = "ParteEnvolvida_fk";
-            this.parteEnvolvidafkDataGridViewTextBoxColumn.HeaderText = "ParteEnvolvida_fk";
-            this.parteEnvolvidafkDataGridViewTextBoxColumn.Name = "parteEnvolvidafkDataGridViewTextBoxColumn";
-            this.parteEnvolvidafkDataGridViewTextBoxColumn.Width = 127;
+            this.dataGridViewTextBoxColumn65.DataPropertyName = "Valor";
+            this.dataGridViewTextBoxColumn65.HeaderText = "Valor";
+            this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
+            this.dataGridViewTextBoxColumn65.ReadOnly = true;
             // 
-            // competenciafkDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn66
             // 
-            this.competenciafkDataGridViewTextBoxColumn.DataPropertyName = "Competencia_fk";
-            this.competenciafkDataGridViewTextBoxColumn.HeaderText = "Competencia_fk";
-            this.competenciafkDataGridViewTextBoxColumn.Name = "competenciafkDataGridViewTextBoxColumn";
-            this.competenciafkDataGridViewTextBoxColumn.Width = 118;
+            this.dataGridViewTextBoxColumn66.DataPropertyName = "TipoMovimentacao_fk";
+            this.dataGridViewTextBoxColumn66.DataSource = this.tipoMovimentacaoBindingSource;
+            this.dataGridViewTextBoxColumn66.DisplayMember = "TipoMovimentacao1";
+            this.dataGridViewTextBoxColumn66.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn66.HeaderText = "Tipo Movimentação";
+            this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
+            this.dataGridViewTextBoxColumn66.ReadOnly = true;
+            this.dataGridViewTextBoxColumn66.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn66.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn66.ValueMember = "Id";
+            this.dataGridViewTextBoxColumn66.Width = 150;
             // 
-            // empresafkDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn67
             // 
-            this.empresafkDataGridViewTextBoxColumn.DataPropertyName = "Empresa_fk";
-            this.empresafkDataGridViewTextBoxColumn.HeaderText = "Empresa_fk";
-            this.empresafkDataGridViewTextBoxColumn.Name = "empresafkDataGridViewTextBoxColumn";
-            this.empresafkDataGridViewTextBoxColumn.Width = 93;
+            this.dataGridViewTextBoxColumn67.DataPropertyName = "ParteEnvolvida_fk";
+            this.dataGridViewTextBoxColumn67.DataSource = this.parteEnvolvidaBindingSource;
+            this.dataGridViewTextBoxColumn67.DisplayMember = "Nome";
+            this.dataGridViewTextBoxColumn67.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn67.HeaderText = "Parte Envolvida";
+            this.dataGridViewTextBoxColumn67.Name = "dataGridViewTextBoxColumn67";
+            this.dataGridViewTextBoxColumn67.ReadOnly = true;
+            this.dataGridViewTextBoxColumn67.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn67.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn67.ValueMember = "Id";
+            this.dataGridViewTextBoxColumn67.Width = 150;
             // 
-            // competenciaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn68
             // 
-            this.competenciaDataGridViewTextBoxColumn.DataPropertyName = "Competencia";
-            this.competenciaDataGridViewTextBoxColumn.HeaderText = "Competencia";
-            this.competenciaDataGridViewTextBoxColumn.Name = "competenciaDataGridViewTextBoxColumn";
-            this.competenciaDataGridViewTextBoxColumn.Width = 102;
+            this.dataGridViewTextBoxColumn68.DataPropertyName = "Competencia_fk";
+            this.dataGridViewTextBoxColumn68.DataSource = this.competenciaBindingSource;
+            this.dataGridViewTextBoxColumn68.DisplayMember = "CompNome";
+            this.dataGridViewTextBoxColumn68.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn68.HeaderText = "Competência";
+            this.dataGridViewTextBoxColumn68.Name = "dataGridViewTextBoxColumn68";
+            this.dataGridViewTextBoxColumn68.ReadOnly = true;
+            this.dataGridViewTextBoxColumn68.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn68.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn68.ValueMember = "Id";
+            this.dataGridViewTextBoxColumn68.Width = 150;
             // 
-            // empresaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn69
             // 
-            this.empresaDataGridViewTextBoxColumn.DataPropertyName = "Empresa";
-            this.empresaDataGridViewTextBoxColumn.HeaderText = "Empresa";
-            this.empresaDataGridViewTextBoxColumn.Name = "empresaDataGridViewTextBoxColumn";
-            this.empresaDataGridViewTextBoxColumn.Width = 77;
+            this.dataGridViewTextBoxColumn69.DataPropertyName = "Empresa_fk";
+            this.dataGridViewTextBoxColumn69.DataSource = this.empresaBindingSource;
+            this.dataGridViewTextBoxColumn69.DisplayMember = "NomeFantasia";
+            this.dataGridViewTextBoxColumn69.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn69.HeaderText = "Empresa";
+            this.dataGridViewTextBoxColumn69.Name = "dataGridViewTextBoxColumn69";
+            this.dataGridViewTextBoxColumn69.ReadOnly = true;
+            this.dataGridViewTextBoxColumn69.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn69.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn69.ValueMember = "Id";
+            this.dataGridViewTextBoxColumn69.Width = 150;
             // 
-            // tipoMovimentacaoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn70
             // 
-            this.tipoMovimentacaoDataGridViewTextBoxColumn.DataPropertyName = "TipoMovimentacao";
-            this.tipoMovimentacaoDataGridViewTextBoxColumn.HeaderText = "TipoMovimentacao";
-            this.tipoMovimentacaoDataGridViewTextBoxColumn.Name = "tipoMovimentacaoDataGridViewTextBoxColumn";
-            this.tipoMovimentacaoDataGridViewTextBoxColumn.Width = 133;
+            this.dataGridViewTextBoxColumn70.DataPropertyName = "DataRegistro";
+            this.dataGridViewTextBoxColumn70.HeaderText = "Data Registro";
+            this.dataGridViewTextBoxColumn70.Name = "dataGridViewTextBoxColumn70";
+            this.dataGridViewTextBoxColumn70.ReadOnly = true;
             // 
-            // dataRegistroDataGridViewTextBoxColumn2
+            // dataGridViewTextBoxColumn71
             // 
-            this.dataRegistroDataGridViewTextBoxColumn2.DataPropertyName = "DataRegistro";
-            this.dataRegistroDataGridViewTextBoxColumn2.HeaderText = "DataRegistro";
-            this.dataRegistroDataGridViewTextBoxColumn2.Name = "dataRegistroDataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn71.DataPropertyName = "Usuario";
+            this.dataGridViewTextBoxColumn71.HeaderText = "Usuario";
+            this.dataGridViewTextBoxColumn71.Name = "dataGridViewTextBoxColumn71";
+            this.dataGridViewTextBoxColumn71.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn30
+            // dgvExcluirMov
             // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "Usuario";
-            this.dataGridViewTextBoxColumn30.HeaderText = "Usuario";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.Width = 73;
-            // 
-            // movimentacaoBindingSource
-            // 
-            this.movimentacaoBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.Movimentacao);
+            this.dgvExcluirMov.HeaderText = "Exluir";
+            this.dgvExcluirMov.Name = "dgvExcluirMov";
+            this.dgvExcluirMov.ReadOnly = true;
+            this.dgvExcluirMov.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvExcluirMov.Text = "X";
+            this.dgvExcluirMov.ToolTipText = "Apaga o registro da linha selecionada";
+            this.dgvExcluirMov.UseColumnTextForButtonValue = true;
+            this.dgvExcluirMov.Width = 62;
             // 
             // tabControl1
             // 
@@ -999,15 +1342,15 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.TabParteEnvolvida);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabTPEnv);
             this.tabControl1.Controls.Add(this.TabTipoMov);
             this.tabControl1.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(11, 11);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1243, 731);
-            this.tabControl1.TabIndex = 1;
+            this.tabControl1.Size = new System.Drawing.Size(1365, 731);
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -1017,13 +1360,13 @@
             this.tabPage1.Controls.Add(this.btnCancelarEmpresa);
             this.tabPage1.Controls.Add(this.btnEditarEmpresa);
             this.tabPage1.Controls.Add(this.btnIncluirEmpresa);
-            this.tabPage1.Controls.Add(label5);
+            this.tabPage1.Controls.Add(lblEmpTitle);
             this.tabPage1.Controls.Add(this.panelEmpresa);
             this.tabPage1.Font = new System.Drawing.Font("Eras Medium ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1235, 702);
+            this.tabPage1.Size = new System.Drawing.Size(1357, 702);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Empresa";
             // 
@@ -1049,93 +1392,91 @@
             this.empresaDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.empresaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.empresaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.nomeFantasiaDataGridViewTextBoxColumn,
-            this.razaoSocialDataGridViewTextBoxColumn,
-            this.enderecoDataGridViewTextBoxColumn,
-            this.cEPDataGridViewTextBoxColumn,
-            this.foneDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.dataRegistroDataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn39,
+            this.dataGridViewTextBoxColumn40,
+            this.dataGridViewTextBoxColumn41,
+            this.dataGridViewTextBoxColumn42,
+            this.dataGridViewTextBoxColumn43,
+            this.dataGridViewTextBoxColumn44,
+            this.dataGridViewTextBoxColumn45,
+            this.dataGridViewTextBoxColumn46,
+            this.dataGridViewTextBoxColumn47,
             this.DeleteEmpColumn});
             this.empresaDataGridView.DataSource = this.empresaBindingSource;
-            this.empresaDataGridView.Location = new System.Drawing.Point(-52, 369);
+            this.empresaDataGridView.Location = new System.Drawing.Point(9, 369);
             this.empresaDataGridView.Name = "empresaDataGridView";
             this.empresaDataGridView.ReadOnly = true;
             this.empresaDataGridView.RowHeadersVisible = false;
-            this.empresaDataGridView.Size = new System.Drawing.Size(1342, 220);
+            this.empresaDataGridView.Size = new System.Drawing.Size(1271, 220);
             this.empresaDataGridView.TabIndex = 2;
             // 
-            // idDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn39
             // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Width = 50;
+            this.dataGridViewTextBoxColumn39.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn39.HeaderText = "Seq";
+            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
+            this.dataGridViewTextBoxColumn39.ReadOnly = true;
+            this.dataGridViewTextBoxColumn39.ToolTipText = "Número Sequêncial";
+            this.dataGridViewTextBoxColumn39.Width = 60;
             // 
-            // nomeFantasiaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn40
             // 
-            this.nomeFantasiaDataGridViewTextBoxColumn.DataPropertyName = "NomeFantasia";
-            this.nomeFantasiaDataGridViewTextBoxColumn.HeaderText = "Nome Fantasia";
-            this.nomeFantasiaDataGridViewTextBoxColumn.Name = "nomeFantasiaDataGridViewTextBoxColumn";
-            this.nomeFantasiaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeFantasiaDataGridViewTextBoxColumn.Width = 200;
+            this.dataGridViewTextBoxColumn40.DataPropertyName = "NomeFantasia";
+            this.dataGridViewTextBoxColumn40.HeaderText = "Nome Fantasia";
+            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
+            this.dataGridViewTextBoxColumn40.ReadOnly = true;
+            this.dataGridViewTextBoxColumn40.Width = 250;
             // 
-            // razaoSocialDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn41
             // 
-            this.razaoSocialDataGridViewTextBoxColumn.DataPropertyName = "RazaoSocial";
-            this.razaoSocialDataGridViewTextBoxColumn.HeaderText = "Razão Social";
-            this.razaoSocialDataGridViewTextBoxColumn.Name = "razaoSocialDataGridViewTextBoxColumn";
-            this.razaoSocialDataGridViewTextBoxColumn.ReadOnly = true;
-            this.razaoSocialDataGridViewTextBoxColumn.Width = 220;
+            this.dataGridViewTextBoxColumn41.DataPropertyName = "RazaoSocial";
+            this.dataGridViewTextBoxColumn41.HeaderText = "Razão Social";
+            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            this.dataGridViewTextBoxColumn41.ReadOnly = true;
+            this.dataGridViewTextBoxColumn41.Width = 200;
             // 
-            // enderecoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn42
             // 
-            this.enderecoDataGridViewTextBoxColumn.DataPropertyName = "Endereco";
-            this.enderecoDataGridViewTextBoxColumn.HeaderText = "Endereço";
-            this.enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
-            this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enderecoDataGridViewTextBoxColumn.Width = 220;
+            this.dataGridViewTextBoxColumn42.DataPropertyName = "Endereco";
+            this.dataGridViewTextBoxColumn42.HeaderText = "Endereço";
+            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
+            this.dataGridViewTextBoxColumn42.ReadOnly = true;
+            this.dataGridViewTextBoxColumn42.Width = 200;
             // 
-            // cEPDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn43
             // 
-            this.cEPDataGridViewTextBoxColumn.DataPropertyName = "CEP";
-            this.cEPDataGridViewTextBoxColumn.HeaderText = "CEP";
-            this.cEPDataGridViewTextBoxColumn.Name = "cEPDataGridViewTextBoxColumn";
-            this.cEPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn43.DataPropertyName = "CEP";
+            this.dataGridViewTextBoxColumn43.HeaderText = "CEP";
+            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+            this.dataGridViewTextBoxColumn43.ReadOnly = true;
             // 
-            // foneDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn44
             // 
-            this.foneDataGridViewTextBoxColumn.DataPropertyName = "Fone";
-            this.foneDataGridViewTextBoxColumn.HeaderText = "Fone";
-            this.foneDataGridViewTextBoxColumn.Name = "foneDataGridViewTextBoxColumn";
-            this.foneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn44.DataPropertyName = "Fone";
+            this.dataGridViewTextBoxColumn44.HeaderText = "Fone";
+            this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
+            this.dataGridViewTextBoxColumn44.ReadOnly = true;
             // 
-            // emailDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn45
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "E-mail";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 200;
+            this.dataGridViewTextBoxColumn45.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn45.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
+            this.dataGridViewTextBoxColumn45.ReadOnly = true;
             // 
-            // dataRegistroDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn46
             // 
-            this.dataRegistroDataGridViewTextBoxColumn1.DataPropertyName = "DataRegistro";
-            this.dataRegistroDataGridViewTextBoxColumn1.HeaderText = "Data de Registro";
-            this.dataRegistroDataGridViewTextBoxColumn1.Name = "dataRegistroDataGridViewTextBoxColumn1";
-            this.dataRegistroDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataRegistroDataGridViewTextBoxColumn1.ToolTipText = "Data de registro da operação deste item";
+            this.dataGridViewTextBoxColumn46.DataPropertyName = "DataRegistro";
+            this.dataGridViewTextBoxColumn46.HeaderText = "Data Registro";
+            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
+            this.dataGridViewTextBoxColumn46.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn12
+            // dataGridViewTextBoxColumn47
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Usuario";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Usuário";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.ToolTipText = "Usuário que realizou a operação";
+            this.dataGridViewTextBoxColumn47.DataPropertyName = "Usuario";
+            this.dataGridViewTextBoxColumn47.HeaderText = "Usuário";
+            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
+            this.dataGridViewTextBoxColumn47.ReadOnly = true;
             // 
             // DeleteEmpColumn
             // 
@@ -1145,10 +1486,6 @@
             this.DeleteEmpColumn.Text = "X";
             this.DeleteEmpColumn.UseColumnTextForButtonValue = true;
             this.DeleteEmpColumn.Width = 70;
-            // 
-            // empresaBindingSource
-            // 
-            this.empresaBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.Empresa);
             // 
             // btnCancelarEmpresa
             // 
@@ -1192,31 +1529,42 @@
             // 
             this.panelEmpresa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelEmpresa.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelEmpresa.Controls.Add(this.mskbxCEPEmp);
+            this.panelEmpresa.Controls.Add(this.mskbxFoneEmp);
             this.panelEmpresa.Controls.Add(cEPLabel);
-            this.panelEmpresa.Controls.Add(this.cEPTextBox);
             this.panelEmpresa.Controls.Add(emailLabel);
             this.panelEmpresa.Controls.Add(this.emailTextBox);
             this.panelEmpresa.Controls.Add(enderecoLabel);
             this.panelEmpresa.Controls.Add(this.enderecoTextBox);
             this.panelEmpresa.Controls.Add(foneLabel);
-            this.panelEmpresa.Controls.Add(this.foneTextBox);
             this.panelEmpresa.Controls.Add(nomeFantasiaLabel);
             this.panelEmpresa.Controls.Add(this.nomeFantasiaTextBox);
             this.panelEmpresa.Controls.Add(razaoSocialLabel);
             this.panelEmpresa.Controls.Add(this.razaoSocialTextBox);
-            this.panelEmpresa.Location = new System.Drawing.Point(136, 93);
+            this.panelEmpresa.Location = new System.Drawing.Point(197, 93);
             this.panelEmpresa.Name = "panelEmpresa";
             this.panelEmpresa.Size = new System.Drawing.Size(998, 178);
             this.panelEmpresa.TabIndex = 20;
             // 
-            // cEPTextBox
+            // mskbxCEPEmp
             // 
-            this.cEPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "CEP", true));
-            this.cEPTextBox.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cEPTextBox.Location = new System.Drawing.Point(853, 143);
-            this.cEPTextBox.Name = "cEPTextBox";
-            this.cEPTextBox.Size = new System.Drawing.Size(120, 26);
-            this.cEPTextBox.TabIndex = 5;
+            this.mskbxCEPEmp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "CEP", true));
+            this.mskbxCEPEmp.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskbxCEPEmp.Location = new System.Drawing.Point(879, 143);
+            this.mskbxCEPEmp.Mask = "99999-999";
+            this.mskbxCEPEmp.Name = "mskbxCEPEmp";
+            this.mskbxCEPEmp.Size = new System.Drawing.Size(94, 26);
+            this.mskbxCEPEmp.TabIndex = 21;
+            // 
+            // mskbxFoneEmp
+            // 
+            this.mskbxFoneEmp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "Fone", true));
+            this.mskbxFoneEmp.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskbxFoneEmp.Location = new System.Drawing.Point(856, 94);
+            this.mskbxFoneEmp.Mask = "(99) 9999-9999";
+            this.mskbxFoneEmp.Name = "mskbxFoneEmp";
+            this.mskbxFoneEmp.Size = new System.Drawing.Size(117, 26);
+            this.mskbxFoneEmp.TabIndex = 22;
             // 
             // emailTextBox
             // 
@@ -1224,7 +1572,7 @@
             this.emailTextBox.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTextBox.Location = new System.Drawing.Point(174, 98);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(426, 26);
+            this.emailTextBox.Size = new System.Drawing.Size(597, 26);
             this.emailTextBox.TabIndex = 2;
             // 
             // enderecoTextBox
@@ -1233,17 +1581,8 @@
             this.enderecoTextBox.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enderecoTextBox.Location = new System.Drawing.Point(174, 143);
             this.enderecoTextBox.Name = "enderecoTextBox";
-            this.enderecoTextBox.Size = new System.Drawing.Size(553, 26);
+            this.enderecoTextBox.Size = new System.Drawing.Size(632, 26);
             this.enderecoTextBox.TabIndex = 4;
-            // 
-            // foneTextBox
-            // 
-            this.foneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "Fone", true));
-            this.foneTextBox.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foneTextBox.Location = new System.Drawing.Point(798, 94);
-            this.foneTextBox.Name = "foneTextBox";
-            this.foneTextBox.Size = new System.Drawing.Size(175, 26);
-            this.foneTextBox.TabIndex = 3;
             // 
             // nomeFantasiaTextBox
             // 
@@ -1266,12 +1605,10 @@
             // TabParteEnvolvida
             // 
             this.TabParteEnvolvida.BackColor = System.Drawing.Color.Tan;
-            this.TabParteEnvolvida.Controls.Add(this.panel1);
-            this.TabParteEnvolvida.Controls.Add(this.button1);
-            this.TabParteEnvolvida.Controls.Add(this.button2);
-            this.TabParteEnvolvida.Controls.Add(this.button3);
-            this.TabParteEnvolvida.Controls.Add(this.btnIncluir);
-            this.TabParteEnvolvida.Controls.Add(label4);
+            this.TabParteEnvolvida.Controls.Add(this.panelPEnv);
+            this.TabParteEnvolvida.Controls.Add(this.btnEditPEnv);
+            this.TabParteEnvolvida.Controls.Add(this.btnIncluirPEnv);
+            this.TabParteEnvolvida.Controls.Add(lblPEnvTitle);
             this.TabParteEnvolvida.Controls.Add(dataRegistroLabel);
             this.TabParteEnvolvida.Controls.Add(this.dataRegistroDateTimePicker);
             this.TabParteEnvolvida.Controls.Add(usuarioLabel);
@@ -1280,147 +1617,150 @@
             this.TabParteEnvolvida.Location = new System.Drawing.Point(4, 25);
             this.TabParteEnvolvida.Name = "TabParteEnvolvida";
             this.TabParteEnvolvida.Padding = new System.Windows.Forms.Padding(3);
-            this.TabParteEnvolvida.Size = new System.Drawing.Size(1235, 702);
+            this.TabParteEnvolvida.Size = new System.Drawing.Size(1357, 702);
             this.TabParteEnvolvida.TabIndex = 6;
             this.TabParteEnvolvida.Text = "Parte Envolvida";
             // 
-            // panel1
+            // panelPEnv
             // 
-            this.panel1.Controls.Add(descricaoLabel);
-            this.panel1.Controls.Add(this.descricaoTextBox);
-            this.panel1.Controls.Add(cEPLabel1);
-            this.panel1.Controls.Add(this.cEPTextBox1);
-            this.panel1.Controls.Add(emailLabel1);
-            this.panel1.Controls.Add(this.emailTextBox1);
-            this.panel1.Controls.Add(enderecoLabel1);
-            this.panel1.Controls.Add(this.enderecoTextBox1);
-            this.panel1.Controls.Add(foneLabel1);
-            this.panel1.Controls.Add(this.foneTextBox1);
-            this.panel1.Controls.Add(idLabel1);
-            this.panel1.Controls.Add(this.idTextBox1);
-            this.panel1.Controls.Add(nomeLabel);
-            this.panel1.Controls.Add(this.nomeTextBox);
-            this.panel1.Controls.Add(tipoParteEnvolvida_fkLabel);
-            this.panel1.Controls.Add(this.tipoParteEnvolvida_fkTextBox);
-            this.panel1.Location = new System.Drawing.Point(40, 75);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(890, 217);
-            this.panel1.TabIndex = 28;
+            this.panelPEnv.Controls.Add(this.msktxtFone);
+            this.panelPEnv.Controls.Add(this.btnSalvarPEnv);
+            this.panelPEnv.Controls.Add(this.btnCancelPEnv);
+            this.panelPEnv.Controls.Add(this.msktxtCEP);
+            this.panelPEnv.Controls.Add(this.cboTPEnvolvida);
+            this.panelPEnv.Controls.Add(cEPLabel1);
+            this.panelPEnv.Controls.Add(emailLabel1);
+            this.panelPEnv.Controls.Add(this.txtEmailPEnv);
+            this.panelPEnv.Controls.Add(enderecoLabel1);
+            this.panelPEnv.Controls.Add(this.txtEnderecoPEnv);
+            this.panelPEnv.Controls.Add(foneLabel1);
+            this.panelPEnv.Controls.Add(idLabel1);
+            this.panelPEnv.Controls.Add(this.txtIdPEnv);
+            this.panelPEnv.Controls.Add(nomeLabel);
+            this.panelPEnv.Controls.Add(this.txtNomePEnv);
+            this.panelPEnv.Controls.Add(tipoParteEnvolvida_fkLabel);
+            this.panelPEnv.Location = new System.Drawing.Point(40, 75);
+            this.panelPEnv.Name = "panelPEnv";
+            this.panelPEnv.Size = new System.Drawing.Size(890, 217);
+            this.panelPEnv.TabIndex = 1;
             // 
-            // descricaoTextBox
+            // msktxtFone
             // 
-            this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "TipoParteEnvolvida.Descricao", true));
-            this.descricaoTextBox.Location = new System.Drawing.Point(87, 79);
-            this.descricaoTextBox.Name = "descricaoTextBox";
-            this.descricaoTextBox.Size = new System.Drawing.Size(707, 24);
-            this.descricaoTextBox.TabIndex = 36;
+            this.msktxtFone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Fone", true));
+            this.msktxtFone.Location = new System.Drawing.Point(120, 174);
+            this.msktxtFone.Mask = "(99) 9999-9999";
+            this.msktxtFone.Name = "msktxtFone";
+            this.msktxtFone.Size = new System.Drawing.Size(117, 24);
+            this.msktxtFone.TabIndex = 7;
             // 
-            // parteEnvolvidaBindingSource
+            // btnSalvarPEnv
             // 
-            this.parteEnvolvidaBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.ParteEnvolvida);
+            this.btnSalvarPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarPEnv.Location = new System.Drawing.Point(424, 175);
+            this.btnSalvarPEnv.Name = "btnSalvarPEnv";
+            this.btnSalvarPEnv.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarPEnv.TabIndex = 8;
+            this.btnSalvarPEnv.Text = "&Salvar";
+            this.toolTip1.SetToolTip(this.btnSalvarPEnv, "Gravas as informações inseridas nos campos");
+            this.btnSalvarPEnv.UseVisualStyleBackColor = true;
+            this.btnSalvarPEnv.Click += new System.EventHandler(this.btnSalvarPEnv_Click);
             // 
-            // cEPTextBox1
+            // btnCancelPEnv
             // 
-            this.cEPTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "CEP", true));
-            this.cEPTextBox1.Location = new System.Drawing.Point(87, 139);
-            this.cEPTextBox1.Name = "cEPTextBox1";
-            this.cEPTextBox1.Size = new System.Drawing.Size(252, 24);
-            this.cEPTextBox1.TabIndex = 22;
-            // 
-            // emailTextBox1
-            // 
-            this.emailTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Email", true));
-            this.emailTextBox1.Location = new System.Drawing.Point(449, 142);
-            this.emailTextBox1.Name = "emailTextBox1";
-            this.emailTextBox1.Size = new System.Drawing.Size(345, 24);
-            this.emailTextBox1.TabIndex = 24;
-            // 
-            // enderecoTextBox1
-            // 
-            this.enderecoTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Endereco", true));
-            this.enderecoTextBox1.Location = new System.Drawing.Point(87, 109);
-            this.enderecoTextBox1.Name = "enderecoTextBox1";
-            this.enderecoTextBox1.Size = new System.Drawing.Size(707, 24);
-            this.enderecoTextBox1.TabIndex = 26;
-            // 
-            // foneTextBox1
-            // 
-            this.foneTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Fone", true));
-            this.foneTextBox1.Location = new System.Drawing.Point(87, 169);
-            this.foneTextBox1.Name = "foneTextBox1";
-            this.foneTextBox1.Size = new System.Drawing.Size(252, 24);
-            this.foneTextBox1.TabIndex = 28;
-            // 
-            // idTextBox1
-            // 
-            this.idTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Id", true));
-            this.idTextBox1.Location = new System.Drawing.Point(87, 19);
-            this.idTextBox1.Name = "idTextBox1";
-            this.idTextBox1.ReadOnly = true;
-            this.idTextBox1.Size = new System.Drawing.Size(152, 24);
-            this.idTextBox1.TabIndex = 30;
-            // 
-            // nomeTextBox
-            // 
-            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(87, 49);
-            this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(707, 24);
-            this.nomeTextBox.TabIndex = 32;
-            // 
-            // tipoParteEnvolvida_fkTextBox
-            // 
-            this.tipoParteEnvolvida_fkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "TipoParteEnvolvida_fk", true));
-            this.tipoParteEnvolvida_fkTextBox.Location = new System.Drawing.Point(591, 16);
-            this.tipoParteEnvolvida_fkTextBox.Name = "tipoParteEnvolvida_fkTextBox";
-            this.tipoParteEnvolvida_fkTextBox.Size = new System.Drawing.Size(203, 24);
-            this.tipoParteEnvolvida_fkTextBox.TabIndex = 34;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(415, 319);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "&Salvar";
-            this.toolTip1.SetToolTip(this.button1, "Gravas as informações inseridas nos campos");
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(297, 319);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "&Cancelar";
-            this.toolTip1.SetToolTip(this.button2, "Desfaz os lançamentos feitos nos campos, impedindo que seja gravado no banco de d" +
+            this.btnCancelPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelPEnv.Location = new System.Drawing.Point(306, 175);
+            this.btnCancelPEnv.Name = "btnCancelPEnv";
+            this.btnCancelPEnv.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelPEnv.TabIndex = 9;
+            this.btnCancelPEnv.Text = "&Cancelar";
+            this.toolTip1.SetToolTip(this.btnCancelPEnv, "Desfaz os lançamentos feitos nos campos, impedindo que seja gravado no banco de d" +
         "ados");
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelPEnv.UseVisualStyleBackColor = true;
+            this.btnCancelPEnv.Click += new System.EventHandler(this.btnCancPEnv_Click);
             // 
-            // button3
+            // msktxtCEP
             // 
-            this.button3.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(179, 319);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "&Editar";
-            this.toolTip1.SetToolTip(this.button3, "Permite alterar os dados de uma empresa já cadastrada");
-            this.button3.UseVisualStyleBackColor = true;
+            this.msktxtCEP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "CEP", true));
+            this.msktxtCEP.Location = new System.Drawing.Point(120, 139);
+            this.msktxtCEP.Mask = "99999-999";
+            this.msktxtCEP.Name = "msktxtCEP";
+            this.msktxtCEP.Size = new System.Drawing.Size(94, 24);
+            this.msktxtCEP.TabIndex = 5;
             // 
-            // btnIncluir
+            // cboTPEnvolvida
             // 
-            this.btnIncluir.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluir.Location = new System.Drawing.Point(61, 319);
-            this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(75, 23);
-            this.btnIncluir.TabIndex = 24;
-            this.btnIncluir.Text = "I&ncluir";
-            this.toolTip1.SetToolTip(this.btnIncluir, "Abre os campos para novo lançamento de um novo registro de uma empresa não cadast" +
+            this.cboTPEnvolvida.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.parteEnvolvidaBindingSource, "TipoParteEnvolvida_fk", true));
+            this.cboTPEnvolvida.DataSource = this.tipoParteEnvolvidaBindingSource;
+            this.cboTPEnvolvida.DisplayMember = "Descricao";
+            this.cboTPEnvolvida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTPEnvolvida.FormattingEnabled = true;
+            this.cboTPEnvolvida.Location = new System.Drawing.Point(624, 14);
+            this.cboTPEnvolvida.Name = "cboTPEnvolvida";
+            this.cboTPEnvolvida.Size = new System.Drawing.Size(203, 24);
+            this.cboTPEnvolvida.TabIndex = 2;
+            this.cboTPEnvolvida.ValueMember = "Id";
+            // 
+            // tipoParteEnvolvidaBindingSource
+            // 
+            this.tipoParteEnvolvidaBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.TipoParteEnvolvida);
+            // 
+            // txtEmailPEnv
+            // 
+            this.txtEmailPEnv.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Email", true));
+            this.txtEmailPEnv.Location = new System.Drawing.Point(375, 142);
+            this.txtEmailPEnv.Name = "txtEmailPEnv";
+            this.txtEmailPEnv.Size = new System.Drawing.Size(452, 24);
+            this.txtEmailPEnv.TabIndex = 6;
+            // 
+            // txtEnderecoPEnv
+            // 
+            this.txtEnderecoPEnv.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Endereco", true));
+            this.txtEnderecoPEnv.Location = new System.Drawing.Point(120, 109);
+            this.txtEnderecoPEnv.Name = "txtEnderecoPEnv";
+            this.txtEnderecoPEnv.Size = new System.Drawing.Size(707, 24);
+            this.txtEnderecoPEnv.TabIndex = 4;
+            // 
+            // txtIdPEnv
+            // 
+            this.txtIdPEnv.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Id", true));
+            this.txtIdPEnv.Location = new System.Drawing.Point(120, 19);
+            this.txtIdPEnv.Name = "txtIdPEnv";
+            this.txtIdPEnv.ReadOnly = true;
+            this.txtIdPEnv.Size = new System.Drawing.Size(152, 24);
+            this.txtIdPEnv.TabIndex = 1;
+            // 
+            // txtNomePEnv
+            // 
+            this.txtNomePEnv.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.parteEnvolvidaBindingSource, "Nome", true));
+            this.txtNomePEnv.Location = new System.Drawing.Point(120, 49);
+            this.txtNomePEnv.Name = "txtNomePEnv";
+            this.txtNomePEnv.Size = new System.Drawing.Size(707, 24);
+            this.txtNomePEnv.TabIndex = 3;
+            // 
+            // btnEditPEnv
+            // 
+            this.btnEditPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPEnv.Location = new System.Drawing.Point(179, 319);
+            this.btnEditPEnv.Name = "btnEditPEnv";
+            this.btnEditPEnv.Size = new System.Drawing.Size(75, 23);
+            this.btnEditPEnv.TabIndex = 10;
+            this.btnEditPEnv.Text = "&Editar";
+            this.toolTip1.SetToolTip(this.btnEditPEnv, "Permite alterar os dados de uma empresa já cadastrada");
+            this.btnEditPEnv.UseVisualStyleBackColor = true;
+            this.btnEditPEnv.Click += new System.EventHandler(this.btnEditarPEnv_Click);
+            // 
+            // btnIncluirPEnv
+            // 
+            this.btnIncluirPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluirPEnv.Location = new System.Drawing.Point(61, 319);
+            this.btnIncluirPEnv.Name = "btnIncluirPEnv";
+            this.btnIncluirPEnv.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluirPEnv.TabIndex = 0;
+            this.btnIncluirPEnv.Text = "I&ncluir";
+            this.toolTip1.SetToolTip(this.btnIncluirPEnv, "Abre os campos para novo lançamento de um novo registro de uma empresa não cadast" +
         "rada");
-            this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluirPEnv.UseVisualStyleBackColor = true;
+            this.btnIncluirPEnv.Click += new System.EventHandler(this.btnIncluirPEnv_Click);
             // 
             // dataRegistroDateTimePicker
             // 
@@ -1441,299 +1781,400 @@
             // 
             // parteEnvolvidaDataGridView
             // 
+            this.parteEnvolvidaDataGridView.AllowUserToAddRows = false;
+            this.parteEnvolvidaDataGridView.AllowUserToDeleteRows = false;
             this.parteEnvolvidaDataGridView.AutoGenerateColumns = false;
+            this.parteEnvolvidaDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.parteEnvolvidaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.parteEnvolvidaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22});
+            this.dataGridViewTextBoxColumn32,
+            this.nomeDataGridViewTextBoxColumn,
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewTextBoxColumn34,
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn36,
+            this.dataGridViewTextBoxColumn37,
+            this.dataGridViewTextBoxColumn38,
+            this.BtnExcluirPEnv});
             this.parteEnvolvidaDataGridView.DataSource = this.parteEnvolvidaBindingSource;
-            this.parteEnvolvidaDataGridView.Location = new System.Drawing.Point(51, 377);
+            this.parteEnvolvidaDataGridView.Location = new System.Drawing.Point(40, 378);
             this.parteEnvolvidaDataGridView.Name = "parteEnvolvidaDataGridView";
-            this.parteEnvolvidaDataGridView.Size = new System.Drawing.Size(1142, 220);
+            this.parteEnvolvidaDataGridView.ReadOnly = true;
+            this.parteEnvolvidaDataGridView.Size = new System.Drawing.Size(1258, 220);
             this.parteEnvolvidaDataGridView.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn13
+            // dataGridViewTextBoxColumn32
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 70;
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Seq";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.ReadOnly = true;
+            this.dataGridViewTextBoxColumn32.ToolTipText = "Número Sequêncial";
+            this.dataGridViewTextBoxColumn32.Width = 80;
             // 
-            // dataGridViewTextBoxColumn14
+            // nomeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Nome";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 300;
             // 
-            // dataGridViewTextBoxColumn15
+            // tipoParteEnvolvidafkDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "TipoParteEnvolvida_fk";
-            this.dataGridViewTextBoxColumn15.HeaderText = "TipoParteEnvolvida_fk";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.DataPropertyName = "TipoParteEnvolvida_fk";
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.DataSource = this.tipoParteEnvolvidaBindingSource;
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.DisplayMember = "Descricao";
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.Name = "tipoParteEnvolvidafkDataGridViewTextBoxColumn";
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.ValueMember = "Id";
+            this.tipoParteEnvolvidafkDataGridViewTextBoxColumn.Width = 150;
             // 
-            // dataGridViewTextBoxColumn16
+            // dataGridViewTextBoxColumn33
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "Endereco";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Endereco";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "Endereco";
+            this.dataGridViewTextBoxColumn33.HeaderText = "Endereço";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn17
+            // dataGridViewTextBoxColumn34
             // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "CEP";
-            this.dataGridViewTextBoxColumn17.HeaderText = "CEP";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "CEP";
+            this.dataGridViewTextBoxColumn34.HeaderText = "CEP";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn18
+            // dataGridViewTextBoxColumn35
             // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "Fone";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Fone";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "Fone";
+            this.dataGridViewTextBoxColumn35.HeaderText = "Fone";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn19
+            // dataGridViewTextBoxColumn36
             // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn36.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn20
+            // dataGridViewTextBoxColumn37
             // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "DataRegistro";
-            this.dataGridViewTextBoxColumn20.HeaderText = "DataRegistro";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "DataRegistro";
+            this.dataGridViewTextBoxColumn37.HeaderText = "Data Registro";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn21
+            // dataGridViewTextBoxColumn38
             // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "Usuario";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Usuario";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "Usuario";
+            this.dataGridViewTextBoxColumn38.HeaderText = "Usuário";
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn22
+            // BtnExcluirPEnv
             // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "TipoParteEnvolvida";
-            this.dataGridViewTextBoxColumn22.HeaderText = "TipoParteEnvolvida";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.BtnExcluirPEnv.HeaderText = "Excluir";
+            this.BtnExcluirPEnv.Name = "BtnExcluirPEnv";
+            this.BtnExcluirPEnv.ReadOnly = true;
+            this.BtnExcluirPEnv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.BtnExcluirPEnv.Text = "X";
+            this.BtnExcluirPEnv.ToolTipText = "Apaga o registro da linha selecionada";
+            this.BtnExcluirPEnv.UseColumnTextForButtonValue = true;
+            this.BtnExcluirPEnv.Width = 70;
             // 
-            // tabPage3
+            // tabTPEnv
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Tan;
-            this.tabPage3.Controls.Add(this.panelPEnv);
-            this.tabPage3.Controls.Add(this.btnEditarPEnv);
-            this.tabPage3.Controls.Add(this.btnIncluirPEnv);
-            this.tabPage3.Controls.Add(label6);
-            this.tabPage3.Controls.Add(this.tipoParteEnvolvidaDataGridView);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1235, 702);
-            this.tabPage3.TabIndex = 7;
-            this.tabPage3.Text = "Tipo Parte Envolvida";
+            this.tabTPEnv.BackColor = System.Drawing.Color.Tan;
+            this.tabTPEnv.Controls.Add(this.panelTPEnv);
+            this.tabTPEnv.Controls.Add(this.btnEditTPEnv);
+            this.tabTPEnv.Controls.Add(this.btnIncluirTPEnv);
+            this.tabTPEnv.Controls.Add(lblTPEnvTitle);
+            this.tabTPEnv.Controls.Add(this.tipoParteEnvolvidaDataGridView);
+            this.tabTPEnv.Location = new System.Drawing.Point(4, 25);
+            this.tabTPEnv.Name = "tabTPEnv";
+            this.tabTPEnv.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTPEnv.Size = new System.Drawing.Size(1357, 702);
+            this.tabTPEnv.TabIndex = 7;
+            this.tabTPEnv.Text = "Tipo Parte Envolvida";
             // 
-            // panelPEnv
+            // panelTPEnv
             // 
-            this.panelPEnv.Controls.Add(label9);
-            this.panelPEnv.Controls.Add(this.btnSalvarPEnv);
-            this.panelPEnv.Controls.Add(this.btnCancPEnv);
-            this.panelPEnv.Controls.Add(label10);
-            this.panelPEnv.Controls.Add(this.descricaoPEnv);
-            this.panelPEnv.Controls.Add(this.idTextBox3);
-            this.panelPEnv.Location = new System.Drawing.Point(55, 147);
-            this.panelPEnv.Name = "panelPEnv";
-            this.panelPEnv.Size = new System.Drawing.Size(405, 88);
-            this.panelPEnv.TabIndex = 18;
+            this.panelTPEnv.Controls.Add(lblidTPEnv);
+            this.panelTPEnv.Controls.Add(this.btnSalvarTPEnv);
+            this.panelTPEnv.Controls.Add(this.btnCancTPEnv);
+            this.panelTPEnv.Controls.Add(lblDescricaoTPEnv);
+            this.panelTPEnv.Controls.Add(this.descricaoTPEnv);
+            this.panelTPEnv.Controls.Add(this.txtIdTPEnv);
+            this.panelTPEnv.Location = new System.Drawing.Point(55, 147);
+            this.panelTPEnv.Name = "panelTPEnv";
+            this.panelTPEnv.Size = new System.Drawing.Size(405, 88);
+            this.panelTPEnv.TabIndex = 18;
             // 
-            // btnSalvarPEnv
+            // btnSalvarTPEnv
             // 
-            this.btnSalvarPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarPEnv.Location = new System.Drawing.Point(314, 10);
-            this.btnSalvarPEnv.Name = "btnSalvarPEnv";
-            this.btnSalvarPEnv.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvarPEnv.TabIndex = 1;
-            this.btnSalvarPEnv.Text = "&Salvar";
-            this.btnSalvarPEnv.UseVisualStyleBackColor = true;
-            this.btnSalvarPEnv.Click += new System.EventHandler(this.btnSalvarPEnv_Click);
+            this.btnSalvarTPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarTPEnv.Location = new System.Drawing.Point(314, 10);
+            this.btnSalvarTPEnv.Name = "btnSalvarTPEnv";
+            this.btnSalvarTPEnv.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarTPEnv.TabIndex = 1;
+            this.btnSalvarTPEnv.Text = "&Salvar";
+            this.btnSalvarTPEnv.UseVisualStyleBackColor = true;
+            this.btnSalvarTPEnv.Click += new System.EventHandler(this.btnSalvarTPEnv_Click);
             // 
-            // btnCancPEnv
+            // btnCancTPEnv
             // 
-            this.btnCancPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancPEnv.Location = new System.Drawing.Point(314, 53);
-            this.btnCancPEnv.Name = "btnCancPEnv";
-            this.btnCancPEnv.Size = new System.Drawing.Size(75, 23);
-            this.btnCancPEnv.TabIndex = 2;
-            this.btnCancPEnv.Text = "&Cancelar";
-            this.btnCancPEnv.UseVisualStyleBackColor = true;
-            this.btnCancPEnv.Click += new System.EventHandler(this.btnCancPEnv_Click);
+            this.btnCancTPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancTPEnv.Location = new System.Drawing.Point(314, 53);
+            this.btnCancTPEnv.Name = "btnCancTPEnv";
+            this.btnCancTPEnv.Size = new System.Drawing.Size(75, 23);
+            this.btnCancTPEnv.TabIndex = 2;
+            this.btnCancTPEnv.Text = "&Cancelar";
+            this.btnCancTPEnv.UseVisualStyleBackColor = true;
+            this.btnCancTPEnv.Click += new System.EventHandler(this.btnCancTPEnv_Click);
             // 
-            // descricaoPEnv
+            // descricaoTPEnv
             // 
-            this.descricaoPEnv.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoParteEnvolvidaBindingSource, "Descricao", true));
-            this.descricaoPEnv.Location = new System.Drawing.Point(124, 49);
-            this.descricaoPEnv.Name = "descricaoPEnv";
-            this.descricaoPEnv.Size = new System.Drawing.Size(184, 24);
-            this.descricaoPEnv.TabIndex = 2;
+            this.descricaoTPEnv.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoParteEnvolvidaBindingSource, "Descricao", true));
+            this.descricaoTPEnv.Location = new System.Drawing.Point(124, 49);
+            this.descricaoTPEnv.Name = "descricaoTPEnv";
+            this.descricaoTPEnv.Size = new System.Drawing.Size(184, 24);
+            this.descricaoTPEnv.TabIndex = 2;
             // 
-            // tipoParteEnvolvidaBindingSource
+            // txtIdTPEnv
             // 
-            this.tipoParteEnvolvidaBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.TipoParteEnvolvida);
+            this.txtIdTPEnv.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoParteEnvolvidaBindingSource, "Id", true));
+            this.txtIdTPEnv.Location = new System.Drawing.Point(124, 9);
+            this.txtIdTPEnv.Name = "txtIdTPEnv";
+            this.txtIdTPEnv.ReadOnly = true;
+            this.txtIdTPEnv.Size = new System.Drawing.Size(100, 24);
+            this.txtIdTPEnv.TabIndex = 4;
             // 
-            // idTextBox3
+            // btnEditTPEnv
             // 
-            this.idTextBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoParteEnvolvidaBindingSource, "Id", true));
-            this.idTextBox3.Location = new System.Drawing.Point(124, 9);
-            this.idTextBox3.Name = "idTextBox3";
-            this.idTextBox3.ReadOnly = true;
-            this.idTextBox3.Size = new System.Drawing.Size(100, 24);
-            this.idTextBox3.TabIndex = 4;
+            this.btnEditTPEnv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEditTPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditTPEnv.Location = new System.Drawing.Point(369, 247);
+            this.btnEditTPEnv.Name = "btnEditTPEnv";
+            this.btnEditTPEnv.Size = new System.Drawing.Size(75, 23);
+            this.btnEditTPEnv.TabIndex = 16;
+            this.btnEditTPEnv.Text = "&Editar";
+            this.btnEditTPEnv.UseVisualStyleBackColor = true;
+            this.btnEditTPEnv.Click += new System.EventHandler(this.btnEditarTPEnv_Click);
             // 
-            // btnEditarPEnv
+            // btnIncluirTPEnv
             // 
-            this.btnEditarPEnv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnEditarPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarPEnv.Location = new System.Drawing.Point(369, 247);
-            this.btnEditarPEnv.Name = "btnEditarPEnv";
-            this.btnEditarPEnv.Size = new System.Drawing.Size(75, 23);
-            this.btnEditarPEnv.TabIndex = 16;
-            this.btnEditarPEnv.Text = "&Editar";
-            this.btnEditarPEnv.UseVisualStyleBackColor = true;
-            this.btnEditarPEnv.Click += new System.EventHandler(this.btnEditarPEnv_Click);
-            // 
-            // btnIncluirPEnv
-            // 
-            this.btnIncluirPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluirPEnv.Location = new System.Drawing.Point(264, 247);
-            this.btnIncluirPEnv.Name = "btnIncluirPEnv";
-            this.btnIncluirPEnv.Size = new System.Drawing.Size(75, 23);
-            this.btnIncluirPEnv.TabIndex = 17;
-            this.btnIncluirPEnv.Text = "I&ncluir";
-            this.btnIncluirPEnv.UseVisualStyleBackColor = true;
-            this.btnIncluirPEnv.Click += new System.EventHandler(this.btnIncluirPEnv_Click);
+            this.btnIncluirTPEnv.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluirTPEnv.Location = new System.Drawing.Point(264, 247);
+            this.btnIncluirTPEnv.Name = "btnIncluirTPEnv";
+            this.btnIncluirTPEnv.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluirTPEnv.TabIndex = 17;
+            this.btnIncluirTPEnv.Text = "I&ncluir";
+            this.btnIncluirTPEnv.UseVisualStyleBackColor = true;
+            this.btnIncluirTPEnv.Click += new System.EventHandler(this.btnIncluirTPEnv_Click);
             // 
             // tipoParteEnvolvidaDataGridView
             // 
             this.tipoParteEnvolvidaDataGridView.AllowUserToAddRows = false;
             this.tipoParteEnvolvidaDataGridView.AllowUserToDeleteRows = false;
             this.tipoParteEnvolvidaDataGridView.AutoGenerateColumns = false;
+            this.tipoParteEnvolvidaDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.tipoParteEnvolvidaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tipoParteEnvolvidaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.descricaoDataGridViewTextBoxColumn1,
-            this.dataRegistroDataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn24,
-            this.btnExcluirPEnv});
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn31,
+            this.btnExcluirTPEnv});
             this.tipoParteEnvolvidaDataGridView.DataSource = this.tipoParteEnvolvidaBindingSource;
             this.tipoParteEnvolvidaDataGridView.Location = new System.Drawing.Point(540, 147);
             this.tipoParteEnvolvidaDataGridView.Name = "tipoParteEnvolvidaDataGridView";
             this.tipoParteEnvolvidaDataGridView.ReadOnly = true;
-            this.tipoParteEnvolvidaDataGridView.Size = new System.Drawing.Size(485, 220);
+            this.tipoParteEnvolvidaDataGridView.Size = new System.Drawing.Size(563, 220);
             this.tipoParteEnvolvidaDataGridView.TabIndex = 0;
             // 
-            // idDataGridViewTextBoxColumn2
+            // dataGridViewTextBoxColumn15
             // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn2.Width = 70;
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Seq";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.ToolTipText = "Número Sequêncial";
             // 
-            // descricaoDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn25
             // 
-            this.descricaoDataGridViewTextBoxColumn1.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn1.HeaderText = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn1.Name = "descricaoDataGridViewTextBoxColumn1";
-            this.descricaoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.Width = 150;
             // 
-            // dataRegistroDataGridViewTextBoxColumn3
+            // dataGridViewTextBoxColumn26
             // 
-            this.dataRegistroDataGridViewTextBoxColumn3.DataPropertyName = "DataRegistro";
-            this.dataRegistroDataGridViewTextBoxColumn3.HeaderText = "DataRegistro";
-            this.dataRegistroDataGridViewTextBoxColumn3.Name = "dataRegistroDataGridViewTextBoxColumn3";
-            this.dataRegistroDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "DataRegistro";
+            this.dataGridViewTextBoxColumn26.HeaderText = "Data Registro";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn24
+            // dataGridViewTextBoxColumn31
             // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "Usuario";
-            this.dataGridViewTextBoxColumn24.HeaderText = "Usuario";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "Usuario";
+            this.dataGridViewTextBoxColumn31.HeaderText = "Usuário";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.ReadOnly = true;
             // 
-            // btnExcluirPEnv
+            // btnExcluirTPEnv
             // 
-            this.btnExcluirPEnv.HeaderText = "Excluir";
-            this.btnExcluirPEnv.Name = "btnExcluirPEnv";
-            this.btnExcluirPEnv.ReadOnly = true;
-            this.btnExcluirPEnv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnExcluirPEnv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnExcluirPEnv.Text = "X";
-            this.btnExcluirPEnv.ToolTipText = "Apaga o registro da linha selecionada";
-            this.btnExcluirPEnv.Width = 70;
+            this.btnExcluirTPEnv.HeaderText = "Excluir";
+            this.btnExcluirTPEnv.Name = "btnExcluirTPEnv";
+            this.btnExcluirTPEnv.ReadOnly = true;
+            this.btnExcluirTPEnv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnExcluirTPEnv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnExcluirTPEnv.Text = "X";
+            this.btnExcluirTPEnv.ToolTipText = "Apaga o registro da linha selecionada";
+            this.btnExcluirTPEnv.UseColumnTextForButtonValue = true;
+            this.btnExcluirTPEnv.Width = 70;
             // 
             // TabTipoMov
             // 
             this.TabTipoMov.BackColor = System.Drawing.Color.Tan;
-            this.TabTipoMov.Controls.Add(label7);
-            this.TabTipoMov.Controls.Add(idLabel4);
-            this.TabTipoMov.Controls.Add(this.idTextBox4);
-            this.TabTipoMov.Controls.Add(tipoMovimentacao1Label);
-            this.TabTipoMov.Controls.Add(this.tipoMovimentacao1TextBox);
+            this.TabTipoMov.Controls.Add(this.panelTMov);
+            this.TabTipoMov.Controls.Add(this.btnEditTMov);
+            this.TabTipoMov.Controls.Add(this.btnIncluirTMov);
+            this.TabTipoMov.Controls.Add(lblTMovTitle);
             this.TabTipoMov.Controls.Add(this.tipoMovimentacaoDataGridView);
             this.TabTipoMov.Location = new System.Drawing.Point(4, 25);
             this.TabTipoMov.Name = "TabTipoMov";
             this.TabTipoMov.Padding = new System.Windows.Forms.Padding(3);
-            this.TabTipoMov.Size = new System.Drawing.Size(1235, 702);
+            this.TabTipoMov.Size = new System.Drawing.Size(1357, 702);
             this.TabTipoMov.TabIndex = 8;
             this.TabTipoMov.Text = "Tipo de Movimentação";
             // 
-            // idTextBox4
+            // panelTMov
             // 
-            this.idTextBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoMovimentacaoBindingSource, "Id", true));
-            this.idTextBox4.Location = new System.Drawing.Point(269, 207);
-            this.idTextBox4.Name = "idTextBox4";
-            this.idTextBox4.Size = new System.Drawing.Size(100, 24);
-            this.idTextBox4.TabIndex = 2;
+            this.panelTMov.Controls.Add(this.btnSalvarTMov);
+            this.panelTMov.Controls.Add(this.btnCancelTMov);
+            this.panelTMov.Controls.Add(tipoMovimentacao1Label);
+            this.panelTMov.Controls.Add(this.descricaoTMov);
+            this.panelTMov.Controls.Add(idLabel4);
+            this.panelTMov.Controls.Add(this.txtIdTMov);
+            this.panelTMov.Location = new System.Drawing.Point(69, 206);
+            this.panelTMov.Name = "panelTMov";
+            this.panelTMov.Size = new System.Drawing.Size(405, 88);
+            this.panelTMov.TabIndex = 21;
             // 
-            // tipoMovimentacaoBindingSource
+            // btnSalvarTMov
             // 
-            this.tipoMovimentacaoBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.TipoMovimentacao);
+            this.btnSalvarTMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarTMov.Location = new System.Drawing.Point(314, 10);
+            this.btnSalvarTMov.Name = "btnSalvarTMov";
+            this.btnSalvarTMov.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarTMov.TabIndex = 1;
+            this.btnSalvarTMov.Text = "&Salvar";
+            this.btnSalvarTMov.UseVisualStyleBackColor = true;
+            this.btnSalvarTMov.Click += new System.EventHandler(this.btnSalvarTMov_Click);
             // 
-            // tipoMovimentacao1TextBox
+            // btnCancelTMov
             // 
-            this.tipoMovimentacao1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoMovimentacaoBindingSource, "TipoMovimentacao1", true));
-            this.tipoMovimentacao1TextBox.Location = new System.Drawing.Point(269, 237);
-            this.tipoMovimentacao1TextBox.Name = "tipoMovimentacao1TextBox";
-            this.tipoMovimentacao1TextBox.Size = new System.Drawing.Size(100, 24);
-            this.tipoMovimentacao1TextBox.TabIndex = 4;
+            this.btnCancelTMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelTMov.Location = new System.Drawing.Point(314, 53);
+            this.btnCancelTMov.Name = "btnCancelTMov";
+            this.btnCancelTMov.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelTMov.TabIndex = 2;
+            this.btnCancelTMov.Text = "&Cancelar";
+            this.btnCancelTMov.UseVisualStyleBackColor = true;
+            this.btnCancelTMov.Click += new System.EventHandler(this.btnCancTMov_Click);
+            // 
+            // descricaoTMov
+            // 
+            this.descricaoTMov.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoMovimentacaoBindingSource, "TipoMovimentacao1", true));
+            this.descricaoTMov.Location = new System.Drawing.Point(180, 46);
+            this.descricaoTMov.Name = "descricaoTMov";
+            this.descricaoTMov.Size = new System.Drawing.Size(100, 24);
+            this.descricaoTMov.TabIndex = 4;
+            // 
+            // txtIdTMov
+            // 
+            this.txtIdTMov.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoMovimentacaoBindingSource, "Id", true));
+            this.txtIdTMov.Location = new System.Drawing.Point(180, 16);
+            this.txtIdTMov.Name = "txtIdTMov";
+            this.txtIdTMov.ReadOnly = true;
+            this.txtIdTMov.Size = new System.Drawing.Size(100, 24);
+            this.txtIdTMov.TabIndex = 2;
+            // 
+            // btnEditTMov
+            // 
+            this.btnEditTMov.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEditTMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditTMov.Location = new System.Drawing.Point(383, 300);
+            this.btnEditTMov.Name = "btnEditTMov";
+            this.btnEditTMov.Size = new System.Drawing.Size(75, 23);
+            this.btnEditTMov.TabIndex = 19;
+            this.btnEditTMov.Text = "&Editar";
+            this.btnEditTMov.UseVisualStyleBackColor = true;
+            this.btnEditTMov.Click += new System.EventHandler(this.btnEditarTMov_Click);
+            // 
+            // btnIncluirTMov
+            // 
+            this.btnIncluirTMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluirTMov.Location = new System.Drawing.Point(278, 300);
+            this.btnIncluirTMov.Name = "btnIncluirTMov";
+            this.btnIncluirTMov.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluirTMov.TabIndex = 20;
+            this.btnIncluirTMov.Text = "I&ncluir";
+            this.btnIncluirTMov.UseVisualStyleBackColor = true;
+            this.btnIncluirTMov.Click += new System.EventHandler(this.btnIncluirTMov_Click);
             // 
             // tipoMovimentacaoDataGridView
             // 
+            this.tipoMovimentacaoDataGridView.AllowUserToAddRows = false;
+            this.tipoMovimentacaoDataGridView.AllowUserToDeleteRows = false;
             this.tipoMovimentacaoDataGridView.AutoGenerateColumns = false;
-            this.tipoMovimentacaoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tipoMovimentacaoDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.tipoMovimentacaoDataGridView.ColumnHeadersHeight = 30;
+            this.tipoMovimentacaoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.tipoMovimentacaoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28});
+            this.dataGridViewTextBoxColumn13,
+            this.tipoMovimentacao1DataGridViewTextBoxColumn,
+            this.BtnExcluirTMov});
             this.tipoMovimentacaoDataGridView.DataSource = this.tipoMovimentacaoBindingSource;
-            this.tipoMovimentacaoDataGridView.Location = new System.Drawing.Point(544, 147);
+            this.tipoMovimentacaoDataGridView.Location = new System.Drawing.Point(601, 150);
             this.tipoMovimentacaoDataGridView.Name = "tipoMovimentacaoDataGridView";
-            this.tipoMovimentacaoDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.tipoMovimentacaoDataGridView.ReadOnly = true;
+            this.tipoMovimentacaoDataGridView.Size = new System.Drawing.Size(373, 220);
             this.tipoMovimentacaoDataGridView.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn27
+            // dataGridViewTextBoxColumn13
             // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Seq";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 60;
             // 
-            // dataGridViewTextBoxColumn28
+            // tipoMovimentacao1DataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "TipoMovimentacao1";
-            this.dataGridViewTextBoxColumn28.HeaderText = "TipoMovimentacao1";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.tipoMovimentacao1DataGridViewTextBoxColumn.DataPropertyName = "TipoMovimentacao1";
+            this.tipoMovimentacao1DataGridViewTextBoxColumn.HeaderText = "Tipo Movimentação";
+            this.tipoMovimentacao1DataGridViewTextBoxColumn.Name = "tipoMovimentacao1DataGridViewTextBoxColumn";
+            this.tipoMovimentacao1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoMovimentacao1DataGridViewTextBoxColumn.Width = 200;
+            // 
+            // BtnExcluirTMov
+            // 
+            this.BtnExcluirTMov.HeaderText = "Excluir";
+            this.BtnExcluirTMov.Name = "BtnExcluirTMov";
+            this.BtnExcluirTMov.ReadOnly = true;
+            this.BtnExcluirTMov.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.BtnExcluirTMov.Text = "X";
+            this.BtnExcluirTMov.ToolTipText = "Apaga o registro da linha selecionada";
+            this.BtnExcluirTMov.UseColumnTextForButtonValue = true;
+            this.BtnExcluirTMov.Width = 70;
             // 
             // toolTip1
             // 
@@ -1750,7 +2191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Sienna;
-            this.ClientSize = new System.Drawing.Size(1268, 731);
+            this.ClientSize = new System.Drawing.Size(1364, 742);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1767,34 +2208,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCompetencia)).EndInit();
             this.tabPageCxDiario.ResumeLayout(false);
             this.tabPageCxDiario.PerformLayout();
+            this.panelMov.ResumeLayout(false);
+            this.panelMov.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentacaoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoMovimentacaoBindingSource)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentacaoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMov)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresaDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
             this.panelEmpresa.ResumeLayout(false);
             this.panelEmpresa.PerformLayout();
             this.TabParteEnvolvida.ResumeLayout(false);
             this.TabParteEnvolvida.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaDataGridView)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.panelPEnv.ResumeLayout(false);
             this.panelPEnv.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoParteEnvolvidaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaDataGridView)).EndInit();
+            this.tabTPEnv.ResumeLayout(false);
+            this.tabTPEnv.PerformLayout();
+            this.panelTPEnv.ResumeLayout(false);
+            this.panelTPEnv.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoParteEnvolvidaDataGridView)).EndInit();
             this.TabTipoMov.ResumeLayout(false);
             this.TabTipoMov.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoMovimentacaoBindingSource)).EndInit();
+            this.panelTMov.ResumeLayout(false);
+            this.panelTMov.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoMovimentacaoDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -1817,7 +2261,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView DataGridViewCompetencia;
         private System.Windows.Forms.TabPage tabPageCxDiario;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewMov;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnSalvarComp;
@@ -1826,20 +2270,16 @@
         private System.Windows.Forms.Button btnIncluirComp;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblEmpTelaMov;
         private System.Windows.Forms.Panel panelComp;
-        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox txtIdComp;
         private System.Windows.Forms.TextBox textBoxPesquisa;
         private System.Windows.Forms.Button btnEditarEmpresa;
         private System.Windows.Forms.Button btnIncluirEmpresa;
         private System.Windows.Forms.Panel panelEmpresa;
-        private System.Windows.Forms.TextBox cEPTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox enderecoTextBox;
-        private System.Windows.Forms.TextBox foneTextBox;
         private System.Windows.Forms.TextBox nomeFantasiaTextBox;
         private System.Windows.Forms.TextBox razaoSocialTextBox;
         private System.Windows.Forms.DataGridView empresaDataGridView;
@@ -1858,11 +2298,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn compNomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewButtonColumn DeleteColumn;
         private System.Windows.Forms.BindingSource competenciaBindingSource;
         private System.Windows.Forms.BindingSource empresaBindingSource;
         private System.Windows.Forms.TabPage TabParteEnvolvida;
@@ -1870,28 +2305,17 @@
         private System.Windows.Forms.DateTimePicker dataRegistroDateTimePicker;
         private System.Windows.Forms.TextBox usuarioTextBox;
         private System.Windows.Forms.DataGridView parteEnvolvidaDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox descricaoPEnv;
-        private System.Windows.Forms.TextBox idTextBox3;
+        private System.Windows.Forms.TabPage tabTPEnv;
+        private System.Windows.Forms.TextBox descricaoTPEnv;
+        private System.Windows.Forms.TextBox txtIdTPEnv;
         private System.Windows.Forms.DataGridView tipoParteEnvolvidaDataGridView;
         private System.Windows.Forms.TabPage TabTipoMov;
-        private System.Windows.Forms.TextBox idTextBox4;
+        private System.Windows.Forms.TextBox txtIdTMov;
         private System.Windows.Forms.BindingSource tipoMovimentacaoBindingSource;
-        private System.Windows.Forms.TextBox tipoMovimentacao1TextBox;
+        private System.Windows.Forms.TextBox descricaoTMov;
         private System.Windows.Forms.DataGridView tipoMovimentacaoDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeFantasiaDataGridViewTextBoxColumn;
@@ -1902,46 +2326,121 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewButtonColumn DeleteEmpColumn;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoMovimentacaofkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn parteEnvolvidafkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn competenciafkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empresafkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox cmbEmpMov;
         private System.Windows.Forms.DataGridViewTextBoxColumn competenciaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empresaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoMovimentacaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.BindingSource movimentacaoBindingSource;
-        private System.Windows.Forms.Panel panelPEnv;
-        private System.Windows.Forms.Button btnSalvarPEnv;
-        private System.Windows.Forms.Button btnCancPEnv;
-        private System.Windows.Forms.Button btnEditarPEnv;
-        private System.Windows.Forms.Button btnIncluirPEnv;
+        private System.Windows.Forms.Panel panelTPEnv;
+        private System.Windows.Forms.Button btnSalvarTPEnv;
+        private System.Windows.Forms.Button btnCancTPEnv;
+        private System.Windows.Forms.Button btnEditTPEnv;
+        private System.Windows.Forms.Button btnIncluirTPEnv;
         private System.Windows.Forms.BindingSource tipoParteEnvolvidaBindingSource;
+        private System.Windows.Forms.Button btnSalvarPEnv;
+        private System.Windows.Forms.Button btnCancelPEnv;
+        private System.Windows.Forms.Button btnEditPEnv;
+        private System.Windows.Forms.Button btnIncluirPEnv;
+        private System.Windows.Forms.Panel panelPEnv;
+        private System.Windows.Forms.TextBox txtEmailPEnv;
+        private System.Windows.Forms.TextBox txtEnderecoPEnv;
+        private System.Windows.Forms.TextBox txtIdPEnv;
+        private System.Windows.Forms.TextBox txtNomePEnv;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Panel panelTMov;
+        private System.Windows.Forms.Button btnSalvarTMov;
+        private System.Windows.Forms.Button btnCancelTMov;
+        private System.Windows.Forms.Button btnEditTMov;
+        private System.Windows.Forms.Button btnIncluirTMov;
+        private System.Windows.Forms.ComboBox cboTPEnvolvida;
+        private System.Windows.Forms.MaskedTextBox msktxtFone;
+        private System.Windows.Forms.MaskedTextBox msktxtCEP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewButtonColumn btnExcluirPEnv;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnIncluir;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox descricaoTextBox;
-        private System.Windows.Forms.TextBox cEPTextBox1;
-        private System.Windows.Forms.TextBox emailTextBox1;
-        private System.Windows.Forms.TextBox enderecoTextBox1;
-        private System.Windows.Forms.TextBox foneTextBox1;
-        private System.Windows.Forms.TextBox idTextBox1;
-        private System.Windows.Forms.TextBox nomeTextBox;
-        private System.Windows.Forms.TextBox tipoParteEnvolvida_fkTextBox;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.MaskedTextBox mskbxCEPEmp;
+        private System.Windows.Forms.MaskedTextBox mskbxFoneEmp;
+        private System.Windows.Forms.Label lblCompTelaMov;
+        private System.Windows.Forms.Panel panelMov;
+        private System.Windows.Forms.TextBox txtIdMov;
+        private System.Windows.Forms.TextBox txtDescricaoMov;
+        private System.Windows.Forms.DateTimePicker dataDateTimePickerDataMov;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.Button btnEditMov;
+        private System.Windows.Forms.Button btnIncluirMov;
+        private System.Windows.Forms.Button btnSalvarMov;
+        private System.Windows.Forms.Button btnCancelMov;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTpPtEnv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbTMov;
+        private System.Windows.Forms.ComboBox cmbCompMov;
+        private System.Windows.Forms.MaskedTextBox mskbxValorMov;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn tipoMovimentacaofkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn parteEnvolvidafkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn competenciafkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn empresafkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn63;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn64;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn65;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn66;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn67;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn68;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn69;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn70;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn71;
+        private System.Windows.Forms.DataGridViewButtonColumn dgvExcluirMov;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoMovimentacao1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn BtnExcluirTMov;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewButtonColumn btnExcluirTPEnv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn tipoParteEnvolvidafkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
+        private System.Windows.Forms.DataGridViewButtonColumn BtnExcluirPEnv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn48;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn50;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn39;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn40;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn41;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn42;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn43;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn44;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn45;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn47;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteEmpColumn;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

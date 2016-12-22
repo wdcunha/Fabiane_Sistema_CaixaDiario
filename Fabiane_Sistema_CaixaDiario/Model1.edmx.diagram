@@ -7,7 +7,7 @@
       <Diagram DiagramId="cd7d1c9398c64e59aa653e2c5b57c35b" Name="Diagram1">
         <EntityTypeShape EntityType="CDFModel.Empresa" Width="1.875" PointX="6.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CDFModel.Competencia" Width="1.75" PointX="0.875" PointY="1.625" />
-        <EntityTypeShape EntityType="CDFModel.ParteEnvolvida" Width="1.875" PointX="6.5" PointY="3.625" />
+        <EntityTypeShape EntityType="CDFModel.ParteEnvolvida" Width="1.875" PointX="6.5" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CDFModel.TipoMovimentacao" Width="2" PointX="0.625" PointY="5" />
         <EntityTypeShape EntityType="CDFModel.TipoParteEnvolvida" Width="1.75" PointX="9.375" PointY="3.625" />
         <AssociationConnector Association="CDFModel.FK_ParteEnvolvida_TipoParteEnvolvida" />

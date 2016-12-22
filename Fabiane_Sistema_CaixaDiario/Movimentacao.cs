@@ -25,9 +25,9 @@ namespace Fabiane_Sistema_CaixaDiario
         public Nullable<System.DateTime> DataRegistro { get; set; }
         public string Usuario { get; set; }
     
-        public virtual Competencia Competencia { get; set; }
-        public virtual Empresa Empresa { get; set; }
-        public virtual ParteEnvolvida ParteEnvolvida { get; set; }
-        public virtual TipoMovimentacao TipoMovimentacao { get; set; }
+        public virtual Competencia Competencias { get; set; }
+        public virtual Empresa Empresas { get; set; }
+        public virtual ParteEnvolvida ParteEnvolvidas { get; set; }
+        public virtual TipoMovimentacao TipoMovimentacaos { get; set; }
     }
 }

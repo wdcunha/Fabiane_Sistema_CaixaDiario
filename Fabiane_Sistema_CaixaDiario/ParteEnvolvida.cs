@@ -25,12 +25,12 @@ namespace Fabiane_Sistema_CaixaDiario
         public Nullable<int> TipoParteEnvolvida_fk { get; set; }
         public string Endereco { get; set; }
         public string CEP { get; set; }
-        public Nullable<decimal> Fone { get; set; }
+        public string Fone { get; set; }
         public string Email { get; set; }
         public Nullable<System.DateTime> DataRegistro { get; set; }
         public string Usuario { get; set; }
     
-        public virtual TipoParteEnvolvida TipoParteEnvolvida { get; set; }
+        public virtual TipoParteEnvolvida TipoParteEnvolvidas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Movimentacao> MovimentacaosPEnv { get; set; }
     }

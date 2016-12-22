@@ -17,13 +17,17 @@ namespace Fabiane_Sistema_CaixaDiario
         char tipo;
         DateTime timeNow = DateTime.Now;
         Competencia comp;
-        TipoParteEnvolvida tPEnv;
+        private ParteEnvolvida PEnv;
+        private TipoParteEnvolvida tPEnv;
+        private TipoMovimentacao tMov;
+
 
         public Form1()
         {
             InitializeComponent();
 
             timer1.Start();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,13 +35,46 @@ namespace Fabiane_Sistema_CaixaDiario
             panelEmpresa.Enabled = false;
             panelComp.Enabled = false;
             panelPEnv.Enabled = false;
+            panelTPEnv.Enabled = false;
+            panelTMov.Enabled = false;
+            panelMov.Enabled = false;
 
             btnSalvarEmpresa.Enabled = false;
+            btnCancelarEmpresa.Enabled = false;
 
             dateTimePickerComp.Format = DateTimePickerFormat.Custom;
             dateTimePickerComp.CustomFormat = "MMMM/yyyy";
             dateTimePickerComp.ShowUpDown = true; // to prevent the calendar from being displayed
 
+            //dataDateTimePickerDataMov.ShowUpDown = true;
+
+
+
+            /*set DateTimePicker in datagridview from competencia
+            dtpComp = new DateTimePicker();
+            dtpComp.Format = DateTimePickerFormat.Custom;
+            dtpComp.CustomFormat = "MMMM/yyyy";
+            dtpComp.Visible = true;
+            dtpComp.Width = 250;
+            dtpComp.ShowUpDown = true; // to prevent the calendar from being displayed
+            DataGridViewCompetencia.Controls.Add(dtpComp);
+            //till here *******************************************************************
+
+            //here calls methods for the code that allow to get date from the datetimepicker
+            /*dtpComp.ValueChanged += this.dtpComp_ValueChanged;
+            DataGridViewCompetencia.CellBeginEdit += this.DataGridViewCompetencia_CellBeginEdit;
+            DataGridViewCompetencia.CellEndEdit += this.DataGridViewCompetencia_CellEndEdit;*/
+
+            DataGridViewCompetencia.Columns[1].DefaultCellStyle.Format = "MMMM/yyyy"; //format date in datagrid for competência
+            dataGridViewMov.Columns[6].DefaultCellStyle.Format = "MMMM/yyyy"; 
+            dataGridViewMov.Columns[3].DefaultCellStyle.Format = "C";
+
+            //mskbxValorMov.Mask = "$ 999,999.00";
+            //mskbxValorMov.TextAlign = "right";
+            //txtIdMov.Text = String.Format("C");
+
+            //cmbEmpMov.ValueMember = "0";
+            //cmbCompMov
 
             db = new CDFEntities();
             db.Configuration.ProxyCreationEnabled = false;
@@ -47,17 +84,33 @@ namespace Fabiane_Sistema_CaixaDiario
 
             empresaBindingSource.DataSource = db.Empresas.Include("MovimentacaosEmp").ToList();
 
-            parteEnvolvidaBindingSource.DataSource = db.ParteEnvolvidas.Include("MovimentacaosPEnv").ToList();
+            parteEnvolvidaBindingSource.DataSource = db.ParteEnvolvidas.Include("TipoParteEnvolvidas").ToList();
 
             tipoParteEnvolvidaBindingSource.DataSource = db.TipoParteEnvolvidas.Include("TPEnv").ToList();
 
-        }
+            tipoMovimentacaoBindingSource.DataSource = db.TipoMovimentacaos.Include("MovimentacaosTpMov").ToList();
+
+            movimentacaoBindingSource.DataSource = db.Movimentacaos.Include("Competencias").ToList();
+            movimentacaoBindingSource.DataSource = db.Movimentacaos.Include("Empresas").ToList();
+            movimentacaoBindingSource.DataSource = db.Movimentacaos.Include("ParteEnvolvidas").ToList();
+            movimentacaoBindingSource.DataSource = db.Movimentacaos.Include("TipoMovimentacaos").ToList();
+      }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             timeNow = DateTime.Now;
             lblTime.Text = timeNow.ToString("F");
         }
+
+
+        ///
+        /// <summary> ***********************************************************************************
+        ///
+        ///     C O M P E T Ê N C I A
+        ///     
+        /// </summary>
+        /// /////////////////////////////////////////////////////////////////////////////////////////////
+        ///
 
         private void btnIncluirComp_Click(object sender, EventArgs e)
         {
@@ -153,12 +206,12 @@ namespace Fabiane_Sistema_CaixaDiario
 
         private void DataGridViewCompetencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if ( DataGridViewCompetencia.Columns[e.ColumnIndex].Name == "Delete" )
+            if ( DataGridViewCompetencia.Columns[e.ColumnIndex].Name == "DeleteColumn")
             {
                 if ( MessageBox.Show("Tem certeza de que deseja apagar o registro selecionado?", "Confirmação",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes )
                 {
-                    //db.Competencias.Remove(competenciaBindingSource.Current as Competencia);
+                    db.Competencias.Remove(competenciaBindingSource.Current as Competencia);
                     competenciaBindingSource.RemoveCurrent();
                 }
             }
@@ -180,10 +233,18 @@ namespace Fabiane_Sistema_CaixaDiario
 
         }
 
+        /// <summary> ***********************************************************************************
+        ///  E M P R E S A
+        /// </summary>
+        /// /////////////////////////////////////////////////////////////////////////////////////////////
+                    
         private void btnIncluirEmpresa_Click(object sender, EventArgs e)
         {
             btnIncluirEmpresa.Enabled = false;
+            btnEditarEmpresa.Enabled = false;
             panelEmpresa.Enabled = true;
+            btnSalvarEmpresa.Enabled = true;
+            btnCancelarEmpresa.Enabled = true;
             nomeFantasiaTextBox.Focus();
 
             Empresa emp = new Empresa();
@@ -201,6 +262,8 @@ namespace Fabiane_Sistema_CaixaDiario
             {
                 await db.SaveChangesAsync();
                 panelEmpresa.Enabled = false;
+                btnSalvarEmpresa.Enabled = false;
+                btnCancelarEmpresa.Enabled = false;
                 btnIncluirEmpresa.Enabled = true;
                 btnEditarEmpresa.Enabled = true;
 
@@ -239,6 +302,7 @@ namespace Fabiane_Sistema_CaixaDiario
         private void btnCancelarEmpresa_Click(object sender, EventArgs e)
         {
             panelEmpresa.Enabled = false;
+            btnCancelarEmpresa.Enabled = false;
             btnEditarEmpresa.Enabled = true;
             btnIncluirEmpresa.Enabled = true;
             empresaBindingSource.ResetBindings(false);
@@ -280,9 +344,16 @@ namespace Fabiane_Sistema_CaixaDiario
 
             return base.ProcessCmdKey(ref msg, keyData);
 
-            //http://stackoverflow.com/questions/2474397/hotkey-to-button-in-c-sharp-windows-application
+            // http://stackoverflow.com/questions/2474397/hotkey-to-button-in-c-sharp-windows-application
             //
         }
+
+        ///
+        /// <summary> ***********************************************************************************
+        ///  PARTE ENVOLVIDA
+        /// </summary>
+        /// /////////////////////////////////////////////////////////////////////////////////////////////
+        ///
 
         private async void btnSalvarPEnv_Click(object sender, EventArgs e)
         {
@@ -290,19 +361,21 @@ namespace Fabiane_Sistema_CaixaDiario
             {
                 await db.SaveChangesAsync();
                 panelPEnv.Enabled = false;
+                btnSalvarPEnv.Enabled = false;
+                btnCancelPEnv.Enabled = false;
                 btnIncluirPEnv.Enabled = true;
-                btnEditarPEnv.Enabled = true;
+                btnEditPEnv.Enabled = true;
 
-                tipoParteEnvolvidaDataGridView.Refresh();
+                parteEnvolvidaDataGridView.Refresh();
 
                 switch ( tipo )
                 {
                     case 'i':
-                        MessageBox.Show("Tipo da Parte Envolvida cadastrada com sucesso!", "Trabalho Concluído!", MessageBoxButtons.OK,
+                        MessageBox.Show("Parte Envolvida cadastrada com sucesso!", "Trabalho Concluído!", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                         break;
                     case 'e':
-                        MessageBox.Show("Tipo da Parte Envolvida alterada com sucesso!", "Trabalho Concluído!", MessageBoxButtons.OK,
+                        MessageBox.Show("Parte Envolvida alterada com sucesso!", "Trabalho Concluído!", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                         break;
                 }
@@ -311,26 +384,26 @@ namespace Fabiane_Sistema_CaixaDiario
             catch ( Exception ex )
             {
 
-                MessageBox.Show(ex.Message, "Erro ao salvar Tipo da Parte Envolvida!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Erro ao salvar Parte Envolvida!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnIncluirPEnv_Click(object sender, EventArgs e)
         {
             panelPEnv.Enabled = true;
-            btnEditarPEnv.Enabled = false;
+            btnEditPEnv.Enabled = false;
             btnIncluirPEnv.Enabled = false;
 
-            descricaoPEnv.Focus();
+            txtNomePEnv.Focus();
 
             ////// *** begin adding process in DB
-            tPEnv = new TipoParteEnvolvida();
-            db.TipoParteEnvolvidas.Add(tPEnv);
-            tPEnv.DataRegistro = timeNow;
+            PEnv = new ParteEnvolvida();
+            db.ParteEnvolvidas.Add(PEnv);
+            PEnv.DataRegistro = timeNow;
 
             ////// *** begin adding process in binding source
-            tipoParteEnvolvidaBindingSource.Add(tPEnv);
-            tipoParteEnvolvidaBindingSource.MoveLast();
+            parteEnvolvidaBindingSource.Add(PEnv);
+            parteEnvolvidaBindingSource.MoveLast();
 
             tipo = 'i';
 
@@ -339,9 +412,9 @@ namespace Fabiane_Sistema_CaixaDiario
         private void btnCancPEnv_Click(object sender, EventArgs e)
         {
             panelPEnv.Enabled = false;
-            btnEditarPEnv.Enabled = true;
+            btnEditPEnv.Enabled = true;
             btnIncluirPEnv.Enabled = true;
-            tipoParteEnvolvidaBindingSource.ResetBindings(false);
+            parteEnvolvidaBindingSource.ResetBindings(false);
 
             foreach ( DbEntityEntry entry in db.ChangeTracker.Entries() )
             {
@@ -359,17 +432,209 @@ namespace Fabiane_Sistema_CaixaDiario
                 }
             }
 
-            tipoParteEnvolvidaDataGridView.Refresh();
+            parteEnvolvidaDataGridView.Refresh();
         }
         
         private void btnEditarPEnv_Click(object sender, EventArgs e)
         {
             panelPEnv.Enabled = true;
-            btnEditarPEnv.Enabled = false;
-            descricaoPEnv.Focus();
+            btnEditPEnv.Enabled = false;
+            txtNomePEnv.Focus();
 
             tipo = 'e';
         }
+        
+        
+        ///
+        /// <summary> ***********************************************************************************
+        /// Tipo Parte Envolvida
+        /// </summary>
+        /// 
+
+
+        private async void btnSalvarTPEnv_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                await db.SaveChangesAsync();
+                panelTPEnv.Enabled = false;
+                btnIncluirTPEnv.Enabled = true;
+                btnEditTPEnv.Enabled = true;
+
+                tipoParteEnvolvidaDataGridView.Refresh();
+
+                switch (tipo)
+                {
+                    case 'i':
+                        MessageBox.Show("Tipo Parte Envolvida cadastrada com sucesso!", "Trabalho Concluído!", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        break;
+                    case 'e':
+                        MessageBox.Show("Tipo da Parte Envolvida alterada com sucesso!", "Trabalho Concluído!", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        break;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro ao salvar Tipo da Parte Envolvida!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnIncluirTPEnv_Click(object sender, EventArgs e)
+        {
+            panelTPEnv.Enabled = true;
+            btnEditTPEnv.Enabled = false;
+            btnIncluirTPEnv.Enabled = false;
+
+            descricaoTPEnv.Focus();
+
+            ////// *** begin adding process in DB
+            tPEnv = new TipoParteEnvolvida();
+            db.TipoParteEnvolvidas.Add(tPEnv);
+            tPEnv.DataRegistro = timeNow;
+
+            ////// *** begin adding process in binding source
+            tipoParteEnvolvidaBindingSource.Add(tPEnv);
+            tipoParteEnvolvidaBindingSource.MoveLast();
+
+            tipo = 'i';
+
+        }
+
+        private void btnCancTPEnv_Click(object sender, EventArgs e)
+        {
+            panelTPEnv.Enabled = false;
+            btnEditTPEnv.Enabled = true;
+            btnIncluirTPEnv.Enabled = true;
+            tipoParteEnvolvidaBindingSource.ResetBindings(false);
+
+            foreach (DbEntityEntry entry in db.ChangeTracker.Entries())
+            {
+                switch (entry.State)
+                {
+                    case System.Data.Entity.EntityState.Added:
+                        entry.State = System.Data.Entity.EntityState.Detached;
+                        break;
+                    case System.Data.Entity.EntityState.Modified:
+                        entry.State = System.Data.Entity.EntityState.Unchanged;
+                        break;
+                    case System.Data.Entity.EntityState.Deleted:
+                        entry.Reload();
+                        break;
+                }
+            }
+
+            tipoParteEnvolvidaDataGridView.Refresh();
+        }
+
+        private void btnEditarTPEnv_Click(object sender, EventArgs e)
+        {
+            panelTPEnv.Enabled = true;
+            btnEditTPEnv.Enabled = false;
+            descricaoTPEnv.Focus();
+
+            tipo = 'e';
+        }
+
+        ///
+        /// <summary> ***********************************************************************************
+        /// Tipo Movimentação
+        /// </summary>
+        /// *********************************************************************************************
+
+
+        private async void btnSalvarTMov_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                await db.SaveChangesAsync();
+                panelTMov.Enabled = false;
+                btnIncluirTMov.Enabled = true;
+                btnEditTMov.Enabled = true;
+
+                tipoMovimentacaoDataGridView.Refresh();
+
+                switch (tipo)
+                {
+                    case 'i':
+                        MessageBox.Show("Tipo de Movimentação cadastrada com sucesso!", "Trabalho Concluído!", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        break;
+                    case 'e':
+                        MessageBox.Show("Tipo de Movimentação alterada com sucesso!", "Trabalho Concluído!", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        break;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro ao salvar Tipo de Movimentação!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnIncluirTMov_Click(object sender, EventArgs e)
+        {
+            panelTMov.Enabled = true;
+            btnEditTMov.Enabled = false;
+            btnIncluirTMov.Enabled = false;
+
+
+
+            descricaoTMov.Focus();
+
+            ////// *** begin adding process in DB
+            tMov = new TipoMovimentacao();
+            db.TipoMovimentacaos.Add(tMov);
+            //tPEnv.DataRegistro = timeNow; tem que criar campos na tabela para registro de data e usuário
+
+            ////// *** begin adding process in binding source
+            tipoMovimentacaoBindingSource.Add(tMov);
+            tipoMovimentacaoBindingSource.MoveLast();
+
+            tipo = 'i';
+
+        }
+
+        private void btnCancTMov_Click(object sender, EventArgs e)
+        {
+            panelTMov.Enabled = false;
+            btnEditTMov.Enabled = true;
+            btnIncluirTMov.Enabled = true;
+            tipoMovimentacaoBindingSource.ResetBindings(false);
+
+            foreach (DbEntityEntry entry in db.ChangeTracker.Entries())
+            {
+                switch (entry.State)
+                {
+                    case System.Data.Entity.EntityState.Added:
+                        entry.State = System.Data.Entity.EntityState.Detached;
+                        break;
+                    case System.Data.Entity.EntityState.Modified:
+                        entry.State = System.Data.Entity.EntityState.Unchanged;
+                        break;
+                    case System.Data.Entity.EntityState.Deleted:
+                        entry.Reload();
+                        break;
+                }
+            }
+
+            tipoMovimentacaoDataGridView.Refresh();
+        }
+
+        private void btnEditarTMov_Click(object sender, EventArgs e)
+        {
+            panelTMov.Enabled = true;
+            btnEditTMov.Enabled = false;
+            descricaoTMov.Focus();
+
+            tipo = 'e';
+        }
+
 
         private void ShowCompetencia()
         {
@@ -380,5 +645,201 @@ namespace Fabiane_Sistema_CaixaDiario
                 competenciaBindingSource.DataSource = objComp.MovimentacaosComp.ToList();
             }
         }
+
+        /// <summary> ***********************************************************************************
+        ///  M O V I M E N T A Ç Ã O
+        /// </summary>
+        /// /////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void btnIncluirMov_Click(object sender, EventArgs e)
+        {
+            btnIncluirMov.Enabled = false;
+            btnEditMov.Enabled = false;
+            panelMov.Enabled = true;
+
+            mskbxValorMov.Clear();
+            txtDescricaoMov.Clear();
+
+            mskbxValorMov.Focus();
+
+            Movimentacao mov = new Movimentacao();
+            db.Movimentacaos.Add(mov);
+            mov.DataRegistro= timeNow;
+                       
+            movimentacaoBindingSource.Add(mov);
+            movimentacaoBindingSource.MoveLast();
+
+            tipo = 'i';
+
+        }
+
+        private async void btnSalvarMov_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                await db.SaveChangesAsync();
+
+                switch (tipo)
+                {
+                    case 'i':
+                        MessageBox.Show("Movimentação cadastrada com sucesso!", "Concluído!", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        break;
+                    case 'e':
+                        MessageBox.Show("Movimentação alterada com sucesso!", "Concluído!", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        break;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro ao Salvar Movimentação!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            panelMov.Enabled = false;
+            btnIncluirMov.Enabled = true;
+            btnEditMov.Enabled = true;
+
+            dataGridViewMov.Refresh();
+
+
+        }
+
+        private void btnEditMov_Click(object sender, EventArgs e)
+        {
+            panelMov.Enabled = true;
+            btnEditMov.Enabled = false;
+            mskbxValorMov.Focus();
+
+            tipo = 'e';
+
+        }
+
+        private void btnCancelMov_Click(object sender, EventArgs e)
+        {
+            panelMov.Enabled = false;
+            btnEditMov.Enabled = true;
+            btnIncluirMov.Enabled = true;
+
+            movimentacaoBindingSource.ResetBindings(false);
+
+            foreach (DbEntityEntry entry in db.ChangeTracker.Entries())
+            {
+                switch (entry.State)
+                {
+                    case System.Data.Entity.EntityState.Added:
+                        entry.State = System.Data.Entity.EntityState.Detached;
+                        break;
+                    case System.Data.Entity.EntityState.Modified:
+                        entry.State = System.Data.Entity.EntityState.Unchanged;
+                        break;
+                    case System.Data.Entity.EntityState.Deleted:
+                        entry.Reload();
+                        break;
+                }
+            }
+            MessageBox.Show("Movimentação cancelada como selecionado!", "Cancelado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            mskbxValorMov.Text = null;
+            txtDescricaoMov.Text = null;
+            dataGridViewMov.Refresh();
+        }
+
+        private void dataGridViewMov_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewMov.Columns[e.ColumnIndex].Name == "dgvExcluirMov")
+            {
+                if (MessageBox.Show("Tem certeza de que deseja apagar o registro selecionado?", "Confirmação",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //db.Competencias.Remove(competenciaBindingSource.Current as Competencia);
+                    movimentacaoBindingSource.RemoveCurrent();
+                }
+            }
+
+        }
+
+        private void mskbxValorMov_ControlAdded(object sender, ControlEventArgs e)
+        {
+            mskbxValorMov.SelectionStart = mskbxValorMov.TextLength + 1;
+        }
+
+        /// <summary>
+        /// SHOW DATATIMEPICKER in datagridviewcompetencia to present the format MMMM/yyyy
+        /// https://www.youtube.com/watch?v=r7Ff1Jn3OO4
+        /// </summary>
+        /// 
+        /*
+        private void DataGridViewCompetencia_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            try
+            {
+                if((DataGridViewCompetencia.Focused) && DataGridViewCompetencia.CurrentCell.ColumnIndex == 1)
+                {
+                    dtpComp.Location = DataGridViewCompetencia.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).Location;
+                    dtpComp.Visible = true;
+                    if(DataGridViewCompetencia.CurrentCell.Value != DBNull.Value)
+                    {
+                        dtpComp.Value = (DateTime)DataGridViewCompetencia.CurrentCell.Value;
+                    }
+                 
+                else{
+                        dtpComp.Visible = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }*/
+
+        private void txtValorMov_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                Double valor = Double.Parse(mskbxValorMov.Text);
+
+                mskbxValorMov.Text = valor.ToString("C");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        /*
+         private void DataGridViewCompetencia_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+         {
+             try
+             {
+                 if ((DataGridViewCompetencia.Focused) && DataGridViewCompetencia.CurrentCell.ColumnIndex == 1)
+                 {
+                     DataGridViewCompetencia.CurrentCell.Value = dtpComp.Value.Date;
+                 }
+             }
+             catch (Exception ex)
+             {
+
+                 MessageBox.Show(ex.Message);
+             }
+         }
+
+         private void dtpComp_ValueChanged(object sender, EventArgs e)
+         {
+             DataGridViewCompetencia.CurrentCell.Value = dtpComp.Text;
+         }*/
+
+        private void txtAllowJustNumbers_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)46;
+        }
+
+
+ 
     }
 }

@@ -22,8 +22,8 @@
           <Property Name="NomeFantasia" Type="nvarchar" MaxLength="100" />
           <Property Name="RazaoSocial" Type="nvarchar" MaxLength="150" />
           <Property Name="Endereco" Type="nvarchar" MaxLength="250" />
-          <Property Name="CEP" Type="nchar" MaxLength="8" />
-          <Property Name="Fone" Type="numeric" Precision="11" Scale="0" />
+          <Property Name="CEP" Type="nchar" MaxLength="9" />
+          <Property Name="Fone" Type="nvarchar" MaxLength="14" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="DataRegistro" Type="datetime" />
           <Property Name="Usuario" Type="nchar" MaxLength="30" />
@@ -34,7 +34,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Data" Type="date" />
-          <Property Name="Descricao" Type="nvarchar" MaxLength="150" />
+          <Property Name="Descricao" Type="nvarchar" MaxLength="300" />
           <Property Name="Valor" Type="money" />
           <Property Name="TipoMovimentacao_fk" Type="int" />
           <Property Name="ParteEnvolvida_fk" Type="int" />
@@ -47,12 +47,12 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" MaxLength="150" />
           <Property Name="TipoParteEnvolvida_fk" Type="int" />
           <Property Name="Endereco" Type="nvarchar" MaxLength="200" />
-          <Property Name="CEP" Type="nchar" MaxLength="8" />
-          <Property Name="Fone" Type="numeric" Precision="11" Scale="0" />
+          <Property Name="CEP" Type="nchar" MaxLength="9" />
+          <Property Name="Fone" Type="nvarchar" MaxLength="14" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="DataRegistro" Type="datetime" />
           <Property Name="Usuario" Type="nchar" MaxLength="30" />
@@ -173,8 +173,8 @@
           <Property Name="NomeFantasia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="RazaoSocial" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Endereco" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
-          <Property Name="Fone" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="CEP" Type="String" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Name="Fone" Type="String" MaxLength="14" FixedLength="false" Unicode="true"  />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DataRegistro" Type="DateTime" Precision="3" />
           <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
@@ -222,16 +222,16 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="TipoParteEnvolvida_fk" Type="Int32" />
+          <Property Name="TipoParteEnvolvida_fk" Type="Int32" annotation:StoreGeneratedPattern="None" />
           <Property Name="Endereco" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
-          <Property Name="Fone" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="CEP" Type="String" MaxLength="9" FixedLength="true" Unicode="true" />
+          <Property Name="Fone" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DataRegistro" Type="DateTime" Precision="3" />
           <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="TipoParteEnvolvida" Relationship="CDFModel.FK_ParteEnvolvida_TipoParteEnvolvida" FromRole="ParteEnvolvida" ToRole="TipoParteEnvolvida" />
+          <NavigationProperty Name="TipoParteEnvolvidas" Relationship="CDFModel.FK_ParteEnvolvida_TipoParteEnvolvida" FromRole="ParteEnvolvida" ToRole="TipoParteEnvolvida" />
           <NavigationProperty Name="MovimentacaosPEnv" Relationship="CDFModel.FK_Movimentacao_ParteEnvolvida" FromRole="ParteEnvolvida" ToRole="Movimentacao" />
         </EntityType>
         <EntityType Name="TipoMovimentacao">
@@ -254,7 +254,8 @@
         </EntityType>
         <Association Name="FK_ParteEnvolvida_TipoParteEnvolvida">
           <End Type="CDFModel.TipoParteEnvolvida" Role="TipoParteEnvolvida" Multiplicity="0..1" />
-          <End Type="CDFModel.ParteEnvolvida" Role="ParteEnvolvida" Multiplicity="*" />
+          <End Type="CDFModel.ParteEnvolvida" Role="ParteEnvolvida" Multiplicity="*" >
+          </End>
           <ReferentialConstraint>
             <Principal Role="TipoParteEnvolvida">
               <PropertyRef Name="Id" />
@@ -270,7 +271,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Data" Type="DateTime" Precision="0" />
-          <Property Name="Descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="Valor" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="TipoMovimentacao_fk" Type="Int32" />
           <Property Name="ParteEnvolvida_fk" Type="Int32" />
@@ -278,10 +279,10 @@
           <Property Name="Empresa_fk" Type="Int32" />
           <Property Name="DataRegistro" Type="DateTime" Precision="3" />
           <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Competencia" Relationship="CDFModel.FK_Comepetencia" FromRole="Movimentacao" ToRole="Competencia" />
-          <NavigationProperty Name="Empresa" Relationship="CDFModel.FK_Empresa" FromRole="Movimentacao" ToRole="Empresa" />
-          <NavigationProperty Name="ParteEnvolvida" Relationship="CDFModel.FK_Movimentacao_ParteEnvolvida" FromRole="Movimentacao" ToRole="ParteEnvolvida" />
-          <NavigationProperty Name="TipoMovimentacao" Relationship="CDFModel.FK_Movimentacao_TipoMovimentacao" FromRole="Movimentacao" ToRole="TipoMovimentacao" />
+          <NavigationProperty Name="Competencias" Relationship="CDFModel.FK_Comepetencia" FromRole="Movimentacao" ToRole="Competencia" />
+          <NavigationProperty Name="Empresas" Relationship="CDFModel.FK_Empresa" FromRole="Movimentacao" ToRole="Empresa" />
+          <NavigationProperty Name="ParteEnvolvidas" Relationship="CDFModel.FK_Movimentacao_ParteEnvolvida" FromRole="Movimentacao" ToRole="ParteEnvolvida" />
+          <NavigationProperty Name="TipoMovimentacaos" Relationship="CDFModel.FK_Movimentacao_TipoMovimentacao" FromRole="Movimentacao" ToRole="TipoMovimentacao" />
         </EntityType>
         <Association Name="FK_Comepetencia">
           <End Type="CDFModel.Competencia" Role="Competencia" Multiplicity="0..1" />
@@ -365,10 +366,10 @@
           <EntitySetMapping Name="ParteEnvolvidas">
             <EntityTypeMapping TypeName="CDFModel.ParteEnvolvida">
               <MappingFragment StoreEntitySet="ParteEnvolvida">
+                <ScalarProperty Name="Fone" ColumnName="Fone" />
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
                 <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Fone" ColumnName="Fone" />
                 <ScalarProperty Name="CEP" ColumnName="CEP" />
                 <ScalarProperty Name="Endereco" ColumnName="Endereco" />
                 <ScalarProperty Name="TipoParteEnvolvida_fk" ColumnName="TipoParteEnvolvida_fk" />
@@ -425,7 +426,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

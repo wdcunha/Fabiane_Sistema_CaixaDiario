@@ -25,7 +25,7 @@ namespace Fabiane_Sistema_CaixaDiario
         public string RazaoSocial { get; set; }
         public string Endereco { get; set; }
         public string CEP { get; set; }
-        public Nullable<decimal> Fone { get; set; }
+        public string Fone { get; set; }
         public string Email { get; set; }
         public Nullable<System.DateTime> DataRegistro { get; set; }
         public string Usuario { get; set; }
