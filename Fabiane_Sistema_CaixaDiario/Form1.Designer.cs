@@ -100,9 +100,8 @@
             this.btnIncluirMov = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panelMov = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numericBox1 = new NumericBox.NumericBox();
             this.movimentacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mskbxValorMov = new System.Windows.Forms.MaskedTextBox();
             this.btnSalvarMov = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.parteEnvolvidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -940,8 +939,7 @@
             this.panelMov.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelMov.BackColor = System.Drawing.Color.OldLace;
             this.panelMov.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelMov.Controls.Add(this.textBox1);
-            this.panelMov.Controls.Add(this.mskbxValorMov);
+            this.panelMov.Controls.Add(this.numericBox1);
             this.panelMov.Controls.Add(this.btnSalvarMov);
             this.panelMov.Controls.Add(this.comboBox3);
             this.panelMov.Controls.Add(this.cmbTMov);
@@ -960,30 +958,22 @@
             this.panelMov.Size = new System.Drawing.Size(1024, 189);
             this.panelMov.TabIndex = 21;
             // 
-            // textBox1
+            // numericBox1
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentacaoBindingSource, "Valor", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0,00", "C2"));
-            this.textBox1.Location = new System.Drawing.Point(450, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 33;
+            this.numericBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.numericBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.numericBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentacaoBindingSource, "Valor", true));
+            this.numericBox1.Font = new System.Drawing.Font("Eras Medium ITC", 12F);
+            this.numericBox1.Location = new System.Drawing.Point(450, 56);
+            this.numericBox1.Name = "numericBox1";
+            this.numericBox1.NegativeNumberColor = System.Drawing.Color.Red;
+            this.numericBox1.Size = new System.Drawing.Size(100, 26);
+            this.numericBox1.TabIndex = 33;
+            this.numericBox1.Text = "0,00";
             // 
             // movimentacaoBindingSource
             // 
             this.movimentacaoBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.Movimentacao);
-            // 
-            // mskbxValorMov
-            // 
-            this.mskbxValorMov.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mskbxValorMov.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentacaoBindingSource, "Valor", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0,00", "C2"));
-            this.mskbxValorMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskbxValorMov.Location = new System.Drawing.Point(450, 57);
-            this.mskbxValorMov.Name = "mskbxValorMov";
-            this.mskbxValorMov.Size = new System.Drawing.Size(100, 26);
-            this.mskbxValorMov.TabIndex = 32;
-            this.mskbxValorMov.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.mskbxValorMov.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAllowJustNumbers_KeyPress);
             // 
             // btnSalvarMov
             // 
@@ -2386,7 +2376,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox cmbTMov;
         private System.Windows.Forms.ComboBox cmbCompMov;
-        private System.Windows.Forms.MaskedTextBox mskbxValorMov;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
@@ -2440,7 +2429,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn47;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteEmpColumn;
-        private System.Windows.Forms.TextBox textBox1;
+        private NumericBox.NumericBox numericBox1;
     }
 }
 

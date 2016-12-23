@@ -17,6 +17,7 @@ namespace Fabiane_Sistema_CaixaDiario
         char tipo;
         DateTime timeNow = DateTime.Now;
         Competencia comp;
+        Movimentacao mov;
         private ParteEnvolvida PEnv;
         private TipoParteEnvolvida tPEnv;
         private TipoMovimentacao tMov;
@@ -657,10 +658,10 @@ namespace Fabiane_Sistema_CaixaDiario
             btnEditMov.Enabled = false;
             panelMov.Enabled = true;
 
-            mskbxValorMov.Clear();
+            numericBox1.Text = null;
             txtDescricaoMov.Clear();
 
-            mskbxValorMov.Focus();
+            numericBox1.Focus();
 
             Movimentacao mov = new Movimentacao();
             db.Movimentacaos.Add(mov);
@@ -677,6 +678,9 @@ namespace Fabiane_Sistema_CaixaDiario
         {
             try
             {
+                //mov.Competencia_fk = cmbCompMov.SelectedIndex;
+                //mov.Empresa_fk = cmbEmpMov.SelectedIndex;
+
                 await db.SaveChangesAsync();
 
                 switch (tipo)
@@ -711,7 +715,7 @@ namespace Fabiane_Sistema_CaixaDiario
         {
             panelMov.Enabled = true;
             btnEditMov.Enabled = false;
-            mskbxValorMov.Focus();
+            numericBox1.Focus();
 
             tipo = 'e';
 
@@ -742,7 +746,7 @@ namespace Fabiane_Sistema_CaixaDiario
             }
             MessageBox.Show("Movimentação cancelada como selecionado!", "Cancelado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            mskbxValorMov.Text = null;
+            numericBox1.Text = null;
             txtDescricaoMov.Text = null;
             dataGridViewMov.Refresh();
         }
@@ -759,11 +763,6 @@ namespace Fabiane_Sistema_CaixaDiario
                 }
             }
 
-        }
-
-        private void mskbxValorMov_ControlAdded(object sender, ControlEventArgs e)
-        {
-            mskbxValorMov.SelectionStart = mskbxValorMov.TextLength + 1;
         }
 
         /// <summary>
@@ -797,21 +796,7 @@ namespace Fabiane_Sistema_CaixaDiario
             }
         }*/
 
-        private void txtValorMov_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                Double valor = Double.Parse(mskbxValorMov.Text);
 
-                mskbxValorMov.Text = valor.ToString("C");
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-        }
         /*
          private void DataGridViewCompetencia_CellEndEdit(object sender, DataGridViewCellEventArgs e)
          {
@@ -833,13 +818,5 @@ namespace Fabiane_Sistema_CaixaDiario
          {
              DataGridViewCompetencia.CurrentCell.Value = dtpComp.Text;
          }*/
-
-        private void txtAllowJustNumbers_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsNumber(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)46;
-        }
-
-
- 
     }
 }
