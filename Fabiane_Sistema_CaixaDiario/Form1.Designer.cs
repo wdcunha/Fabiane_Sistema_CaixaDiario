@@ -907,7 +907,7 @@
             // btnEditMov
             // 
             this.btnEditMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditMov.Location = new System.Drawing.Point(474, 109);
+            this.btnEditMov.Location = new System.Drawing.Point(530, 109);
             this.btnEditMov.Name = "btnEditMov";
             this.btnEditMov.Size = new System.Drawing.Size(75, 23);
             this.btnEditMov.TabIndex = 24;
@@ -918,7 +918,7 @@
             // btnIncluirMov
             // 
             this.btnIncluirMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluirMov.Location = new System.Drawing.Point(369, 109);
+            this.btnIncluirMov.Location = new System.Drawing.Point(425, 109);
             this.btnIncluirMov.Name = "btnIncluirMov";
             this.btnIncluirMov.Size = new System.Drawing.Size(75, 23);
             this.btnIncluirMov.TabIndex = 25;
@@ -955,7 +955,7 @@
             this.panelMov.Controls.Add(this.dataDateTimePickerDataMov);
             this.panelMov.Location = new System.Drawing.Point(11, 153);
             this.panelMov.Name = "panelMov";
-            this.panelMov.Size = new System.Drawing.Size(1024, 189);
+            this.panelMov.Size = new System.Drawing.Size(885, 189);
             this.panelMov.TabIndex = 21;
             // 
             // numericBox1
@@ -978,7 +978,7 @@
             // btnSalvarMov
             // 
             this.btnSalvarMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarMov.Location = new System.Drawing.Point(937, 106);
+            this.btnSalvarMov.Location = new System.Drawing.Point(413, 8);
             this.btnSalvarMov.Name = "btnSalvarMov";
             this.btnSalvarMov.Size = new System.Drawing.Size(75, 23);
             this.btnSalvarMov.TabIndex = 22;
@@ -988,7 +988,7 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBox3.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.movimentacaoBindingSource, "ParteEnvolvida_fk", true));
             this.comboBox3.DataSource = this.parteEnvolvidaBindingSource;
             this.comboBox3.DisplayMember = "Nome";
@@ -996,7 +996,7 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(656, 149);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(271, 27);
+            this.comboBox3.Size = new System.Drawing.Size(213, 27);
             this.comboBox3.TabIndex = 1;
             this.comboBox3.ValueMember = "Id";
             // 
@@ -1006,7 +1006,7 @@
             // 
             // cmbTMov
             // 
-            this.cmbTMov.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbTMov.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbTMov.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.movimentacaoBindingSource, "TipoMovimentacao_fk", true));
             this.cmbTMov.DataSource = this.tipoMovimentacaoBindingSource;
             this.cmbTMov.DisplayMember = "TipoMovimentacao1";
@@ -1014,7 +1014,7 @@
             this.cmbTMov.FormattingEnabled = true;
             this.cmbTMov.Location = new System.Drawing.Point(656, 95);
             this.cmbTMov.Name = "cmbTMov";
-            this.cmbTMov.Size = new System.Drawing.Size(271, 27);
+            this.cmbTMov.Size = new System.Drawing.Size(213, 27);
             this.cmbTMov.TabIndex = 1;
             this.cmbTMov.ValueMember = "Id";
             // 
@@ -1025,7 +1025,7 @@
             // btnCancelMov
             // 
             this.btnCancelMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelMov.Location = new System.Drawing.Point(937, 149);
+            this.btnCancelMov.Location = new System.Drawing.Point(519, 8);
             this.btnCancelMov.Name = "btnCancelMov";
             this.btnCancelMov.Size = new System.Drawing.Size(75, 23);
             this.btnCancelMov.TabIndex = 23;
@@ -2275,19 +2275,8 @@
         private System.Windows.Forms.DataGridView empresaDataGridView;
         private System.Windows.Forms.Button btnSalvarEmpresa;
         private System.Windows.Forms.Button btnCancelarEmpresa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DateTimePicker dateTimePickerComp;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn compNomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource competenciaBindingSource;
         private System.Windows.Forms.BindingSource empresaBindingSource;
         private System.Windows.Forms.TabPage TabParteEnvolvida;
@@ -2295,8 +2284,6 @@
         private System.Windows.Forms.DateTimePicker dataRegistroDateTimePicker;
         private System.Windows.Forms.TextBox usuarioTextBox;
         private System.Windows.Forms.DataGridView parteEnvolvidaDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
         private System.Windows.Forms.TabPage tabTPEnv;
         private System.Windows.Forms.TextBox descricaoTPEnv;
         private System.Windows.Forms.TextBox txtIdTPEnv;
@@ -2306,18 +2293,7 @@
         private System.Windows.Forms.BindingSource tipoMovimentacaoBindingSource;
         private System.Windows.Forms.TextBox descricaoTMov;
         private System.Windows.Forms.DataGridView tipoMovimentacaoDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeFantasiaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn razaoSocialDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enderecoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn foneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.ComboBox cmbEmpMov;
-        private System.Windows.Forms.DataGridViewTextBoxColumn competenciaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource movimentacaoBindingSource;
         private System.Windows.Forms.Panel panelTPEnv;
         private System.Windows.Forms.Button btnSalvarTPEnv;
@@ -2343,12 +2319,6 @@
         private System.Windows.Forms.ComboBox cboTPEnvolvida;
         private System.Windows.Forms.MaskedTextBox msktxtFone;
         private System.Windows.Forms.MaskedTextBox msktxtCEP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.MaskedTextBox mskbxCEPEmp;
         private System.Windows.Forms.MaskedTextBox mskbxFoneEmp;
         private System.Windows.Forms.Label lblCompTelaMov;
@@ -2356,36 +2326,14 @@
         private System.Windows.Forms.TextBox txtIdMov;
         private System.Windows.Forms.TextBox txtDescricaoMov;
         private System.Windows.Forms.DateTimePicker dataDateTimePickerDataMov;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.Button btnEditMov;
         private System.Windows.Forms.Button btnIncluirMov;
         private System.Windows.Forms.Button btnSalvarMov;
         private System.Windows.Forms.Button btnCancelMov;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTpPtEnv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox cmbTMov;
         private System.Windows.Forms.ComboBox cmbCompMov;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn tipoMovimentacaofkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn parteEnvolvidafkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn competenciafkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn empresafkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataRegistroDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn63;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn64;

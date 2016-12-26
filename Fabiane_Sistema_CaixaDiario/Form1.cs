@@ -250,6 +250,7 @@ namespace Fabiane_Sistema_CaixaDiario
 
             Empresa emp = new Empresa();
             db.Empresas.Add(emp);
+            emp.DataRegistro = timeNow;
             empresaBindingSource.Add(emp);
             empresaBindingSource.MoveLast();
 
@@ -658,12 +659,13 @@ namespace Fabiane_Sistema_CaixaDiario
             btnEditMov.Enabled = false;
             panelMov.Enabled = true;
 
-            numericBox1.Text = null;
+            numericBox1.Text= "0,00";
+            
             txtDescricaoMov.Clear();
 
             numericBox1.Focus();
 
-            Movimentacao mov = new Movimentacao();
+            mov = new Movimentacao();
             db.Movimentacaos.Add(mov);
             mov.DataRegistro= timeNow;
                        
@@ -705,7 +707,6 @@ namespace Fabiane_Sistema_CaixaDiario
             panelMov.Enabled = false;
             btnIncluirMov.Enabled = true;
             btnEditMov.Enabled = true;
-
             dataGridViewMov.Refresh();
 
 
@@ -715,7 +716,15 @@ namespace Fabiane_Sistema_CaixaDiario
         {
             panelMov.Enabled = true;
             btnEditMov.Enabled = false;
+            btnIncluirMov.Enabled = false;
             numericBox1.Focus();
+
+            //Save data of uptdating to the field DataRegistro
+            mov = new Movimentacao();
+            db.Movimentacaos.Add(mov);
+            mov.DataRegistro = timeNow;
+            //movimentacaoBindingSource.Add(mov.DataRegistro=timeNow);
+            //dataGridViewMov.Rows[rowIndex].Cells[columnIndex].Value = timeNow;
 
             tipo = 'e';
 
@@ -744,11 +753,11 @@ namespace Fabiane_Sistema_CaixaDiario
                         break;
                 }
             }
-            MessageBox.Show("Movimentação cancelada como selecionado!", "Cancelado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            numericBox1.Text = null;
+            numericBox1.Text = "0,00";
             txtDescricaoMov.Text = null;
             dataGridViewMov.Refresh();
+
+            MessageBox.Show("Movimentação cancelada como selecionado!", "Cancelada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void dataGridViewMov_CellContentClick(object sender, DataGridViewCellEventArgs e)
