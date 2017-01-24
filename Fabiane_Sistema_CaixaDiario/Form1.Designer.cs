@@ -100,8 +100,13 @@
             this.btnIncluirMov = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panelMov = new System.Windows.Forms.Panel();
-            this.numericBox1 = new NumericBox.NumericBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbSetComp = new System.Windows.Forms.ComboBox();
+            this.cmbSetEmp = new System.Windows.Forms.ComboBox();
             this.movimentacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.numericBox1 = new NumericBox.NumericBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnSalvarMov = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.parteEnvolvidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -117,7 +122,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmpTelaMov = new System.Windows.Forms.Label();
             this.cmbEmpMov = new System.Windows.Forms.ComboBox();
-            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewMov = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -209,6 +213,7 @@
             this.BtnExcluirTMov = new System.Windows.Forms.DataGridViewButtonColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             lblCompTitle = new System.Windows.Forms.Label();
             lblEmpTitle = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
@@ -250,11 +255,11 @@
             this.tabPageCxDiario.SuspendLayout();
             this.panelMov.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movimentacaoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoMovimentacaoBindingSource)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMov)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -457,6 +462,8 @@
             // 
             // lblMovTitle
             // 
+            lblMovTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             lblMovTitle.AutoSize = true;
             lblMovTitle.Font = new System.Drawing.Font("Lucida Handwriting", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblMovTitle.ForeColor = System.Drawing.Color.Navy;
@@ -571,7 +578,7 @@
             // 
             tipoMovimentacao_fkLabel.AutoSize = true;
             tipoMovimentacao_fkLabel.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tipoMovimentacao_fkLabel.Location = new System.Drawing.Point(652, 70);
+            tipoMovimentacao_fkLabel.Location = new System.Drawing.Point(652, 33);
             tipoMovimentacao_fkLabel.Name = "tipoMovimentacao_fkLabel";
             tipoMovimentacao_fkLabel.Size = new System.Drawing.Size(173, 19);
             tipoMovimentacao_fkLabel.TabIndex = 27;
@@ -611,7 +618,7 @@
             // 
             parteEnvolvida_fkLabel.AutoSize = true;
             parteEnvolvida_fkLabel.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            parteEnvolvida_fkLabel.Location = new System.Drawing.Point(652, 128);
+            parteEnvolvida_fkLabel.Location = new System.Drawing.Point(652, 108);
             parteEnvolvida_fkLabel.Name = "parteEnvolvida_fkLabel";
             parteEnvolvida_fkLabel.Size = new System.Drawing.Size(142, 19);
             parteEnvolvida_fkLabel.TabIndex = 31;
@@ -877,6 +884,7 @@
             // 
             this.tabPageCxDiario.AutoScroll = true;
             this.tabPageCxDiario.BackColor = System.Drawing.Color.Tan;
+            this.tabPageCxDiario.Controls.Add(this.comboBox1);
             this.tabPageCxDiario.Controls.Add(this.label1);
             this.tabPageCxDiario.Controls.Add(this.btnEditMov);
             this.tabPageCxDiario.Controls.Add(this.btnIncluirMov);
@@ -896,18 +904,17 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Eras Medium ITC", 1F);
             this.label1.Location = new System.Drawing.Point(15, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(590, 3);
+            this.label1.Size = new System.Drawing.Size(470, 3);
             this.label1.TabIndex = 26;
             // 
             // btnEditMov
             // 
             this.btnEditMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditMov.Location = new System.Drawing.Point(530, 109);
+            this.btnEditMov.Location = new System.Drawing.Point(409, 106);
             this.btnEditMov.Name = "btnEditMov";
             this.btnEditMov.Size = new System.Drawing.Size(75, 23);
             this.btnEditMov.TabIndex = 24;
@@ -918,7 +925,7 @@
             // btnIncluirMov
             // 
             this.btnIncluirMov.Font = new System.Drawing.Font("Eras Medium ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluirMov.Location = new System.Drawing.Point(425, 109);
+            this.btnIncluirMov.Location = new System.Drawing.Point(409, 65);
             this.btnIncluirMov.Name = "btnIncluirMov";
             this.btnIncluirMov.Size = new System.Drawing.Size(75, 23);
             this.btnIncluirMov.TabIndex = 25;
@@ -928,18 +935,26 @@
             // 
             // monthCalendar1
             // 
+            this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(3, 1);
-            this.monthCalendar1.Location = new System.Drawing.Point(616, 16);
+            this.monthCalendar1.Location = new System.Drawing.Point(512, 3);
+            this.monthCalendar1.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.monthCalendar1.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 11;
             // 
             // panelMov
             // 
-            this.panelMov.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelMov.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMov.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelMov.BackColor = System.Drawing.Color.OldLace;
             this.panelMov.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMov.Controls.Add(this.label3);
+            this.panelMov.Controls.Add(this.cmbSetComp);
+            this.panelMov.Controls.Add(this.cmbSetEmp);
             this.panelMov.Controls.Add(this.numericBox1);
+            this.panelMov.Controls.Add(this.label2);
             this.panelMov.Controls.Add(this.btnSalvarMov);
             this.panelMov.Controls.Add(this.comboBox3);
             this.panelMov.Controls.Add(this.cmbTMov);
@@ -953,10 +968,57 @@
             this.panelMov.Controls.Add(this.txtDescricaoMov);
             this.panelMov.Controls.Add(dataLabel);
             this.panelMov.Controls.Add(this.dataDateTimePickerDataMov);
-            this.panelMov.Location = new System.Drawing.Point(11, 153);
+            this.panelMov.Location = new System.Drawing.Point(11, 165);
             this.panelMov.Name = "panelMov";
-            this.panelMov.Size = new System.Drawing.Size(885, 189);
+            this.panelMov.Size = new System.Drawing.Size(1192, 189);
             this.panelMov.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Eras Bold ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(888, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 19);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Empresa:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cmbSetComp
+            // 
+            this.cmbSetComp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbSetComp.DisplayMember = "CompNome";
+            this.cmbSetComp.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSetComp.FormatString = "MMMM/yyyy";
+            this.cmbSetComp.FormattingEnabled = true;
+            this.cmbSetComp.Location = new System.Drawing.Point(892, 129);
+            this.cmbSetComp.Name = "cmbSetComp";
+            this.cmbSetComp.Size = new System.Drawing.Size(273, 27);
+            this.cmbSetComp.TabIndex = 27;
+            this.cmbSetComp.ValueMember = "Id";
+            // 
+            // cmbSetEmp
+            // 
+            this.cmbSetEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbSetEmp.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.movimentacaoBindingSource, "Empresa_fk", true));
+            this.cmbSetEmp.DataSource = this.empresaBindingSource;
+            this.cmbSetEmp.DisplayMember = "NomeFantasia";
+            this.cmbSetEmp.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSetEmp.FormattingEnabled = true;
+            this.cmbSetEmp.Location = new System.Drawing.Point(892, 58);
+            this.cmbSetEmp.Name = "cmbSetEmp";
+            this.cmbSetEmp.Size = new System.Drawing.Size(273, 27);
+            this.cmbSetEmp.TabIndex = 1;
+            this.cmbSetEmp.ValueMember = "Id";
+            // 
+            // movimentacaoBindingSource
+            // 
+            this.movimentacaoBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.Movimentacao);
+            // 
+            // empresaBindingSource
+            // 
+            this.empresaBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.Empresa);
             // 
             // numericBox1
             // 
@@ -971,9 +1033,18 @@
             this.numericBox1.TabIndex = 33;
             this.numericBox1.Text = "0,00";
             // 
-            // movimentacaoBindingSource
+            // label2
             // 
-            this.movimentacaoBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.Movimentacao);
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.CausesValidation = false;
+            this.label2.Font = new System.Drawing.Font("Eras Bold ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(888, 104);
+            this.label2.Margin = new System.Windows.Forms.Padding(3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Competência:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSalvarMov
             // 
@@ -994,7 +1065,7 @@
             this.comboBox3.DisplayMember = "Nome";
             this.comboBox3.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(656, 149);
+            this.comboBox3.Location = new System.Drawing.Point(656, 129);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(213, 27);
             this.comboBox3.TabIndex = 1;
@@ -1012,7 +1083,7 @@
             this.cmbTMov.DisplayMember = "TipoMovimentacao1";
             this.cmbTMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTMov.FormattingEnabled = true;
-            this.cmbTMov.Location = new System.Drawing.Point(656, 95);
+            this.cmbTMov.Location = new System.Drawing.Point(656, 58);
             this.cmbTMov.Name = "cmbTMov";
             this.cmbTMov.Size = new System.Drawing.Size(213, 27);
             this.cmbTMov.TabIndex = 1;
@@ -1065,13 +1136,12 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel2.Controls.Add(this.cmbCompMov, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblCompTelaMov, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(24, 101);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(18, 101);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1111,7 +1181,6 @@
             // cmbCompMov
             // 
             this.cmbCompMov.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbCompMov.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.movimentacaoBindingSource, "Competencia_fk", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "MMMM/yyyy"));
             this.cmbCompMov.DataSource = this.competenciaBindingSource;
             this.cmbCompMov.DisplayMember = "CompNome";
             this.cmbCompMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1139,17 +1208,16 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 414F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 289F));
             this.tableLayoutPanel1.Controls.Add(this.lblEmpTelaMov, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.cmbEmpMov, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 56);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 56);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(526, 39);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(382, 39);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // lblEmpTelaMov
@@ -1167,26 +1235,22 @@
             // cmbEmpMov
             // 
             this.cmbEmpMov.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbEmpMov.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.movimentacaoBindingSource, "Empresa_fk", true));
             this.cmbEmpMov.DataSource = this.empresaBindingSource;
             this.cmbEmpMov.DisplayMember = "NomeFantasia";
             this.cmbEmpMov.Font = new System.Drawing.Font("Eras Medium ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmpMov.FormattingEnabled = true;
-            this.cmbEmpMov.Location = new System.Drawing.Point(115, 6);
+            this.cmbEmpMov.Location = new System.Drawing.Point(96, 6);
             this.cmbEmpMov.Name = "cmbEmpMov";
-            this.cmbEmpMov.Size = new System.Drawing.Size(408, 27);
+            this.cmbEmpMov.Size = new System.Drawing.Size(283, 27);
             this.cmbEmpMov.TabIndex = 1;
             this.cmbEmpMov.ValueMember = "Id";
-            // 
-            // empresaBindingSource
-            // 
-            this.empresaBindingSource.DataSource = typeof(Fabiane_Sistema_CaixaDiario.Empresa);
             // 
             // dataGridViewMov
             // 
             this.dataGridViewMov.AllowUserToAddRows = false;
             this.dataGridViewMov.AllowUserToDeleteRows = false;
-            this.dataGridViewMov.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridViewMov.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewMov.AutoGenerateColumns = false;
             this.dataGridViewMov.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridViewMov.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1328,6 +1392,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPageCxDiario);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -2176,6 +2243,17 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.empresaBindingSource;
+            this.comboBox1.DisplayMember = "NomeFantasia";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(16, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 22);
+            this.comboBox1.TabIndex = 27;
+            this.comboBox1.ValueMember = "Id";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2201,12 +2279,12 @@
             this.panelMov.ResumeLayout(false);
             this.panelMov.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movimentacaoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parteEnvolvidaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoMovimentacaoBindingSource)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMov)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -2378,6 +2456,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn47;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteEmpColumn;
         private NumericBox.NumericBox numericBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbSetComp;
+        private System.Windows.Forms.ComboBox cmbSetEmp;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
