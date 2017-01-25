@@ -38,11 +38,7 @@ namespace Fabiane_Sistema_CaixaDiario
             panelPEnv.Enabled = false;
             panelTPEnv.Enabled = false;
             panelTMov.Enabled = false;
-            panelMov.Size = new Size(883, 189);
             panelMov.Enabled = false;
-            cmbEmpMov.DropDownStyle = ComboBoxStyle.Simple;
-
-            //Empresa.
 
             btnSalvarEmpresa.Enabled = false;
             btnCancelarEmpresa.Enabled = false;
@@ -79,7 +75,7 @@ namespace Fabiane_Sistema_CaixaDiario
             //txtIdMov.Text = String.Format("C");
 
             //cmbEmpMov.ValueMember = "0";
-            
+            //cmbCompMov
 
             db = new CDFEntities();
             db.Configuration.ProxyCreationEnabled = false;
@@ -99,7 +95,7 @@ namespace Fabiane_Sistema_CaixaDiario
             movimentacaoBindingSource.DataSource = db.Movimentacaos.Include("Empresas").ToList();
             movimentacaoBindingSource.DataSource = db.Movimentacaos.Include("ParteEnvolvidas").ToList();
             movimentacaoBindingSource.DataSource = db.Movimentacaos.Include("TipoMovimentacaos").ToList();
-        }
+      }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -250,9 +246,6 @@ namespace Fabiane_Sistema_CaixaDiario
             panelEmpresa.Enabled = true;
             btnSalvarEmpresa.Enabled = true;
             btnCancelarEmpresa.Enabled = true;
-
-            cmbEmpMov.SelectedIndex = 0;
-
             nomeFantasiaTextBox.Focus();
 
             Empresa emp = new Empresa();
@@ -665,8 +658,8 @@ namespace Fabiane_Sistema_CaixaDiario
             btnIncluirMov.Enabled = false;
             btnEditMov.Enabled = false;
             panelMov.Enabled = true;
-            panelMov.Size = new Size(1104, 189);
-            cmbEmpMov.DropDownStyle = ComboBoxStyle.DropDown;
+
+            numericBox1.Text= "0,00";
             
             txtDescricaoMov.Clear();
 
@@ -675,17 +668,23 @@ namespace Fabiane_Sistema_CaixaDiario
             mov = new Movimentacao();
             db.Movimentacaos.Add(mov);
             mov.DataRegistro= timeNow;
-                       
+            
             movimentacaoBindingSource.Add(mov);
             movimentacaoBindingSource.MoveLast();
-
+            cmbEmpMov.SelectedIndex = 0;
+            dataDateTimePickerDataMov.Text = DateTime.Now.ToString();
 
             tipo = 'i';
 
-            numericBox1.Text= "0,00";
+            //if (cmbCompMov.Items.Count > 0)
+            //{
+            //    object objCompMov = cmbCompMov.Items[0];
+            //    cmbCompMov.SelectedIndex = cmbCompMov.Items.IndexOf(objCompMov);
+            //}
 
-            cmbEmpMov.SelectedIndex = 0;
+            //    if (cmbEmpMov.Items.Count > 0)
 
+            numericBox1.Text = "0,00";
         }
 
         private async void btnSalvarMov_Click(object sender, EventArgs e)
@@ -720,6 +719,8 @@ namespace Fabiane_Sistema_CaixaDiario
             btnIncluirMov.Enabled = true;
             btnEditMov.Enabled = true;
             dataGridViewMov.Refresh();
+
+
         }
 
         private void btnEditMov_Click(object sender, EventArgs e)
@@ -766,7 +767,6 @@ namespace Fabiane_Sistema_CaixaDiario
             numericBox1.Text = "0,00";
             txtDescricaoMov.Text = null;
             dataGridViewMov.Refresh();
-            panelMov.Size = new Size(883, 189);
 
             MessageBox.Show("Movimentação cancelada como selecionado!", "Cancelada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

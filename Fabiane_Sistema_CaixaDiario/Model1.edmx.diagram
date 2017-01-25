@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="CDFModel.TipoMovimentacao" Width="2" PointX="0.625" PointY="5" />
         <EntityTypeShape EntityType="CDFModel.TipoParteEnvolvida" Width="1.75" PointX="9.375" PointY="3.625" />
         <AssociationConnector Association="CDFModel.FK_ParteEnvolvida_TipoParteEnvolvida" />
-        <EntityTypeShape EntityType="CDFModel.Movimentacao" Width="2.125" PointX="3.75" PointY="1.125" />
+        <EntityTypeShape EntityType="CDFModel.Movimentacao" Width="2.125" PointX="3.5" PointY="1.125" />
         <AssociationConnector Association="CDFModel.FK_Comepetencia" />
         <AssociationConnector Association="CDFModel.FK_Empresa" />
         <AssociationConnector Association="CDFModel.FK_Movimentacao_ParteEnvolvida" />
